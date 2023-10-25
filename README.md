@@ -124,16 +124,15 @@ h1, h2, ul {
   </head>
   <body>
     <br>
-    <h1><b>Notatku tutaj będą (chb)</b></h1>
+    <h1><b>O mnie:</b></h1>
     <br>
     <center>
-    <h3>O mnie:</h3>
     <ul>
       <li><a href="https://szmurk0.github.io/bio/">Bio</a></li>
     </ul>  
     </center>
     <br>
-    <br><br><br>
+    <br><br>
     <h2>Języki Programowania: </h2>
     <ul>
       <li><a href="https://szmurk0.github.io/Python/">Python</a></li>
