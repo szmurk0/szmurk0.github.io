@@ -126,19 +126,25 @@ h1, h2, ul {
 
     <h1><b>Notatku tutaj będą (chb)</b></h1>
     <br>
-    <center><p>Moje jebane bio, tu będą lekcje itp i guess</p></center>
+    <center>
+    <ul>
+      <li><a href="https://szmurk0.github.io/bio/">O mnie</a></li>
+    </ul>  
+    </center>
+    
     <br>
     <h2>Języki Programowania których się uczę: </h2>
     <ul>
       <li><a href="https://szmurk0.github.io/Python/">Python</a></li>
-      <li>PHP</li>
-      <li>JS</li>
-      <li>C</li>
+      <li><a href="https://szmurk0.github.io/PHP/">PHP</li>
+      <li><a href="https://szmurk0.github.io/JS/">JS</li>
+      <li><a href="https://szmurk0.github.io/C/">C</li>
       <li><a href="https://szmurk0.github.io/C-/">C++</a></li>
-      <li>C#</li>
-      <li>Batch</li>
-      <li>Kotlin</li>
-      <li>SQL</li>
+      <li><a href="https://szmurk0.github.io/Csh/">C#</li>
+      <li><a href="https://szmurk0.github.io/Batch/">Batch</li>
+      <li><a href="https://szmurk0.github.io/Kotlin/">Kotlin</li>
+      <li><a href="https://szmurk0.github.io/SQL/">SQL</li>
+      
       <li><a href="https://szmurk0.github.io/PythonPodr/">Podręcznik z Pythona</a></li>
     </ul>
   <br>
