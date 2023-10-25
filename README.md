@@ -126,7 +126,7 @@ h1, h2, ul {
 
     <h1><b>Notatku tutaj będą (chb)</b></h1>
     <br>
-    <p>Moje jebane bio, tu będą lekcje itp i guess</p>
+    <center><p>Moje jebane bio, tu będą lekcje itp i guess</p></center>
     <br>
     <h2>Języki Programowania których się uczę: </h2>
     <ul>
