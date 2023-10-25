@@ -136,7 +136,6 @@ h1, h2, ul {
       <li><a href="https://szmurk0.github.io/Kotlin/">Kotlin</a></li>
       <li><a href="https://szmurk0.github.io/SQL/">SQL</a></li>
       
-      <li><a href="https://szmurk0.github.io/PythonPodr/">Podręcznik z Pythona</a></li>
     </ul>
  
 
