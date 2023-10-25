@@ -130,11 +130,11 @@ h1, h2, ul {
     <br>
     <h2>Języki Programowania których się uczę: </h2>
     <ul>
-      <li><a href="https://howtopraisetheholypeanut.github.io/Python/">Python</a></li>
+      <li><a href="https://szmurk0.github.io/Python/">Python</a></li>
       <li>PHP</li>
       <li>JS</li>
       <li>C</li>
-      <li><a href="https://howtopraisetheholypeanut.github.io/C1/">C++</a></li>
+      <li><a href="https://szmurk0.github.io/C-/">C++</a></li>
       <li>C#</li>
       <li>Batch</li>
       <li>Kotlin</li>
