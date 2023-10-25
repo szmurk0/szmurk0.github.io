@@ -124,16 +124,7 @@ h1, h2, ul {
   </head>
   <body>
     <br>
-    <h1><b>O mnie:</b></h1>
-    <br>
-    <center>
-    <ul>
-      <li><a href="https://szmurk0.github.io/bio/">Bio</a></li>
-    </ul>  
-    </center>
-    <br>
-    <br><br>
-    <h2>Języki Programowania: </h2>
+        <h2>Języki Programowania: </h2>
     <ul>
       <li><a href="https://szmurk0.github.io/Python/">Python</a></li>
       <li><a href="https://szmurk0.github.io/PHP/">PHP</a></li>
@@ -150,5 +141,15 @@ h1, h2, ul {
  
 
 
-  <br>
+    <br>
+    <h1><b>O mnie:</b></h1>
+    <br>
+    <center>
+    <ul>
+      <li><a href="https://szmurk0.github.io/bio/">Bio</a></li>
+    </ul>  
+    </center>
+    <br>
+    <br><br>
+
   </body>
