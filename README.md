@@ -136,14 +136,14 @@ h1, h2, ul {
     <h2>Języki Programowania których się uczę: </h2>
     <ul>
       <li><a href="https://szmurk0.github.io/Python/">Python</a></li>
-      <li><a href="https://szmurk0.github.io/PHP/">PHP</li>
-      <li><a href="https://szmurk0.github.io/JS/">JS</li>
-      <li><a href="https://szmurk0.github.io/C/">C</li>
+      <li><a href="https://szmurk0.github.io/PHP/">PHP</a></li>
+      <li><a href="https://szmurk0.github.io/JS/">JS</a></li>
+      <li><a href="https://szmurk0.github.io/C/">C</a></li>
       <li><a href="https://szmurk0.github.io/C-/">C++</a></li>
-      <li><a href="https://szmurk0.github.io/Csh/">C#</li>
-      <li><a href="https://szmurk0.github.io/Batch/">Batch</li>
-      <li><a href="https://szmurk0.github.io/Kotlin/">Kotlin</li>
-      <li><a href="https://szmurk0.github.io/SQL/">SQL</li>
+      <li><a href="https://szmurk0.github.io/Csh/">C#</a></li>
+      <li><a href="https://szmurk0.github.io/Batch/">Batch</a></li>
+      <li><a href="https://szmurk0.github.io/Kotlin/">Kotlin</a></li>
+      <li><a href="https://szmurk0.github.io/SQL/">SQL</a></li>
       
       <li><a href="https://szmurk0.github.io/PythonPodr/">Podręcznik z Pythona</a></li>
     </ul>
