@@ -123,7 +123,7 @@ h1, h2, ul {
     </style>
   </head>
   <body>
-    <br><br>
+    <br>
     <h1><b>Notatku tutaj będą (chb)</b></h1>
     <br>
     <center>
