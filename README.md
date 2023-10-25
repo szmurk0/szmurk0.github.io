@@ -139,6 +139,7 @@ h1, h2, ul {
       <li>Batch</li>
       <li>Kotlin</li>
       <li>SQL</li>
+      <li><a href="https://szmurk0.github.io/PythonPodr/">Podręcznik z Pythona</a></li>
     </ul>
   <br>
     <center><h2>Hobby</h2></center>
