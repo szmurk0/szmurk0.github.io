@@ -147,16 +147,7 @@ h1, h2, ul {
       
       <li><a href="https://szmurk0.github.io/PythonPodr/">Podręcznik z Pythona</a></li>
     </ul>
-  <br>
-    <center><h2>Hobby</h2></center>
-    <center><p>Bass gurom</p></center>
-    <ul>
-      <li>Airsoft</li>
-      <li>GameDev (bardzo podstawowy)</li>
-      <li>Granie</li>
-      <li>Nauka grania na Basie</li>
-    </ul>
-  <br>
+ 
 
 
   <br>
