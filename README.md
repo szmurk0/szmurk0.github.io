@@ -127,8 +127,9 @@ h1, h2, ul {
     <h1><b>Notatku tutaj będą (chb)</b></h1>
     <br>
     <center>
+    <h3>O mnie:</h3>
     <ul>
-      <li><a href="https://szmurk0.github.io/bio/">O mnie</a></li>
+      <li><a href="https://szmurk0.github.io/bio/">Bio</a></li>
     </ul>  
     </center>
     
@@ -152,4 +153,3 @@ h1, h2, ul {
 
   <br>
   </body>
-</html>
