@@ -132,9 +132,9 @@ h1, h2, ul {
       <li><a href="https://szmurk0.github.io/bio/">Bio</a></li>
     </ul>  
     </center>
-    
     <br>
-    <h2>Języki Programowania których się uczę: </h2>
+    <br><br><br>
+    <h2>Języki Programowania: </h2>
     <ul>
       <li><a href="https://szmurk0.github.io/Python/">Python</a></li>
       <li><a href="https://szmurk0.github.io/PHP/">PHP</a></li>
