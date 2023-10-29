@@ -132,10 +132,12 @@ h1, h2, ul {
     <center><h2> Witam na mojej stronie! Strona ta przechowuje materiały z zajęć z lekcji programowania ( oraz chat na żywo z lekcji programowań???) To wszystko na tej stronie i więcej! Miłego pobytu na stronie! </h2></center>
     <br>
     <center><h2>Chat na Żywo</h2></center>
-    
+
+    <center>
     <ul class="chat-button">
       <li><a href="https://szmurk0.github.io/Chat/">Chat</a></li>
     </ul>
+    </center>
     
     <br>
     <br>
