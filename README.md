@@ -151,7 +151,7 @@ h1, h2, ul {
  
 
 
-    <br>
+    <br><br><br><br><br><br><br>
     <h3><b>O mnie:</b></h3>
     <br>
     <center>
