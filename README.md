@@ -123,7 +123,7 @@ h1, h2, ul {
     </style>
   </head>
   <body>
-    <b><center><p> Witam na mojej stronie! Strona ta przechowuje materiały z zajęć z lekcji programowania ( oraz chat na żywo z lekcji programowań???) To wszystko na tej stronie i więcej! Miłego pobytu na stronie! </p></center></b>
+    <b><center><h1> Witam na mojej stronie! Strona ta przechowuje materiały z zajęć z lekcji programowania ( oraz chat na żywo z lekcji programowań???) To wszystko na tej stronie i więcej! Miłego pobytu na stronie! </h1></center></b>
     <br>
     <center><h2> Chat na Żywo </h2></center>
       <ul>
