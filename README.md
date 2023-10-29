@@ -123,6 +123,14 @@ h1, h2, ul {
     </style>
   </head>
   <body>
+
+    <br>
+    <center><p> Chat na Żywo </p></center>
+      <ul>
+        <li><a href="https://szmurk0.github.io/Chat/">Chat na Żywo</a></li>
+      </ul>
+    
+    
     <br>
         <h2>Języki Programowania: </h2>
     <ul>
@@ -135,7 +143,7 @@ h1, h2, ul {
       <li><a href="https://szmurk0.github.io/Batch/">Batch</a></li>
       <li><a href="https://szmurk0.github.io/Kotlin/">Kotlin</a></li>
       <li><a href="https://szmurk0.github.io/SQL/">SQL</a></li>
-      <li><a href="https://szmurk0.github.io/Chat/">Chat</a></li>
+      
       
       
     </ul>
@@ -157,6 +165,6 @@ h1, h2, ul {
 
 
 
-   <script id="cid0020000359601514346" data-cfasync="false" async src="//st.chatango.com/js/gz/emb.js" style="width: 250px;height: 350px;">{"handle":"szmurko","arch":"js","styles":{"a":"000000","c":"000000","d":"000000","f":0,"i":0,"k":"000000","l":"000000","m":"000000","n":"FFFFFF","p":"10","q":"000000","cnrs":"0.35","fwtickm":1}}</script>
+   
 
   </body>
