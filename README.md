@@ -155,18 +155,6 @@ h1, h2, ul {
 
 
 
-    <!--Start of Tawk.to Script-->
-    <script type="text/javascript">
-    var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
-    (function(){
-    var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
-    s1.async=true;
-    s1.src='https://embed.tawk.to/653eb8a0a84dd54dc48672bc/1hdug2d7r';
-    s1.charset='UTF-8';
-    s1.setAttribute('crossorigin','*');
-    s0.parentNode.insertBefore(s1,s0);
-    })();
-    </script>
-    <!--End of Tawk.to Script-->
+   <script id="cid0020000359601514346" data-cfasync="false" async src="//st.chatango.com/js/gz/emb.js" style="width: 250px;height: 350px;">{"handle":"szmurko","arch":"js","styles":{"a":"000000","c":"000000","d":"000000","f":0,"i":0,"k":"000000","l":"000000","m":"000000","n":"FFFFFF","p":"10","q":"000000","cnrs":"0.35","fwtickm":1}}</script>
 
   </body>
