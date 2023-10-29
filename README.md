@@ -127,7 +127,7 @@ h1, h2, ul {
     <br>
     <center><h2> Chat na Żywo </h2>
       <ul>
-        <li><a href="https://szmurk0.github.io/Chat/">Chat na Żywo</a></li>
+        <li><a href="https://szmurk0.github.io/Chat/">Chat</a></li>
       </ul></center>
     
     <br>
