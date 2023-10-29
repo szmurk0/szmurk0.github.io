@@ -1,5 +1,26 @@
 <html>
   <head>
+    <script>
+      function sendMessage() {
+        var messageInput = document.getElementById("message-input");
+        var message = messageInput.value;
+    
+        if (message.trim() === "") {
+            return;
+        }
+    
+        var chatMessages = document.getElementById("chat-messages");
+        var messageElement = document.createElement("div");
+        messageElement.className = "message";
+        messageElement.innerText = "You: " + message;
+        chatMessages.appendChild(messageElement);
+    
+        messageInput.value = "";
+        chatMessages.scrollTop = chatMessages.scrollHeight;
+        }
+
+    </script>
+    
     <style>
     /* Ustawienia globalne */
     @import url('https://fonts.googleapis.com/css?family=Open+Sans');
@@ -150,5 +171,13 @@ h1, h2, ul {
     </center>
     <br>
     <br><br>
+
+
+
+    <div class="chat-container">
+        <div class="chat-messages" id="chat-messages"></div>
+        <input type="text" id="message-input" placeholder="Type your message...">
+        <button onclick="sendMessage()">Send</button>
+    </div>
 
   </body>
