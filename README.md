@@ -21,6 +21,12 @@ h1, h2, ul {
 }      
     
 
+    ul.chat-button {
+      text-align: center;
+      margin-top: 10px;
+    }
+
+    
     .hover-box:hover h2 {
       color: #000;
     }
@@ -127,7 +133,7 @@ h1, h2, ul {
     <br>
     <center><h2>Chat na Żywo</h2></center>
     
-    <ul>
+    <ul class="chat-button">
       <li><a href="https://szmurk0.github.io/Chat/">Chat</a></li>
     </ul>
     
