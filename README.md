@@ -1,23 +1,34 @@
 <html>
   <head>
     <script>
+      var chatHistory = localStorage.getItem('chatHistory');
+      if (chatHistory) {
+          document.getElementById('chat-messages').innerText = chatHistory;
+      }
+      
       function sendMessage() {
-        var messageInput = document.getElementById("message-input");
-        var message = messageInput.value;
-    
-        if (message.trim() === "") {
-            return;
-        }
-    
-        var chatMessages = document.getElementById("chat-messages");
-        var messageElement = document.createElement("div");
-        messageElement.className = "message";
-        messageElement.innerText = "You: " + message;
-        chatMessages.appendChild(messageElement);
-    
-        messageInput.value = "";
-        chatMessages.scrollTop = chatMessages.scrollHeight;
-        }
+          var messageInput = document.getElementById('message-input');
+          var message = messageInput.value;
+      
+          if (message.trim() === '') {
+              return;
+          }
+      
+          var chatMessages = document.getElementById('chat-messages');
+          var messageElement = document.createElement('div');
+          messageElement.className = 'message';
+          messageElement.innerText = 'You: ' + message;
+          chatMessages.appendChild(messageElement);
+      
+          // Zapisanie nowej wiadomości do localStorage
+          var existingHistory = localStorage.getItem('chatHistory');
+          var newHistory = existingHistory ? existingHistory + '\n' + 'You: ' + message : 'You: ' + message;
+          localStorage.setItem('chatHistory', newHistory);
+      
+          messageInput.value = '';
+          chatMessages.scrollTop = chatMessages.scrollHeight;
+      }
+
 
     </script>
     
