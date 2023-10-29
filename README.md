@@ -19,8 +19,7 @@
           messageElement.className = 'message';
           messageElement.innerText = 'You: ' + message;
           chatMessages.appendChild(messageElement);
-      
-          // Zapisanie nowej wiadomości do localStorage
+
           var existingHistory = localStorage.getItem('chatHistory');
           var newHistory = existingHistory ? existingHistory + '\n' + 'You: ' + message : 'You: ' + message;
           localStorage.setItem('chatHistory', newHistory);
