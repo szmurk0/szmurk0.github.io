@@ -29,6 +29,52 @@
       }
 
 
+      const WebSocket = require('ws');
+      const wss = new WebSocket.Server({ port: 3000 });
+      
+      wss.on('connection', function connection(ws) {
+        ws.on('message', function incoming(message) {
+          // Przesyłaj otrzymaną wiadomość do wszystkich połączonych klientów
+          wss.clients.forEach(function each(client) {
+            if (client !== ws && client.readyState === WebSocket.OPEN) {
+              client.send(message);
+            }
+          });
+        });
+      });
+
+      var socket = new WebSocket('ws://localhost:3000');
+
+      socket.onopen = function(event) {
+        console.log('Połączono z serwerem WebSocket.');
+      };
+      
+      socket.onmessage = function(event) {
+        var message = event.data;
+        // Obsłuż otrzymaną wiadomość, np. wyświetl na stronie jako nową wiadomość czatu
+        displayMessage(message);
+      };
+      
+      function sendMessage() {
+        var messageInput = document.getElementById('message-input');
+        var message = messageInput.value;
+        // Przesyłaj wiadomość do serwera WebSocket
+        socket.send(message);
+        messageInput.value = '';
+      }
+      
+      function displayMessage(message) {
+        var chatMessages = document.getElementById('chat-messages');
+        var messageElement = document.createElement('div');
+        messageElement.className = 'message';
+        messageElement.innerText = message;
+        chatMessages.appendChild(messageElement);
+        chatMessages.scrollTop = chatMessages.scrollHeight;
+      }
+
+
+
+
     </script>
     
     <style>
