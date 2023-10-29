@@ -1,55 +1,62 @@
 <html>
   <head>
   <script>
-    var chatHistory = localStorage.getItem('chatHistory');
-    if (chatHistory) {
-      document.getElementById('chat-messages').innerText = chatHistory;
-    }
-
-    var socket = new WebSocket('wss://your-websocket-server-url'); // Zastąp to odpowiednim adresem URL serwera WebSocket
-
-    socket.onopen = function (event) {
-      console.log('Połączono z serwerem WebSocket.');
-    };
-
-    socket.onmessage = function (event) {
-      var message = event.data;
-      displayMessage(message);
-    };
-
-    function sendMessage() {
-      var messageInput = document.getElementById('message-input');
-      var message = messageInput.value;
-
-      if (message.trim() === '') {
-        return;
+      var socket = new WebSocket('ws://localhost:3000'); // Zastąp 'localhost:3000' odpowiednim adresem serwera WebSocket
+      
+      socket.onopen = function (event) {
+        console.log('Połączono z serwerem WebSocket.');
+      };
+      
+      socket.onmessage = function (event) {
+        var message = event.data;
+        displayMessage(message);
+      };
+      
+      function sendMessage() {
+        var messageInput = document.getElementById('message-input');
+        var message = messageInput.value;
+      
+        if (message.trim() === '') {
+          return;
+        }
+      
+        var chatMessages = document.getElementById('chat-messages');
+        var messageElement = document.createElement('div');
+        messageElement.className = 'message';
+        messageElement.innerText = 'You: ' + message;
+        chatMessages.appendChild(messageElement);
+      
+        // Przesyłaj wiadomość do serwera WebSocket
+        socket.send(message);
+      
+        messageInput.value = '';
+        chatMessages.scrollTop = chatMessages.scrollHeight;
+      }
+      
+      function displayMessage(message) {
+        var chatMessages = document.getElementById('chat-messages');
+        var messageElement = document.createElement('div');
+        messageElement.className = 'message';
+        messageElement.innerText = message;
+        chatMessages.appendChild(messageElement);
+        chatMessages.scrollTop = chatMessages.scrollHeight;
       }
 
-      var chatMessages = document.getElementById('chat-messages');
-      var messageElement = document.createElement('div');
-      messageElement.className = 'message';
-      messageElement.innerText = 'You: ' + message;
-      chatMessages.appendChild(messageElement);
 
-      var existingHistory = localStorage.getItem('chatHistory');
-      var newHistory = existingHistory ? existingHistory + '\n' + 'You: ' + message : 'You: ' + message;
-      localStorage.setItem('chatHistory', newHistory);
+    const WebSocket = require('ws');
+    const wss = new WebSocket.Server({ port: 3000 });
+    
+    wss.on('connection', function connection(ws) {
+      ws.on('message', function incoming(message) {
+        // Przesyłaj otrzymaną wiadomość do wszystkich połączonych klientów
+        wss.clients.forEach(function each(client) {
+          if (client !== ws && client.readyState === WebSocket.OPEN) {
+            client.send(message);
+          }
+        });
+      });
+    });
 
-      // Przesyłaj wiadomość do serwera WebSocket
-      socket.send(message);
-
-      messageInput.value = '';
-      chatMessages.scrollTop = chatMessages.scrollHeight;
-    }
-
-    function displayMessage(message) {
-      var chatMessages = document.getElementById('chat-messages');
-      var messageElement = document.createElement('div');
-      messageElement.className = 'message';
-      messageElement.innerText = message;
-      chatMessages.appendChild(messageElement);
-      chatMessages.scrollTop = chatMessages.scrollHeight;
-    }
   </script>
     
     <style>
