@@ -123,16 +123,16 @@ h1, h2, ul {
     </style>
   </head>
   <body>
-    <p> Witam na mojej stronie! Strona ta przechowuje materiały z zajęć z lekcji programowania ( oraz chat na żywo z lekcji programowań???) To wszystko na tej stronie i więcej! Miłego pobytu na stronie! </p>
+    <b><center><p> Witam na mojej stronie! Strona ta przechowuje materiały z zajęć z lekcji programowania ( oraz chat na żywo z lekcji programowań???) To wszystko na tej stronie i więcej! Miłego pobytu na stronie! </p></center></b>
     <br>
-    <center><p> Chat na Żywo </p></center>
+    <center><h2> Chat na Żywo </h2></center>
       <ul>
         <li><a href="https://szmurk0.github.io/Chat/">Chat na Żywo</a></li>
       </ul>
     
     <br>
     <br>
-        <p>Języki Programowania: </p>
+        <h2>Języki Programowania: </h2>
     <ul>
       <li><a href="https://szmurk0.github.io/Python/">Python</a></li>
       <li><a href="https://szmurk0.github.io/PHP/">PHP</a></li>
