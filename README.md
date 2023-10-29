@@ -153,14 +153,6 @@ h1, h2, ul {
 
 
 
-    <div class="chat-container">
-        <div class="chat-messages" id="chat-messages"></div>
-        <input type="text" id="message-input" placeholder="Type your message...">
-        <button onclick="sendMessage()">Send</button>
-    </div>
-
-
-
 
  <!--Start of Tawk.to Script-->
 <script type="text/javascript">
