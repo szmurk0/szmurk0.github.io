@@ -1,64 +1,5 @@
 <html>
   <head>
-  <script>
-      var socket = new WebSocket('ws://localhost:3000'); // Zastąp 'localhost:3000' odpowiednim adresem serwera WebSocket
-      
-      socket.onopen = function (event) {
-        console.log('Połączono z serwerem WebSocket.');
-      };
-      
-      socket.onmessage = function (event) {
-        var message = event.data;
-        displayMessage(message);
-      };
-      
-      function sendMessage() {
-        var messageInput = document.getElementById('message-input');
-        var message = messageInput.value;
-      
-        if (message.trim() === '') {
-          return;
-        }
-      
-        var chatMessages = document.getElementById('chat-messages');
-        var messageElement = document.createElement('div');
-        messageElement.className = 'message';
-        messageElement.innerText = 'You: ' + message;
-        chatMessages.appendChild(messageElement);
-      
-        // Przesyłaj wiadomość do serwera WebSocket
-        socket.send(message);
-      
-        messageInput.value = '';
-        chatMessages.scrollTop = chatMessages.scrollHeight;
-      }
-      
-      function displayMessage(message) {
-        var chatMessages = document.getElementById('chat-messages');
-        var messageElement = document.createElement('div');
-        messageElement.className = 'message';
-        messageElement.innerText = message;
-        chatMessages.appendChild(messageElement);
-        chatMessages.scrollTop = chatMessages.scrollHeight;
-      }
-
-
-    const WebSocket = require('ws');
-    const wss = new WebSocket.Server({ port: 3000 });
-    
-    wss.on('connection', function connection(ws) {
-      ws.on('message', function incoming(message) {
-        // Przesyłaj otrzymaną wiadomość do wszystkich połączonych klientów
-        wss.clients.forEach(function each(client) {
-          if (client !== ws && client.readyState === WebSocket.OPEN) {
-            client.send(message);
-          }
-        });
-      });
-    });
-
-  </script>
-    
     <style>
     /* Ustawienia globalne */
     @import url('https://fonts.googleapis.com/css?family=Open+Sans');
@@ -217,5 +158,22 @@ h1, h2, ul {
         <input type="text" id="message-input" placeholder="Type your message...">
         <button onclick="sendMessage()">Send</button>
     </div>
+
+
+
+
+ <!--Start of Tawk.to Script-->
+<script type="text/javascript">
+var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+(function(){
+var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+s1.async=true;
+s1.src='https://embed.tawk.to/your_unique_tawk_id/default';
+s1.charset='UTF-8';
+s1.setAttribute('crossorigin','*');
+s0.parentNode.insertBefore(s1,s0);
+})();
+</script>
+<!--End of Tawk.to Script-->
 
   </body>
