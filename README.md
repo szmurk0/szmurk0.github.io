@@ -151,7 +151,7 @@ h1, h2, ul {
 
 
     <br>
-    <h1><b>O mnie:</b></h1>
+    <h3><b>O mnie:</b></h3>
     <br>
     <center>
     <ul>
