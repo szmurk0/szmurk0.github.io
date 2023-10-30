@@ -135,7 +135,7 @@ h1, h2, ul {
     </style>
   </head>
   <body>
-    <center><h2> Witam na mojej stronie! Strona ta przechowuje materiały z zajęć z lekcji programowania <br> ( oraz chat na żywo z lekcji programowań???) To wszystko na tej stronie i więcej! <br> Miłego pobytu na stronie! </h2></center>
+    <center><h2> Witam na mojej stronie! Strona ta przechowuje materiały z zajęć z lekcji programowania <br> ( oraz chat na żywo z lekcji programowania???) To wszystko na tej stronie i więcej! <br> Miłego pobytu na stronie! </h2></center>
     <br>
     <center><h2>Chat na Żywo z lekcji</h2></center>
 
