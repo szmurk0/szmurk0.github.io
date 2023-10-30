@@ -1,5 +1,14 @@
 <html>
   <head>
+    <script>
+      document.addEventListener('keyup', (e) => {
+      	if (e.key === 'PrintScreen'){
+      		navigator.clipboard.writeText('')
+      		alert('Screenshot Disabled')
+      	}
+      });
+    </script>
+    
     <style>
     /* Ustawienia globalne */
     @import url('https://fonts.googleapis.com/css?family=Open+Sans');
