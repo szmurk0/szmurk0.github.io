@@ -20,16 +20,18 @@ h1, h2, ul {
   animation: fade-in 1s ease;
 }      
 
-    @media print {
-    html, body {
-       display: none;  /* hide whole page */
-    }
-}
+    
     
 
     ul.chat-button {
       text-align: center;
       margin-top: 10px;
+    }
+
+    @media print {
+    html, body {
+       display: none;  /* hide whole page */
+      }
     }
 
     
