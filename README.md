@@ -1,12 +1,13 @@
 <html>
   <head>
     <script>
-      document.addEventListener('keyup', (e) => {
-      	if (e.key === 'PrintScreen'){
-      		navigator.clipboard.writeText('')
-      		alert('Screenshot Disabled')
-      	}
-      });
+        window.onload = function() {
+          var watermark = document.getElementById('watermark');
+          setInterval(function() {
+            watermark.style.top = Math.random() * window.innerHeight + 'px';
+            watermark.style.left = Math.random() * window.innerWidth + 'px';
+          }, 1000);
+        };
     </script>
     
     <style>
@@ -37,10 +38,17 @@ h1, h2, ul {
       margin-top: 10px;
     }
 
-    @media print {
-    html, body {
-       display: none;  /* hide whole page */
-      }
+    #watermark {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-image: url('watermark.png');
+      background-repeat: no-repeat;
+      background-position: center;
+      opacity: 0.5;
+      pointer-events: none; /* pozwala na interakcję z elementami pod znakiem wodnym */
     }
 
     
