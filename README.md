@@ -203,13 +203,6 @@ h1, h2, ul {
 
 
     <br><br><br><br><br><br><br>
-    <center><h3><b>O mnie:</b></h3></center>
-    <br>
-    <center>
-    <ul>
-      <li><a href="https://szmurk0.github.io/bio/">Bio</a></li>
-    </ul>  
-    </center>
     <br>
     <br><br>
 
