@@ -138,7 +138,7 @@
     <center>
     <ul class="chat-button">
       <li><a href="https://szmurk0.github.io/Chat/">Chat z lekcji</a></li>
-      <li><a href="https://szmurk0.github.io/AI/">ChatGPT (???)</a></li>
+      <!-- <li><a href="https://szmurk0.github.io/AI/">ChatGPT (???)</a></li> -->
     </ul>
     </center>
     
