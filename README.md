@@ -130,6 +130,11 @@
       text-align: justify;
     }
 
+    .center-text {
+        text-align: center;
+        margin: 0 auto;
+    }
+
 
 
     </style>
@@ -145,13 +150,20 @@
     
     <center><h2> Witam na mojej (szmurka) stronie! Strona ta przechowuje materiały z zajęć z lekcji programowania. Miłego pobytu na stronie! </h2></center>
     <br>
+
+
+    <div class="center-text">
+      <h2> Chat na Żywo </h2>
+    </div>
+
     
-    <center><h2>Chat na Żywo:</h2></center>
     <center>
-    <ul class="chat-button">
-      <li><a href="https://szmurk0.github.io/Chat/">Chat z lekcji</a></li>
-      <!-- <li><a href="https://szmurk0.github.io/AI/">ChatGPT (???)</a></li> -->
-    </ul>
+    <div class="center-text">
+      <ul>
+        <li><a href="https://szmurk0.github.io/Chat/">Chat z lekcji</a></li>
+        <!-- <li><a href="https://szmurk0.github.io/AI/">ChatGPT (???)</a></li> -->
+      </ul>
+    </div>
     </center>
     
     <br>
