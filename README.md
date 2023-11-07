@@ -135,7 +135,14 @@
     </style>
     
   </head>
+  
   <body>
+    <div>
+     <div class="wave"></div>
+     <div class="wave"></div>
+     <div class="wave"></div>
+    </div>
+    
     <center><h2> Witam na mojej (szmurka) stronie! Strona ta przechowuje materiały z zajęć z lekcji programowania. Miłego pobytu na stronie! </h2></center>
     <br>
     
