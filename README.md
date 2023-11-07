@@ -136,7 +136,7 @@
     
   </head>
   <body>
-    <center><h2> Witam na mojej stronie! Strona ta przechowuje materiały z zajęć z lekcji programowania <br> ( oraz chat na żywo z lekcji programowania???) To wszystko na tej stronie i więcej! <br> Miłego pobytu na stronie! </h2></center>
+    <center><h2> Witam na mojej (szmurka) stronie! Strona ta przechowuje materiały z zajęć z lekcji programowania. Miłego pobytu na stronie! </h2></center>
     <br>
     
     <center><h2>Chat na Żywo:</h2></center>
@@ -151,15 +151,15 @@
     <br>
         <center><h2>Języki Programowania: </h2></center>
     <ul>
-      <li><a href="https://szmurk0.github.io/Python/">Python</a></li>
-      <li><a href="https://szmurk0.github.io/PHP/">PHP</a></li>
-      <li><a href="https://szmurk0.github.io/JS/">JS</a></li>
-      <li><a href="https://szmurk0.github.io/C/">C</a></li>
-      <li><a href="https://szmurk0.github.io/C-/">C++</a></li>
-      <li><a href="https://szmurk0.github.io/Csh/">C#</a></li>
-      <li><a href="https://szmurk0.github.io/Batch/">Batch</a></li>
-      <li><a href="https://szmurk0.github.io/Kotlin/">Kotlin</a></li>
-      <li><a href="https://szmurk0.github.io/SQL/">SQL</a></li>
+      <li><a href="https://szmurk0.github.io/Python/"> Python </a></li>
+      <li><a href="https://szmurk0.github.io/PHP/"> PHP </a></li>
+      <li><a href="https://szmurk0.github.io/JS/"> JS </a></li>
+      <li><a href="https://szmurk0.github.io/C/"> C </a></li>
+      <li><a href="https://szmurk0.github.io/C-/"> C++ </a></li>
+      <li><a href="https://szmurk0.github.io/Csh/"> C# </a></li>
+      <li><a href="https://szmurk0.github.io/Batch/"> Batch </a></li>
+      <li><a href="https://szmurk0.github.io/Kotlin/"> Kotlin </a></li>
+      <li><a href="https://szmurk0.github.io/SQL/"> SQL </a></li>
     </ul>
       <br><br>
       <center><h2> O mnie </h2></center>
