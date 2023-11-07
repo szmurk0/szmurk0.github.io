@@ -117,6 +117,11 @@
       text-decoration: underline;
     }
 
+    a {
+      color: black;
+      text-decoration: none;
+    }
+
     /* Paragrafy */
     p {
       font-size: 1.2em;
