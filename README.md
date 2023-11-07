@@ -144,7 +144,7 @@
     
     <br>
     <br>
-        <h2>Języki Programowania: </h2>
+        <center><p>Języki Programowania: </p></center>
     <ul>
       <li><a href="https://szmurk0.github.io/Python/">Python</a></li>
       <li><a href="https://szmurk0.github.io/PHP/">PHP</a></li>
