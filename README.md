@@ -1,118 +1,76 @@
 <html>
   <head>
-    <script>
-        document.addEventListener("keyup", function (e) {
-          var keyCode = e.keyCode ? e.keyCode : e.which;
-                  if (keyCode == 44) {
-                      stopPrntScr();
-                  }
-              });
-        function stopPrntScr() {
-            var inpFld = document.createElement("input");
-            inpFld.setAttribute("value", ".");
-            inpFld.setAttribute("width", "0");
-            inpFld.style.height = "0px";
-            inpFld.style.width = "0px";
-            inpFld.style.border = "0px";
-            document.body.appendChild(inpFld);
-            inpFld.select();
-            document.execCommand("copy");
-            inpFld.remove(inpFld);
-          }
-         function AccessClipboardData() {
-            try {
-                window.clipboardData.setData('text', "Access   Restricted");
-            } catch (err) {
-            }
-          }
-          setInterval("AccessClipboardData()", 300);
-    </script>
-    
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@400;700&display=swap">
     <style>
-    /* Ustawienia globalne */
-    @import url('https://fonts.googleapis.com/css?family=Open+Sans');
-    body {
-      font-family: 'Open Sans', sans-serif;
-      margin: 0;
-      padding: 0;
-      background-image: linear-gradient(to bottom, #202020, #FF8C42);
-      color: #fff;
-    }
- 
-      @keyframes fade-in {
-  0% { opacity: 0; }
-  100% { opacity: 1; }
-}
-
-h1, h2, ul {
-  animation: fade-in 1s ease;
-}      
-
-    
-    
-
-    ul.chat-button {
-      text-align: center;
-      margin-top: 10px;
-    }
-
-    #watermark {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background-image: url('watermark.png');
-      background-repeat: no-repeat;
-      background-position: center;
-      opacity: 0.5;
-      pointer-events: none; /* pozwala na interakcję z elementami pod znakiem wodnym */
-    }
-
-    
-    .hover-box:hover h2 {
-      color: #000;
-    }
-
       
-    /* Nagłówki */
-    h1, h2 {
-      font-weight: bold;
-      text-align: center;
-      margin-top: 30px;
-    }
-
-    header {
-      display: none;
-    }
-
-
-    h1 {
-      font-size: 3em;
-      text-shadow: 2px 2px #ccc;
-    }
-
-    a {
-      color: black;
-      text-decoration: none;    
-  }
-
-    a:hover {
-      color: black;
-      text-decoration: underline;
-    }
-
-
-    .hover-box:hover {
-      background-color: #fff;
-      color: #000;
+    body {
+        margin: auto;
+        font-family: 'Source Code Pro', monospace;
+        overflow: auto;
+        background: linear-gradient(315deg, rgba(101,0,94,1) 3%, rgba(60,132,206,1) 38%, rgba(48,238,226,1) 68%, rgba(255,25,25,1) 98%);
+        animation: gradient 15s ease infinite;
+        background-size: 400% 400%;
+        background-attachment: fixed;
     }
     
-    h2 {
-      font-size: 2em;
-      border-bottom: 1px solid #ccc;
-      padding-bottom: 10px;
-      margin-bottom: 20px;
+    @keyframes gradient {
+        0% {
+            background-position: 0% 0%;
+        }
+        50% {
+            background-position: 100% 100%;
+        }
+        100% {
+            background-position: 0% 0%;
+        }
+    }
+    
+    .wave {
+        background: rgb(255 255 255 / 25%);
+        border-radius: 1000% 1000% 0 0;
+        position: fixed;
+        width: 200%;
+        height: 12em;
+        animation: wave 10s -3s linear infinite;
+        transform: translate3d(0, 0, 0);
+        opacity: 0.8;
+        bottom: 0;
+        left: 0;
+        z-index: -1;
+    }
+    
+    .wave:nth-of-type(2) {
+        bottom: -1.25em;
+        animation: wave 18s linear reverse infinite;
+        opacity: 0.8;
+    }
+    
+    .wave:nth-of-type(3) {
+        bottom: -2.5em;
+        animation: wave 20s -1s reverse infinite;
+        opacity: 0.9;
+    }
+    
+    @keyframes wave {
+        2% {
+            transform: translateX(1);
+        }
+    
+        25% {
+            transform: translateX(-25%);
+        }
+    
+        50% {
+            transform: translateX(-50%);
+        }
+    
+        75% {
+            transform: translateX(-25%);
+        }
+    
+        100% {
+            transform: translateX(1);
+        }
     }
 
     /* Lista */
@@ -170,6 +128,7 @@ h1, h2, ul {
 
 
     </style>
+    
   </head>
   <body>
     <center><h2> Witam na mojej stronie! Strona ta przechowuje materiały z zajęć z lekcji programowania <br> ( oraz chat na żywo z lekcji programowania???) To wszystko na tej stronie i więcej! <br> Miłego pobytu na stronie! </h2></center>
