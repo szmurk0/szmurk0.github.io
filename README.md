@@ -133,8 +133,8 @@
   <body>
     <center><h2> Witam na mojej stronie! Strona ta przechowuje materiały z zajęć z lekcji programowania <br> ( oraz chat na żywo z lekcji programowania???) To wszystko na tej stronie i więcej! <br> Miłego pobytu na stronie! </h2></center>
     <br>
-    <center><p>Chat na Żywo:</p></center>
-
+    
+    <center><h2>Chat na Żywo:</h2></center>
     <center>
     <ul class="chat-button">
       <li><a href="https://szmurk0.github.io/Chat/">Chat z lekcji</a></li>
@@ -144,7 +144,7 @@
     
     <br>
     <br>
-        <center><p>Języki Programowania: </p></center>
+        <center><h2>Języki Programowania: </h2></center>
     <ul>
       <li><a href="https://szmurk0.github.io/Python/">Python</a></li>
       <li><a href="https://szmurk0.github.io/PHP/">PHP</a></li>
@@ -155,6 +155,12 @@
       <li><a href="https://szmurk0.github.io/Batch/">Batch</a></li>
       <li><a href="https://szmurk0.github.io/Kotlin/">Kotlin</a></li>
       <li><a href="https://szmurk0.github.io/SQL/">SQL</a></li>
+    </ul>
+      <br><br>
+      <center><h2> O mnie </h2></center>
+    <ul>
+      <li><a href="https://szmurk0.github.io/bio/">BIO</a></li>
+    </ul>
       
       
       
