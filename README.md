@@ -143,12 +143,9 @@
 
     
     <center>
-    <div class="center-text">
       <ul>
         <li><a href="https://szmurk0.github.io/Chat/">Chat z lekcji</a></li>
-        <!-- <li><a href="https://szmurk0.github.io/AI/">ChatGPT (???)</a></li> -->
       </ul>
-    </div>
     </center>
     
     <br>
