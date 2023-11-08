@@ -76,8 +76,9 @@
     /* Lista */
     ul {
       list-style: none;
-      margin: 0;
       text-align: center;
+      display: flex;
+      justify-content: center;
     }
 
     ul li.programming {
