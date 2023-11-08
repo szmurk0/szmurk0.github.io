@@ -77,8 +77,7 @@
     ul {
       list-style: none;
       text-align: center;
-      display: flex;
-      justify-content: center;
+      padding-left: -19px;
     }
 
     ul li.programming {
