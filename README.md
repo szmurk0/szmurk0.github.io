@@ -66,7 +66,6 @@
       ul {
         list-style: none;
         text-align: center;
-        padding: 0;
       }
       ul li.programming {
         background-color: #145369;
@@ -81,11 +80,15 @@
         color: #145369;
         border-color: #145369;
       }     
+      ul {
+        padding: 0px
+      }
       ul li {
         display: inline-block;
         margin: 10px;
         float: center;
         font-weight: bold;
+        padding: 10px;
         border: 2px solid #ccc;
         border-radius: 10px;
         transition: background-color 0.3s ease;
@@ -168,11 +171,5 @@
     <br><br><br><br><br><br><br>
     <br>
     <br><br>
-
-
-
-
-
-   
 
   </body>
