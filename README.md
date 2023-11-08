@@ -66,7 +66,7 @@
       ul {
         list-style: none;
         text-align: center;
-        padding-left: -19px;
+        padding: 0;
       }
       ul li.programming {
         background-color: #145369;
