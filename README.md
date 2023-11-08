@@ -83,7 +83,8 @@
       }     
       ul li {
         display: inline-block;
-        margin: 10px 5px;
+        margin: 10px;
+        float: center;
         font-weight: bold;
         border: 2px solid #ccc;
         border-radius: 10px;
