@@ -77,7 +77,6 @@
     ul {
       list-style: none;
       margin: 0;
-      padding: 0;
       text-align: center;
     }
 
@@ -104,7 +103,6 @@
       font-weight: bold;
       border: 2px solid #ccc;
       border-radius: 10px;
-      padding: 10px;
       transition: background-color 0.3s ease;
     }
 
