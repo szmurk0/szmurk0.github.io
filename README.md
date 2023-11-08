@@ -84,7 +84,7 @@
         border-color: #145369;
       }     
       ul {
-        padding: 0px
+        padding: -32px
       }
       ul li {
         display: inline-block;
