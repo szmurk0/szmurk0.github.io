@@ -168,9 +168,6 @@
       <li><a href="https://szmurk0.github.io/bio/">BIO</a></li>
     </ul>
 
-    <br><br><br><br><br><br><br>
-    <br>
-    <br><br>
 
 
 
