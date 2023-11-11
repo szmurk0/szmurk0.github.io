@@ -138,13 +138,14 @@
 
 
     <div class="center-text">
-      <h2> Chat na Żywo </h2>
+      <h2> Rzeczy potrzebne na lekcje </h2>
     </div>
 
     
     <center>
       <ul>
-        <li><a href="https://szmurk0.github.io/Chat/">Chat z lekcji</a></li>
+        <li><a href="https://szmurk0.github.io/Chat/"> Chat </a></li>
+        <li><a href="https://szmurk0.github.io/Chat/"> Kompilatory </a></li>
       </ul>
     </center>
     
