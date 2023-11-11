@@ -155,7 +155,7 @@
       <li><a href="https://szmurk0.github.io/Python/"> Python </a></li>
       <li><a href="https://szmurk0.github.io/Csh/"> C# </a></li>
       <li><a href="https://szmurk0.github.io/C/"> C </a></li>
-      <li><a href="https://szmurk0.github.io/C-/"> C++ </a></li>
+      <li><a href="https://szmurk0.github.io/Cpp/"> C++ </a></li>
       <li><a href="https://szmurk0.github.io/Java/"> Java </a></li>
       <li><a href="https://szmurk0.github.io/PHP/"> PHP </a></li>
       <li><a href="https://szmurk0.github.io/JS/"> JS </a></li>
