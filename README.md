@@ -145,7 +145,7 @@
     <center>
       <ul>
         <li><a href="https://szmurk0.github.io/Chat/"> Chat </a></li>
-        <li><a href="https://szmurk0.github.io/Chat/"> Kompilatory </a></li>
+        <li><a href="https://szmurk0.github.io/Kompilatory/"> Kompilatory </a></li>
       </ul>
     </center>
     
