@@ -167,7 +167,7 @@
       <br><br>
       <center><h2> O mnie </h2></center>
     <ul>
-      <li><a href="https://szmurk0.github.io/bio/">BIO</a></li>
+      <li><a href="https://szmurk0.github.io/bio/index.html">BIO</a></li>
     </ul>
 
 
