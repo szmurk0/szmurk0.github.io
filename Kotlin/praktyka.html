@@ -1,0 +1,408 @@
+<html>
+  <head>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+      body {
+          color: black;
+          margin: auto;
+          font-family: 'Source Code Pro', monospace;
+          overflow: auto;
+          background: linear-gradient(315deg, rgba(101,0,94,1) 3%, rgba(60,132,206,1) 38%, rgba(48,238,226,1) 68%, rgba(255,25,25,1) 98%);
+          animation: gradient 15s ease infinite;
+          background-size: 400% 400%;
+          background-attachment: fixed;
+      }
+      @keyframes gradient {
+          0% {
+              background-position: 0% 0%;
+          }
+          50% {
+              background-position: 100% 100%;
+          }
+          100% {
+              background-position: 0% 0%;
+          }
+      }
+      .wave {
+          background: rgb(255 255 255 / 25%);
+          border-radius: 1000% 1000% 0 0;
+          position: fixed;
+          width: 200%;
+          height: 12em;
+          animation: wave 10s -3s linear infinite;
+          transform: translate3d(0, 0, 0);
+          opacity: 0.8;
+          bottom: 0;
+          left: 0;
+          z-index: -1;
+      }
+      .wave:nth-of-type(2) {
+          bottom: -1.25em;
+          animation: wave 18s linear reverse infinite;
+          opacity: 0.8;
+      }
+      .wave:nth-of-type(3) {
+          bottom: -2.5em;
+          animation: wave 20s -1s reverse infinite;
+          opacity: 0.9;
+      }
+      @keyframes wave {
+          2% {
+              transform: translateX(1);
+          }
+          25% {
+              transform: translateX(-25%);
+          }
+          50% {
+              transform: translateX(-50%);
+          }
+          75% {
+              transform: translateX(-25%);
+          }
+          100% {
+              transform: translateX(1);
+          }
+      }
+      /* Lista */
+      ul {
+        list-style: none;
+        text-align: center;
+      }
+      ul li.programming {
+        background-color: #145369;
+        color: #fff;
+      }
+      ul li.hobby {
+        background-color: #e74c3c;
+        color: #fff;
+      }
+      ul li:hover {
+        background-color: #fff;
+        color: #145369;
+        border-color: #145369;
+      }     
+      ul {
+        padding: -32px;
+      }
+      ul li {
+        display: inline-block;
+        margin: 10px;
+        float: center;
+        font-weight: bold;
+        padding: 10px;
+        border: 2px solid #ccc;
+        border-radius: 10px;
+        transition: background-color 0.3s ease;
+      }
+      ul li:hover {
+        background-color: #fff;
+        color: #145369;
+        border-color: #145369;
+      }
+      a:hover {
+        text-decoration: underline;
+      }
+      a {
+        color: black;
+        text-decoration: none;
+      }
+      /* Paragrafy */
+      p {
+        font-size: 1.2em;
+        line-height: 1.5;
+        margin: 20px;
+        text-align: justify;
+      }
+      .center-text {
+          text-align: center;
+          margin: 0 auto;
+      }
+  
+  
+
+    </style>
+    
+  </head>
+  
+  <body>
+    <div>
+     <div class="wave"></div>
+     <div class="wave"></div>
+     <div class="wave"></div>
+    </div>
+
+    <br>
+    <br>
+        <h2>Zadania z Kotlina: </h2>
+    <pre>
+    Zadanie na dzień.: 03.11.2023:
+    
+    package com.example.myapplication
+
+    import android.os.Bundle
+    import androidx.activity.ComponentActivity
+    import androidx.activity.compose.setContent
+    import androidx.compose.foundation.Image
+    import androidx.compose.foundation.layout.Column
+    import androidx.compose.foundation.layout.Row
+    import androidx.compose.foundation.layout.fillMaxSize
+    import androidx.compose.material3.MaterialTheme
+    import androidx.compose.material3.Surface
+    import androidx.compose.material3.Text
+    import androidx.compose.runtime.Composable
+    import androidx.compose.ui.Alignment
+    import androidx.compose.ui.Modifier
+    import androidx.compose.ui.res.painterResource
+    import androidx.compose.ui.tooling.preview.Preview
+    import com.example.myapplication.ui.theme.MyApplicationTheme
+    
+    class MainActivity : ComponentActivity() {
+        override fun onCreate(savedInstanceState: Bundle?) {
+            super.onCreate(savedInstanceState)
+            setContent {
+                MyApplicationTheme {
+                    // A surface container using the 'background' color from the theme
+                    Surface(
+                        modifier = Modifier.fillMaxSize(),
+                        color = MaterialTheme.colorScheme.background
+                    ){
+                    Kompozycja()
+                    }
+                }
+            }
+        }
+    }
+    
+    @Composable
+    fun Kompozycja() {
+        Row(verticalAlignment = Alignment.CenterVertically){
+            Image(painter = painterResource(id = R.drawable.kot),
+                contentDescription = "Opiekunowaie Mruczka")
+            Column {
+                Text("Brajan Sheridan")
+                Text("Kevin Bronkiewicz")
+            }
+        }
+    }
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+Toast.: 09.11.2023r.:
+
+    class MainActivity : ComponentActivity() {
+     override fun onCreate(savedInstanceState: Bundle?) {
+     super.onCreate(savedInstanceState)
+     setContent {
+     SurnameTheme { // Nazwa tego elementu zależy od nazwy projektu
+     Surface(
+     modifier = Modifier.fillMaxSize(),
+     color = MaterialTheme.colorScheme.background
+     ) {
+    // Wywołanie funkcji i przekazanie jej argumentu:
+    wyswietlToast("Hello Kitty!")
+    }
+     }
+     }
+     }
+    }
+    @Composable
+    fun Context.wyswietlToast(wiadomosc: String) {
+     Toast.makeText(applicationContext, wiadomosc, Toast.LENGTH_LONG).show()
+    }
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+  Pasek tytułu.: 16.11.2023.:
+  
+    package com.example.tytul
+    import android.os.Bundle
+    import androidx.activity.ComponentActivity
+    import androidx.activity.compose.setContent
+    import androidx.compose.foundation.layout.fillMaxSize
+    import androidx.compose.material3.ExperimentalMaterial3Api
+    import androidx.compose.material3.MaterialTheme
+    import androidx.compose.material3.Scaffold
+    import androidx.compose.material3.Surface
+    import androidx.compose.material3.Text
+    import androidx.compose.material3.TopAppBar
+    import androidx.compose.material3.TopAppBarDefaults
+    import androidx.compose.runtime.Composable
+    import androidx.compose.ui.Modifier
+    import androidx.compose.ui.tooling.preview.Preview
+    import com.example.tytul.ui.theme.TytulTheme
+    
+    class MainActivity : ComponentActivity() {
+        override fun onCreate(savedInstanceState: Bundle?) {
+            super.onCreate(savedInstanceState)
+            setContent {
+                TytulTheme {
+                    // A surface container using the 'background' color from the theme
+                    Surface(
+                        modifier = Modifier.fillMaxSize(),
+                        color = MaterialTheme.colorScheme.background
+                    ) {
+                        Greeting("Android")
+                        pasekTytulu()
+                    }
+                }
+            }
+        }
+    }
+    
+    @Composable
+    fun Greeting(name: String, modifier: Modifier = Modifier) {
+        Text(
+            text = "Hello $name!",
+            modifier = modifier
+        )
+    }
+    
+    @Preview(showBackground = true)
+    @Composable
+    fun GreetingPreview() {
+        TytulTheme {
+            Greeting("Android")
+            pasekTytulu()
+        }
+    }
+    
+    
+    @OptIn(ExperimentalMaterial3Api::class)
+    @Composable
+    fun pasekTytulu() {
+        Scaffold(
+            topBar = {
+                TopAppBar(
+                    colors = TopAppBarDefaults.smallTopAppBarColors(
+                        containerColor = MaterialTheme.colorScheme.primaryContainer,
+                        titleContentColor = MaterialTheme.colorScheme.primary
+                    ),
+                    title = {
+                        Text("Tytuł aplikacji")
+                    }
+                )
+            }
+        ) {}
+    }
+
+    - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+  Zadanie Chip:
+  
+    package com.example.chip
+    import android.os.Bundle
+    import androidx.activity.ComponentActivity
+    import androidx.activity.compose.setContent
+    import androidx.compose.foundation.layout.Column
+    import androidx.compose.foundation.layout.fillMaxSize
+    import androidx.compose.foundation.layout.size
+    import androidx.compose.material.icons.Icons
+    import androidx.compose.material.icons.filled.Done
+    import androidx.compose.material3.ExperimentalMaterial3Api
+    import androidx.compose.material3.FilterChip
+    import androidx.compose.material3.FilterChipDefaults
+    import androidx.compose.material3.Icon
+    import androidx.compose.material3.MaterialTheme
+    import androidx.compose.material3.Surface
+    import androidx.compose.material3.Text
+    import androidx.compose.runtime.Composable
+    import androidx.compose.runtime.getValue
+    import androidx.compose.runtime.mutableStateOf
+    import androidx.compose.runtime.remember
+    import androidx.compose.runtime.setValue
+    import androidx.compose.ui.Modifier
+    import androidx.compose.ui.tooling.preview.Preview
+    import com.example.chip.ui.theme.ChipTheme
+    
+    class MainActivity : ComponentActivity() {
+        override fun onCreate(savedInstanceState: Bundle?) {
+            super.onCreate(savedInstanceState)
+            setContent {
+                ChipTheme {
+                    // A surface container using the 'background' color from the theme
+                    Surface(
+                        modifier = Modifier.fillMaxSize(),
+                        color = MaterialTheme.colorScheme.background
+                    ) {
+                        Column {
+                            Greeting("Kuba Szmidt")
+                            PrzyciskFilterChip()
+    
+                        }
+    
+    
+                    }
+                }
+            }
+        }
+    }
+    
+    @Composable
+    fun Greeting(name: String, modifier: Modifier = Modifier) {
+        Text(
+            text = "$name!",
+            modifier = modifier
+        )
+    }
+    
+    @Preview(showBackground = true)
+    @Composable
+    fun GreetingPreview() {
+        ChipTheme {
+            Column {
+                Greeting("Maciej Baścik")
+            }
+    
+        }
+    }
+    
+    
+    @OptIn(ExperimentalMaterial3Api::class)
+    @Composable
+    fun PrzyciskFilterChip() {
+        var selected by remember { mutableStateOf(false) }
+        Column{
+            FilterChip(
+                onClick = { selected = !selected },
+                label = { Text("Kliknij mnie...") },
+                selected = selected,
+                leadingIcon = if (selected) {
+                    {
+                        Icon(
+                            imageVector = Icons.Filled.Done,
+                            contentDescription = "Ikona potwierdzenia",
+                            modifier = Modifier.size(FilterChipDefaults.IconSize)
+                        )
+                    }
+                } else {
+                    null
+                }
+            )
+        }
+    
+    
+    
+    }
+
+
+
+
+
+    
+    </pre>
+ 
+
+
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+    <br>
+    <br><br>
+
+
+
+
+
+   
+
+  </body>
