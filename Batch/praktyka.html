@@ -1,0 +1,442 @@
+<html>
+  <head>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+      body {
+          color: black;
+          margin: auto;
+          font-family: 'Source Code Pro', monospace;
+          overflow: auto;
+          background: linear-gradient(315deg, rgba(101,0,94,1) 3%, rgba(60,132,206,1) 38%, rgba(48,238,226,1) 68%, rgba(255,25,25,1) 98%);
+          animation: gradient 15s ease infinite;
+          background-size: 400% 400%;
+          background-attachment: fixed;
+      }
+      @keyframes gradient {
+          0% {
+              background-position: 0% 0%;
+          }
+          50% {
+              background-position: 100% 100%;
+          }
+          100% {
+              background-position: 0% 0%;
+          }
+      }
+      .wave {
+          background: rgb(255 255 255 / 25%);
+          border-radius: 1000% 1000% 0 0;
+          position: fixed;
+          width: 200%;
+          height: 12em;
+          animation: wave 10s -3s linear infinite;
+          transform: translate3d(0, 0, 0);
+          opacity: 0.8;
+          bottom: 0;
+          left: 0;
+          z-index: -1;
+      }
+      .wave:nth-of-type(2) {
+          bottom: -1.25em;
+          animation: wave 18s linear reverse infinite;
+          opacity: 0.8;
+      }
+      .wave:nth-of-type(3) {
+          bottom: -2.5em;
+          animation: wave 20s -1s reverse infinite;
+          opacity: 0.9;
+      }
+      @keyframes wave {
+          2% {
+              transform: translateX(1);
+          }
+          25% {
+              transform: translateX(-25%);
+          }
+          50% {
+              transform: translateX(-50%);
+          }
+          75% {
+              transform: translateX(-25%);
+          }
+          100% {
+              transform: translateX(1);
+          }
+      }
+      /* Lista */
+      ul {
+        list-style: none;
+        text-align: center;
+      }
+      ul li.programming {
+        background-color: #145369;
+        color: #fff;
+      }
+      ul li.hobby {
+        background-color: #e74c3c;
+        color: #fff;
+      }
+      ul li:hover {
+        background-color: #fff;
+        color: #145369;
+        border-color: #145369;
+      }     
+      ul {
+        padding: -32px;
+      }
+      ul li {
+        display: inline-block;
+        margin: 10px;
+        float: center;
+        font-weight: bold;
+        padding: 10px;
+        border: 2px solid #ccc;
+        border-radius: 10px;
+        transition: background-color 0.3s ease;
+      }
+      ul li:hover {
+        background-color: #fff;
+        color: #145369;
+        border-color: #145369;
+      }
+      a:hover {
+        text-decoration: underline;
+      }
+      a {
+        color: black;
+        text-decoration: none;
+      }
+      /* Paragrafy */
+      p {
+        font-size: 1.2em;
+        line-height: 1.5;
+        margin: 20px;
+        text-align: justify;
+      }
+      .center-text {
+          text-align: center;
+          margin: 0 auto;
+      }
+  
+  
+
+    </style>
+    
+  </head>
+  
+  <body>
+    <div>
+     <div class="wave"></div>
+     <div class="wave"></div>
+     <div class="wave"></div>
+    </div>
+
+<center><h2> Praktyka z Batch </h2></center>
+<pre>
+
+Oto poradnik mojego autorstwa odnośnie programowania w batch'u, przeniesiony ze spore forum:
+
+Do tworzenia plików w języku BATCH wystarczy umiejętność posługiwania się Notatnikiem.
+Nazwę programu należy zapisywać z końcówką ".bat" by komputer zrozumiał że użyto języka BATCH.
+BATCH nie rozumie polskich znaków językowych takich jak "ą", "ę", "ł" itp. Chyba że korzystacie z odpowiedniego kodowania znaków tekstowych.
+BATCH nie rozumie niektórych znaków specjalnych takich jak "|" itp. Ale można ich użyć wstawiając przed nimi znaczek "^" np. "^|"
+
+Prosty kod:
+
+@echo off
+echo Siema!
+pause
+
+"@echo off" - zawsze należy umieszczać na początku skryptu.
+"echo Siema!" - "echo" należy wpisać jeżeli chcemy by dana informacja została wyświetlona, w tym przypadku informacją jest "Siema!". Jeżeli chcemy pozostawić pustą linijkę należy po "echo" postawić "." np.
+
+@echo off
+echo.
+pause
+
+"pause" - czeka aż ktoś naciśnie dowolny klawisz by program mógł przejść do następnej części.
+
+Zakładki:
+
+@echo off
+:menu
+echo Siemka! Nie przeszkadzam?
+echo 1) Nie skadze znowu.
+echo 2) Niestety tak, musze zrobic cos waznego.
+set /p letter=
+if %letter% == 1 goto opcja1
+if %letter% == 2 goto opcja2
+
+:opcja1
+echo Bardzo sie ciesze!
+pause
+goto menu
+
+:opcja2
+echo Trudno, pogadamy pozniej.
+pause
+goto menu
+
+":menu", ":opcja1", ":opcja2" - są to etykiety, tworzymy je za pomocą ":".
+"set /p letter=" pozwala użytkownikowi wpisać wartość informacji "letter" i zapisać ją enterem.
+"if %letter% == X goto Y" - dzięki tej funkcji program sprawdza czy informacja "letter" wynosi X, a jeżeli tak to przenosi nas do etykiety Y. Zamiast X i Y można wpisać dowolną wartość np. "if %letter% == 1 goto opcja1"
+"%letter%" - użycie wartości podanej w "set /p letter". Zamiast "letter" można wstawić dowlony wyrazć ale musi być on identyczny w obu funkcjach, np. jeżeli użyjemy wyrazu "muza" w "set /p muza=" to w "if %muza%" też musimy go użyć.
+"goto Z" - program przenosi nas do etykiety "Z", za "Z" można wstawić dowolną wartość np. "goto menu"
+
+Czyszczenie ekranu
+
+@echo off
+:menu
+cls
+echo Siema!
+pause
+cls
+echo Jestem Mietek.
+pause
+goto menu
+
+"cls" - to wyrażenie mówi programowi że ma on wyczyścić ekran
+
+Kolor
+
+@echo off
+:menu
+echo Jaki chcesz kolor?
+echo 1) Czarny ekran i biale litery
+echo 2) Czerwony ekran i czarne litery
+echo 3) Niebieski ekran i zolte litery
+set /p letter=
+if %letter% == 1 color 07
+if %letter% == 2 color b0
+if %letter% == 3 color 1e
+
+"color XY" - funkcja zmieniająca kolor programu wedle użytego parametru, X oznacza kolor tła a Y kolor czcionki.
+Parametry kolorów:
+
+0 - czarny
+1 - niebieski
+2 - zielony
+3 - błękitny
+4 - czerwony
+5 - purpurowy
+6 - żółty
+7 - biały
+8 - szary
+9 - jasnoniebieski
+A - jasnozielony
+B - jasnoczerwony
+D - jasnopurpurowy
+C - Jasnoczerwony
+E - jasnożółty
+F - jaskrawobiały
+
+Otwieranie innych programów
+
+@echo off
+start ewolucja.exe
+
+"start ewolucja.exe- funkcja ta pozawala na uruchomienie programu "ewolucja" z końcówką .exe. Aby funkcja poprawnie działała zaleca się umieszczenie programu w tym samym folderze co program który ma zostać uruchomiony lub w folderze w którym jest skrót do danego programu. Funkcja ta czyta jedynie pierwszy wyraz nazwy, więc plik który chcemy uruchomić powinien mieć jeden wyraz w nazwie.
+
+Zakończenie programu:
+- normalnie
+
+@echo off
+echo Siema!
+pause
+exit
+
+- po naciśnięciu klawisza
+
+@echo off
+:menu
+cls
+echo Siema! Co robisz?
+echo 1) Ponow pytanie.
+echo 2) Opusc program.
+set /p letter =
+if %letter% == 1 goto menu
+if %letter% == 2 exit
+
+"exit" - funkcja ta zamyka program
+
+Animacja:
+
+@echo off
+:menu
+cls
+echo -o o-
+ping localhost -n 2 >nul
+cls
+echo -o o-
+ping localhost -n 2 >nul
+cls
+echo -o o-
+ping localhost -n 2 >nul
+cls
+echo -oo-
+ping localhost -n 2 >nul
+cls
+color ce
+echo \\\\////
+echo BUM!
+ping localhost -n 3 >nul
+cls
+echo KONIEC
+ping localhost -n 3 >nul
+goto menu
+
+"ping localhost -n X >nul" - ta funkcja mówi po jakim czasie ma wyświetlić się kolejna część zamieszczona w kolejnych linijkach funkcji "echo". "X" to ilość sekund po jakim ma się wyświetlić kolejna część.
+
+Zastosowanie imienia:
+
+@echo off
+
+:Menu
+cls
+echo Jak sie nazywasz?
+set /p type=
+echo Jaka masz plec?
+echo 1) Kobieta.
+echo 2) Mezczyzna.
+set /p plec=
+if %plec% == 1 goto Kob
+if %plec% == 2 goto Men
+
+:Kob
+echo A wiec jestes kobieta, a twoje imie to %type%
+pause
+goto menu
+
+:Men
+echo A wiec jestes mezczyzna, a twoje imie to %type%
+pause
+goto menu
+
+"set /p type=" Jak już wiecie ta funkcja pozwala na wpisanie dowolnej wartości (w naszym przypadku imienia) z czego najważniejszy w naszym skrypcie będzie "type"
+
+"%type%" - Użycie wartości podanej w funkcji "set /p type=" (zamiast "type" może być inny wyraz, ale musi być on identyczny w obu funkcjach)
+
+Czyli tak w skrócie: Gdy w "set /p type=" zostanie podana jakaś wartość to w "%type%" ta wartość zostanie wyświetlona.
+
+Zmienianie wielkości ekranu:
+
+@echo off
+:menu
+echo Przed zmiana wielkosci ekranu.
+pause
+mode 1000
+echo Po zmianie rozdzielczosci ekranu.
+pause
+goto menu
+
+"mode X" - funkcja ta pozwala na zmianę wielkości ekranu, zamiast "X" należy wstawić dowolną liczbę.
+
+Odblokowanie:
+
+@echo off
+set letter=nie
+:gra
+cls
+echo Siemka. Co robisz?
+echo 1) Gram w poziom 1
+echo 2) Gram w poziom 2
+set /p lol=
+if %lol% == 1 goto lvl1
+if %lol% == 2 goto sprawdzenie
+
+:lvl1
+set letter=tak
+echo Odblokowales poziom 2! Gratulacje!
+pause
+goto gra
+
+:sprawdzenie
+if %letter% == tak goto lvl2
+if %letter% == nie goto zle
+
+:lvl2
+echo Przeszedles gre!
+pause
+goto gra
+
+:zle
+echo Niestety, nie odblokowales poziomu 2. Przejdz najpierw poziom 1!
+pause
+goto gra
+
+"set" - służy do zmieniania wartości zmiennych przez komputer
+
+1. operatory
+
+jest to rzecz niemal podstawowa przy grach rpg lub hazardowych. Operatorów używa się poprzez komendę set /a (wcześniej poznaliście tylko set i set /p). używa się tego tak: set /a zmienna=zmienna+liczba
+
+pierwsza zmienna oznacza zmienną, która ma być wynikiem działania. druga zmienna oznacza pierwszą część działania. operator "+" oznacza, że jest to działanie dodające, zaś liczba oznacza liczbę do dodania. wie, to dość skomplikowane, dlatego daję poniżej przykład:
+
+@echo off
+set zycia=10
+set zycia2=5
+echo zaatakowal cie potwor. liczba twoich zyc: %zycia%
+echo zycia potwora: %zycia2%
+echo 1) uderzasz
+echo 2) wykonujesz unik
+set /p wybor=
+if %wybor% == 1 goto x
+if %wybor% == 2 goto y
+
+Mad
+set /a zycia2=zycia2-4
+echo uderzasz. zadane obrazenia: 3
+echo liczba pozostalych zyc potwora: %zycia2%
+pause
+exit
+
+:y
+set /a zycia=zycia-1
+echo zaslaniasz sie. potwor wyprowadza uderzenie.
+echo zadane obrazenia: 1
+echo liczba pozostalych zyc: %zycia%
+pause
+exit
+
+na początku to może się wydawać trudne, ale jeżeli trochę z tym poćwiczycie to prawdopodobnie wszystko zrozumiecie.
+
+
+
+2. liczby losowe
+
+liczby losowe tworzy się za pomocą funkcji "random". powinno to wyglądać tak:
+
+%random:~-liczba,liczba%
+
+oczywiście "liczba" oznacza konkretną liczbę, np. 0,1 daje wartość z zakresu 1-9. Teraz trochę praktyki:
+
+
+
+a) używanie liczb losowych w funkcji "echo":
+
+@echo off
+:menu
+echo %random:~-0,1%
+pause
+goto menu
+
+
+
+b) używanie liczb losowych w funkcji "set"
+
+@echo off
+
+:menu
+
+set liczba=%random:~-0,1%
+
+echo %liczba%
+
+pause
+
+goto menu
+  
+</pre>
+</body>
