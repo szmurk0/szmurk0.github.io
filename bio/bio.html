@@ -19,21 +19,24 @@
     /* Dodatkowe style dla kontenera obrazka albumu i informacji o utworze */
     #albumContainer {
       display: flex;
+      flex-direction: column;
       align-items: center;
       text-align: center;
       margin-top: 20px;
     }
-
+    
     #albumImage {
       max-width: 100%;
       height: auto;
       transition: transform 0.3s ease-in-out;
       cursor: pointer;
+      margin: 0 auto; /* Centruje obrazek */
     }
-
+    
     #albumImage:hover {
       transform: scale(1.1);
     }
+
 
     #trackInfo {
       margin-left: 20px;
