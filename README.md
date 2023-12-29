@@ -153,16 +153,16 @@
     <br>
         <center><h2>Języki Programowania: </h2></center>
     <ul>
-      <li><a href="https://szmurk0.github.io/Python/python.html"> Python </a></li>
-      <li><a href="https://szmurk0.github.io/Csh/csh.html"> C# </a></li>
-      <li><a href="https://szmurk0.github.io/C/c.html"> C </a></li>
-      <li><a href="https://szmurk0.github.io/Cpp/cpp.html"> C++ </a></li>
-      <li><a href="https://szmurk0.github.io/Java/java.html"> Java </a></li>
-      <li><a href="https://szmurk0.github.io/PHP/php.html"> PHP </a></li>
-      <li><a href="https://szmurk0.github.io/JS/js.html"> JS </a></li>
-      <li><a href="https://szmurk0.github.io/Batch/batch.html"> Batch </a></li>
-      <li><a href="https://szmurk0.github.io/Kotlin/kotlin.html"> Kotlin </a></li>
-      <li><a href="https://szmurk0.github.io/SQL/sql.html"> SQL </a></li>
+      <li><a href="https://szmurk0.github.io/Python/index.html"> Python </a></li>
+      <li><a href="https://szmurk0.github.io/Csh/index.html"> C# </a></li>
+      <li><a href="https://szmurk0.github.io/C/index.html"> C </a></li>
+      <li><a href="https://szmurk0.github.io/Cpp/index.html"> C++ </a></li>
+      <li><a href="https://szmurk0.github.io/Java/index.html"> Java </a></li>
+      <li><a href="https://szmurk0.github.io/PHP/index.html"> PHP </a></li>
+      <li><a href="https://szmurk0.github.io/JS/index.html"> JS </a></li>
+      <li><a href="https://szmurk0.github.io/Batch/index.html"> Batch </a></li>
+      <li><a href="https://szmurk0.github.io/Kotlin/index.html"> Kotlin </a></li>
+      <li><a href="https://szmurk0.github.io/SQL/index.html"> SQL </a></li>
     </ul>
       <br><br>
       <center><h2> O mnie </h2></center>
