@@ -1,0 +1,759 @@
+<html>
+  <head>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+      body {
+          color: black;
+          margin: auto;
+          font-family: 'Source Code Pro', monospace;
+          overflow: auto;
+          background: linear-gradient(315deg, rgba(101,0,94,1) 3%, rgba(60,132,206,1) 38%, rgba(48,238,226,1) 68%, rgba(255,25,25,1) 98%);
+          animation: gradient 15s ease infinite;
+          background-size: 400% 400%;
+          background-attachment: fixed;
+      }
+      @keyframes gradient {
+          0% {
+              background-position: 0% 0%;
+          }
+          50% {
+              background-position: 100% 100%;
+          }
+          100% {
+              background-position: 0% 0%;
+          }
+      }
+      .wave {
+          background: rgb(255 255 255 / 25%);
+          border-radius: 1000% 1000% 0 0;
+          position: fixed;
+          width: 200%;
+          height: 12em;
+          animation: wave 10s -3s linear infinite;
+          transform: translate3d(0, 0, 0);
+          opacity: 0.8;
+          bottom: 0;
+          left: 0;
+          z-index: -1;
+      }
+      .wave:nth-of-type(2) {
+          bottom: -1.25em;
+          animation: wave 18s linear reverse infinite;
+          opacity: 0.8;
+      }
+      .wave:nth-of-type(3) {
+          bottom: -2.5em;
+          animation: wave 20s -1s reverse infinite;
+          opacity: 0.9;
+      }
+      @keyframes wave {
+          2% {
+              transform: translateX(1);
+          }
+          25% {
+              transform: translateX(-25%);
+          }
+          50% {
+              transform: translateX(-50%);
+          }
+          75% {
+              transform: translateX(-25%);
+          }
+          100% {
+              transform: translateX(1);
+          }
+      }
+      /* Lista */
+      ul {
+        list-style: none;
+        text-align: center;
+      }
+      ul li.programming {
+        background-color: #145369;
+        color: #fff;
+      }
+      ul li.hobby {
+        background-color: #e74c3c;
+        color: #fff;
+      }
+      ul li:hover {
+        background-color: #fff;
+        color: #145369;
+        border-color: #145369;
+      }     
+      ul {
+        padding: -32px;
+      }
+      ul li {
+        display: inline-block;
+        margin: 10px;
+        float: center;
+        font-weight: bold;
+        padding: 10px;
+        border: 2px solid #ccc;
+        border-radius: 10px;
+        transition: background-color 0.3s ease;
+      }
+      ul li:hover {
+        background-color: #fff;
+        color: #145369;
+        border-color: #145369;
+      }
+      a:hover {
+        text-decoration: underline;
+      }
+      a {
+        color: black;
+        text-decoration: none;
+      }
+      /* Paragrafy */
+      p {
+        font-size: 1.2em;
+        line-height: 1.5;
+        margin: 20px;
+        text-align: justify;
+      }
+      .center-text {
+          text-align: center;
+          margin: 0 auto;
+      }
+  
+  
+
+    </style>
+    
+  </head>
+  
+  <body>
+    <div>
+     <div class="wave"></div>
+     <div class="wave"></div>
+     <div class="wave"></div>
+    </div>
+<pre>
+tutaj będą zadania z Po 
+(tu jest C++)
+dbać przez cały rok o oceny
+
+C++ jest:
+- wieloparadygmatyczny 
+- zarządza wolną pamięcią
+- wydajny
+
+Wieloparadygmatyczość oznacza że nie jest narzucany styl programowania. Można korzystać z:
+
+- programowania procedularnego; kod organizowany w procedury
+
+- programowania obiektowego; zbiór obiektów komunikujących się pomiędzy sobą w celu wykonania zadania; obiekt łączy stan (dane) i zachowanie (metody)
+
+- programowania generycznego; Kod bez wcześniejszej znajomości typów danych. 
+
+- - - - - - - - - - - - - - - - -
+
+Zastosowanie C++:
+
+- Tworzenie oprogramowania systemowego: systemy, sterowniki, narzędzia diagnostyczne,
+
+- Pisanie gier komputerowych
+
+- Aplikacje Desktopowe: Doskonale nadaje się do tworzenia aplikacji desktopowych na różne platformy, tj: Windows, macOS
+
+- Aplikacje Wbudowane: Zastosowanie wbudowanych, gdzie pamięć i zasoby są ograniczone, język C++ jest często wybierany ze względu na możliwość bezpośredniej kontroli nad sprzętem oraz brak zbędnego narzutu czasu wykonania
+
+- Aplikacje Naukowe, Krytyczne: 
+
+- - - - - - - - - - - - - - - - - - - 
+
+Pojęcie Środowiska Programistycznego:
+
+- IDE (Integrated Development Environment): Zestaw narzędzi, pzowalający na tworzenie, edytowanie, debugowanie, testowanie i zarządzaniem oprogramowaniem. Zawiera narzędzia do testowania jednostkowego oraz integracyjnego.
+
+- Edytor; umożliwia programowanie kodu,
+
+- Kompilator; kompiluje kod, przygotowuje kod źródłowy na wykonywalny
+
+- Debugger;
+
+- - - - - - - - - - - - - - 
+
+Sytem zarządzania projektem:
+
+- IDE umożliwia zorganizowanie projektów,
+
+- Zintegrowane Środowisko Programistyczne; Ułatwia zarządzanie kodem źródłowym
+
+- - - - - - - - - - - - - - 
+
+Popularne narzędzia do C++:
+
+- Visual Studio Code
+
+- Microsoft Visual Studio
+
+- Code::Blocks
+
+- CLion
+
+- Qt Creator
+
+- Eclipse CDT
+
+
+___________________________________________________________________________________________
+
+Temat: Zasady programowania w dobrym stylu:
+
+1.Kod komputerowy
+
+  - zrozumiała budowa programu
+
+  - ważna jest jakość
+
+- - - - - - - - - - - - - - - - - - - - 
+
+2.czysty kod:
+
+  - łatwy do czytania
+
+  - łatwy do zrozumienia
+
+  - łatwy do zmiany,poprawiania i rozbudowania
+
+- - - - - - - - - - - - - - - - - - - 
+
+3.Na co zwracać uwagę?
+
+  - analizowanie wymagań programu(rozmowa z klientem)
+
+  - automatyzowanie (czasochłonnych i trywialnych prac)
+
+  - komunikacja w zespole
+
+  - dbanie o jakość zastanego kodu
+
+
+- - - - - - - - - - - - - - - - - -
+
+4.Refaktoryzacja kodu(usprawnienie kodu)
+
+  - polega na uproszczeniu kodu np.przy powtarzających się fragmentach kodu
+
+  - poprawia się błędy
+
+- - - - - - - - - - - - - - - - - - -
+
+5.Istotne zasady tworzenia kodu:
+
+  - stosowanie wcięć (tabulatory,spacje)
+
+  - stosowanie spacji między operatorami/separatorami i słowami kluczowymi (lepsza jakość odczytu)
+
+  - długość wiersza (należy stosować ograniczenia długości wiersza. Zazwyczaj od 80 do 120 znaków na wiersz)
+
+  - puste linie (dodawanie pustych linii w celu grupowania logicznych bloków kodu)
+
+  - nazewnictwo zmiennych (nadajemy znaczące nazwy ,dotyczące przeznaczenia zmiennych)
+
+- - - - - - - - - - - - - - - - - - - 
+
+6. Dla zmiennych wielowyrazowych zmiennych , sposoby zapisania np.:
+
+  - camelCase
+
+  - snake_case
+
+  - PascalCase
+  
+  
+  
+___________________________________________________________________________________________
+
+Typy proste w C++
+
+1.Klasyfikacja typów:
+
+  1)Proste(porządkowe):
+
+    Typy standardowe
+        - całkowite
+
+        - rzeczywisty
+
+        - znakowy
+
+        - logiczny
+
+        - wyliczeniowy
+
+- - - - - - - - - - - - - - - - - - - 
+
+
+  2)Złożone(strukturalne)
+
+    Typy definiowane przez programistę
+        - tablice
+
+        - struktury
+
+        - unie
+
+        - klasy
+
+        - pliki
+        
+  - - - - - - - - - - - - - - - - - - - 
+      
+        
+2.Rodzaje typów prostych:
+
+    - typ liczbowy (całkowitych, przecinkowych)
+
+    - typ znakowy (przechowuje pojedyncze znaki)
+
+    - typ logiczny
+
+- - - - - - - - - - - - - - - - - - - 
+
+
+ 3.Typy liczb całkowitych:
+ 
+ 	-long int (w skrócie int). Posiada podtypy m.in. : short int, long long int
+        
+        -unsigned int (przechowuje wyłącznie wartości nieujemne)
+
+- - - - - - - - - - - - - - - - - - - 
+
+        
+ 4.Typ zmiennoprzecinkowy:
+ 
+ 	Stosowany do tworzenia zmiennych przechowujących liczby rzeczywiste.
+        
+        (Domyślnie przechowywane w pamięci jako typ double)
+      
+        -float - -typ pojedynczej precyzji
+        
+	-double - zazwyczaj dwa razy większy niż float (typ podwójnej precyzji)
+        
+	-long double
+
+
+___________________________________________________________________________________________
+
+
+				Lekcja
+Temat: Char
+
+- - - - - - - - - - - - - - - - - - - 
+
+
+Char:
+- zapisuje się w apostrofach -> char przyklad = '1';
+- liczby w Char są przekształcane na kod ASCII '1' = 49;
+
+- - - - - - - - - - - - - - - - - - - 
+
+Typ Logiczny:
+ - mogą przyjmować jedynie wartości "True" i "False", albo 1 i 0
+
+- - - - - - - - - - - - - - - - - - - 
+
+Typ spacjalny void:
+- Oznacza brak wartości, czyli nie przyjmuje wartości. Funckja o tym typie nie zwraca wyniku.
+- Wskazuje, że wskaźnik nie wskazuje na konkretny typ danych.
+
+- - - - - - - - - - - - - - - - - - - 
+
+Typ String:
+- nie należy do typów prostych
+- w ostatnim bajcie string przechowane jest 0 - tzw. znak przestankowy null lub znak null, który oznacza koniec zmiennej typu string.
+.length -> długość
+.append() -> dodawanie na koniec listy pewnej wartości 
+.substr -> zwraca pod-ciąg łańcuchów
+
+
+
+___________________________________________________________________________________________
+
+
+			Lekcja
+
+Temat: Deklaracja Zmiennej w C++
+
+
+
+1. Pojęcie Zmiennej
+
+2. Podział języków programowania
+
+3. Deklaracja Zmiennej
+
+4. Definicja Zmiennej
+
+5. Przypisywanie wartości do zmiennej
+
+6. Literał
+
+7. Identyfikator
+
+8. Stała nazwana
+
+
+!!!!! 	Zagadnienia deklaracja zmiennej, typy proste. !!!!!
+
+
+
+
+1. Zmienna to symboliczna nazwa (abstrakcja), która jest używana do przechowywania danych w pamięci komputera. 
+
+- - - - - - - - - - - - - - - - - - - 
+
+
+2. Podział Języków Programowania
+Podział Języków Programowania można dzielić ze względu na typowanie zmiennych na trzy główne kategorie:
+	- typowanie statyczne; 
+        	Języki typowane statyczne wymagają, aby typy zmiennych były określane jawnie przed ich użyciem 
+                - typy zmiennych są znane przed uruchomieniem programu, a kompilator sprawdza poprawność typów podczas analizy kodu np:(C++, C#, Java).
+                
+        - typowanie dynamiczne;
+		Języki typowane dynamiczne nie wymagają deklaracji typów zmiennych przed ich użyciem 
+		- zmienna może zmieniać typ w trakcie działania programu np(Python, Ruby, Lua)
+                
+        - słabo typowane;
+        	Języki słabo typowane są podobne do języków typowanych dynamicznie, ale mają jeszcze luźniejsze restrykcje dotyczące typów
+		- konwersje między różnymi typami są automatycznie np(JavaScript, PHP)
+
+
+- - - - - - - - - - - - - - - - - - - 
+
+3. Deklaracja Zmiennej
+Aby zdefiniować zmienną w C++, należy należy podać jej typ oraz nazwę.
+
+Zasady tworzenia nazw zmiennych (identyfikatora):
+	- unikatowa
+        
+        - opisuje cel lub zawartość
+      
+        - nazwy w jezyku angielskim
+
+- - - - - - - - - - - - - - - - - - - 
+
+
+4. Definicja Zmiennej
+Definicja Zmiennej to czynność, w której programista określa typ danych, nazwę zmiennej oraz alokuje pamięć(rezerwuje pamięć) w celu przechowywania wartości dla tej zmiennej
+
+Definicja zmiennej może również zawierać opcjonalną inicjację - przypisywanie początkowej wartości do zmiennej.
+
+- - - - - - - - - - - - - - - - - - - 
+
+5. Przypisanie
+Przedstawiony zapis nazywamy przypisaniem
+znak równości to operator, który przypisuje wartość zmiennej znajdującej się po lewej stronie
+
+int number = 5;
+number -> argument
+= -> operator;
+
+W C++ argument w po lewej stronie operatora jest l-wartością
+int number = 5;
+number -> l-wartość
+5 -> r-wartość
+
+
+- - - - - - - - - - - - - - - - - - - 
+
+6. Literał
+Literał to stała wartość, która występuje w kodzie programu i reprezentuje określony typ danych
+Jednym z najczęstszych zastosowań literałów jest przypisanie wartości do zmiennych
+
+int number = 5;
+5 -> literał
+
+Typ Literału:
+  - int
+  - string
+
+- - - - - - - - - - - - - - - - - - - 
+
+
+7. Identyfikator
+Identyfikator to nazwa zdefiniowana przez programistę, która reprezentuje jakiś fragment kodu, np: nazwy zmiennych;
+
+- - - - - - - - - - - - - - - - - - - 
+
+
+8. Stała nazwana
+Stała nazwana to nazwa reperzentująca pewną wartość, której nie będzie się dało zmienić podczas działania programu.
+const double Pi  3.14159;
+
+- - - - - - - - - - - - - - - - - - - 
+
+
+Zmienna, literał, algorytm, typy proste <-- tak było (i będzie riperoni)
+
+ZMIENNA, LITERAŁ, ALGORYTM, TYPY PROSTE
+
+___________________________________________________________________________________________
+
+TEMAT: Wprowadzenie do typów złożonych w języku C++
+
+1. Typ złożony - typ danych składający się z wielu różnych elementów, które mogą być złączone razem - pozwala to tworzyć bardziej skomplikowane struktury danych
+	
+      
+- Enum; typ wyliczeniowy. Definiuje zestaw nazwanych stałych całkowitoliczbowych           
+                
+- Struct - definiuje zbiór różnych zmiennych o różnych typach danych, które są zgrupowane jako jednostka
+           
+- Tablica - struktura danych, która przechowuje sekwencję elementów tego samego typu: tablice są indeksowane - każdy element ma unikalny identyfikator (indeksy od 0!)
+  int rating[] = {6,1,5,2,4,3};
+  cout << rating[3] << endl;
+             
+- Wektor (ten z minionkuf) - vector jest obiektem składającym się z wielu elementów tego samego typu (jest podobny do tablicy, ale ma kilka różnic m.in. nie jest konieczne deklarowanie jego rozmiaru) (vectory zwykły też kraść księżyce)
+
+- - - - - - - - - - - - - - - - - - - 
+                     
+                        
+METODY WEKTORA:
+    - push_back() - dodaje element do wektora
+    - pop_back() - usuwa element z końca wektora
+    - size() - zwraca rozmiar wektora
+    - front() - uzyskuje dostęp do pierwszego elementu wektora
+    - back() - uzyskuje dostęp do ostatniego wektora
+
+
+- - - - - - - - - - - - - - - - - - - 
+
+
+
+
+
+Enum -> Definicja typu wyliczeniowego zawiera, ograniczoną klamrami, 
+listę słownych wartości (listę wyliczeniową), które mogą zostać przypisane do zmiennych tego typu. 
+Sama zmienna przechowuje wartości liczbowe całkowite - Dodatnie i ujemne, skojarzone z wyrazami w liście.
+
+- - - - - - - - - - - - - - - - - - - 
+
+Struct - definiuje zbiór różnych zmiennych o różnych typach danych, które są zgrupowane jako jednostka
+
+
+___________________________________________________________________________________________
+
+Temat: Złożone struktury danych
+
+Lista - Dynamiczna struktura danych, która pozwala na dodawanie i usuwanie elementów w dowolnym miejscu; może być jednokierunkowa oraz dwukierunkowa.
+
+- - - - - - - - - - - - - - - - - - - 
+
+Stos - Struktura danych bazujaca na zasadzie LIFO - "Last In, First Out", czyli ostatni element dodany do tej struktury, będzie pierwszym wychodzącym.
+
+- - - - - - - - - - - - - - - - - - - 
+
+Kopiec - Struktura danych, tworząca kopiec binarny, często używana do implementowania kolejek priorytetowych.
+
+- - - - - - - - - - - - - - - - - - - 
+
+Kolejka - Struktura danych, która działa w sposób FIFO (First In, First Out), czyli pierwszy element, który został dodany, jest pierwszy do usunięcia.
+
+- - - - - - - - - - - - - - - - - - - 
+
+Graf - Abstrakcyjna struktura danych składająca się z wierzchołków i krawędzi, która reprezentuje zbiór powiązanych elementów.
+
+- - - - - - - - - - - - - - - - - - - 
+
+Klasa - Klasa pozwala na zdefiniowanie nowego typu złożonego, który może zawierać zarówno pola (zmienne)jak i metody (funkcje) do operowania na tych polach.
+
+- - - - - - - - - - - - - - - - - - - 
+
+Drzewo - Struktura danych, złożona z węzłów połączonych krawędziami, gdzie jeden węzeł jest wróżniony jako węzeł korzenia. Przykładem może być drzewo binarne.
+
+___________________________________________________________________________________________
+___________________________________________________________________________________________
+___________________________________________________________________________________________   
+
+Temat: Liczby losowe C++
+
+
+
+Biblioteka <cstdlib>; aby uruchomić generator liczb losowych nalezy wykorzystać tą bibliotekę, co robimy dołączając do programu.
+
+Ta biblioteka zawiera:
+	- itoa; konwertuje liczbę na łańcuch znaków w postaci określonego systemu liczbowego,
+ 
+ 	- qsort; wykonuje algorytm szybkiego sortowania (ang. quicksort),
+  
+  	- rand; generuje całkowitą liczbę pseudolosową,
+		Liczby generowane przez rand() są pseudolosowe. Funkcja wykorzystuje algorytm, który zawiera tę samą sekwencje przy każdym uruchomieniu programu na tym samym systemie operacyjnym.
+  
+   	- srand; ustawia punkt startowy generatora psuedolosowego,
+    		Aby wyniki były bardziej losowe, należy zastosować funkcję srand(), funkcja przyjmuje argument typu unsigned który odgrywa rolę zirana. Jeśli poda się różne wartości ziarna, to rand() wygeneruje różne sekwencje liczb losowych.
+      
+    	- system; wywołuje polecenia systemowe.
+
+
+
+Biblioteka <ctime>; zawiera kilka ciekawych funkcji dotyczących daty i czas m.in.:
+	- clock; zwraca liczbę cykli, które upłynęły od chwili uruchomienia programu,
+ 	
+  	- time; zwraca czas lokalny;
+   		Funkcja time() zwaraca wyrażony w sekundach czas, który upłynął od północy 1 stycznia 1970 reku. Jako argument przyjmuje 0.
+
+Zakres liczb losowych:
+	Aby wylosować liczby z określonego zakresu należy posłużyć się wzorem,
+
+ 	y = (rand() % (MAX - MIN + 1)) + MIN;
+
+
+Temat: Rzutowanie i Konwersja w C++
+
+Konwersja to proces zmiany wartości z jednego typu danych na inny - może to być wykonane automatycznie przez kompilator lub ręcznie przez programistę.
+int main()
+{
+    int i = 10;
+    float f = i;
+
+    cout << i / 3 << endl;
+    cout << f / 3 << endl;
+
+    return 0;
+}
+
+- - - - - - - - - - - - - - - - - - - 
+
+Rzutowanie (casting).: to proces zmiany wartości z jednego typu danych na inny, nawet jeśli nie jest to możliwe bez utraty danych - rzutowanie jest używane, gdy programista chce zmusić kompilator do wykonania konwersji, która normalnie nie byłaby możliwa.
+int main()
+{
+    double x = 3.14;
+    int y = (int)x;
+
+    cout << y << endl;
+
+    return 0;
+}
+
+- - - - - - - - - - - - - - - - - - - 
+
+Rzutowanie C-style.: jest starszą i mniej bezpieczną formą zmiany - warto unikać tego rodzaju rzutowania.
+(docelowy typ)wyrażenie
+
+- - - - - - - - - - - - - - - - - - - 
+
+Rzutowanie implicit cast (domyślne).: rzutowanie następuje automatycznie, kiedy kompilator sam decyduje o konwersji typu.
+int a = 10;
+double b = a;
+
+- - - - - - - - - - - - - - - - - - - 
+
+Rzutowanie static_cast.: rzutowanie to pozwala na konwersję miedzy typami, które są dla siebie pokrewne, a sama konwersja jest kontrolowana przy kompilacji (ten typ konwersji jest bezpieczny i nie powoduje utraty danych)
+int main()
+{
+    int x = 10;
+    float y = static_cast<float>(x);
+
+    float f = 1.5;
+    int i = static_cast<int>(f);
+
+    cout << y << endl;
+    cout << i << endl;
+
+    return 0;
+}
+
+- - - - - - - - - - - - - - - - - - - 
+
+Rzutowanie const_cast.: specjalny rodzaj rzutowania, który pozwala na osowanie const zadeklarowanego kwalifikatora
+int main()
+{
+    const int i = 10;
+
+    int* j = const_cast<int*>(&i);
+    *j = 20;
+
+    cout << *j;
+
+    return 0;
+}
+
+- - - - - - - - - - - - - - - - - - - 
+
+Rzutowanie dynamic_cast.: stosuje się w kontekście dziedziczenia i wskaźników na klasy; służy do rzutowania wskaźników lub referencji na klasy bazowe na wskaźniki lub referencje na ich pochodne (gdy rzutowanie nie jest możliwe, zwracany jest wskaźnik lub rzucany jest wyjątek)
+
+- - - - - - - - - - - - - - - - - - - 
+
+Rzutowanie reinterpret_cast.: pozwala na dokonywanie rzutowania między dowolnymi dwoma wskaźnikami, nawet jeśli nie mają one ze sobą związku (najbardziej niebezpieczny rodzaj rzutowania, który może prowadzić do nieprzewidywalnych zachowań programu)
+int main()
+{
+    int x = 10;
+    double *ptr = reinterpret_cast<double>(&x);
+
+    return 0;
+}
+
+
+___________________________________________________________________________________________
+___________________________________________________________________________________________   
+
+
+Temat: Zasady programowania w dobrym stylu
+
+Formatowanie Kodu
+	- stosowanie wcięć: należy stosować spacje lub tabulatory do wcięcia kodu wewnątrz bloków, funkcji, pętli np.: zazwyczaj są to 2 lub 4 spacje
+	- stosowanie spacji między operatorami: w celu poprawienia czytelności należy dodać spacje między operatorami, separatorami i słowami kluczowymi.
+	- długość wiersza: należy stosować ograniczenia dotyczące długości wiersza (zazwyczaj od 80 do 120 znaków na wiersz)
+	- puste linie: aby ułatwić czytanie i zrozumienie, należy dodać puste linie w celu grupowania logicznych bloków kodu
+
+- - - - - - - - - - - - - - - - - - - 
+
+Nazewnictwo zmiennych
+- zmiennym należy nadawać znaczące nazwy: nazwa powinna odzwierciedlać to za co zmienna odpowiada (jakie jest jej przeznaczenie) np.: name, często nazwa zmiennej składa się z więcej niż jednego wyrazu np.: accessUser
+  	- warto zarezerwować pewne nazwy na zmienne używane wielokrotnie - np.: sterujące pętlami (i,j), liczby (a,x)
+  	- sporządzić listę używanych zmiennych - deklaracja zmiennych
+  	- stałe zapisywać wielkimi literami
+
+- - - - - - - - - - - - - - - - - - - 
+
+Sposób zapisu zmiennych
+	- Snake_case charakteryzuje się podkreśleniem pomiędzy wyrazami np.: input_buffer (taki zapis jest popularny w Pythonie),
+	- PascalCase charakteryzuje się tym, że wyrazy zawsze rozpoczynamy wielkimi literami np.: inputBuffer,
+	- camelCase charakteryzuje się tym, że pierwszy wyraz zawsze zapisywany jest małą literą, a kolejne zawsze rozpoczynamy dużą literą.
+
+- - - - - - - - - - - - - - - - - - - 
+
+Zapisywanie Funkcji:
+	- Sposób zapisu funkcji jest taki sam jak w zmiennych
+
+- - - - - - - - - - - - - - - - - - - 
+
+Zapis instrukcji:
+Nawiasy klamrowe w instrukcjach sterujących możemy pisać m.in zgodnie z stylem:
+	- BSD: Berkeley Software Distribution
+ 	- K&R: nazwa tego pochodzi od nazwisk Kerninghan oraz Ritchie.
+
+- - - - - - - - - - - - - - - - - - - 
+
+Komentarze:
+	Komentarze należy dodawać tam, gdzie jest to potrzebne, aby wyjaśnić skomplikowne fragmenty kodu, algorytmy lub decyzje projektowe - należy unikać nadmiernej ilości komentarzy
+
+- - - - - - - - - - - - - - - - - - - 
+
+Unikanie redudancji kodu:
+	Redundancja kodu poprzez wykorzystanie funkcji dziedziczenia polimorfonizmu itp.
+
+- - - - - - - - - - - - - - - - - - - 
+
+Modularność kodu: 
+	Rozbudowany program można podzielić na moduły lub klasę. Te moduły można importować do innych projektów.
+
+- - - - - - - - - - - - - - - - - - - 
+
+Dokumentacja: 
+	Zasadne jest tworzenie dokumentacji projektu, która opisuje ogólną strukturę aplikacji, cel oraz interface'y - ułatwia to innym programistom zrozumienie projektu.
+
+- - - - - - - - - - - - - - - - - - - 
+
+Refaktoryzacja kodu:
+	Usuwanie niepotrzebnych zmiennych
+
+</pre>
+
+</body>
