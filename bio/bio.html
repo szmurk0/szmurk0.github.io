@@ -3,20 +3,6 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@400;700&display=swap">
     <style>
 
-    .center-down {
-      position: absolute;
-      left: 500px;
-      top: 510px;
-    }
-
-
-    
-    #scrobblesInfo {
-      text-align: center;
-      margin-top: 20px;
-    }
-
-    /* Dodatkowe style dla kontenera obrazka albumu i informacji o utworze */
     #albumContainer {
       display: flex;
       flex-direction: column;
@@ -24,7 +10,7 @@
       text-align: center;
       margin-top: 20px;
     }
-    
+
     #albumImage {
       max-width: 100%;
       height: auto;
@@ -32,15 +18,27 @@
       cursor: pointer;
       margin: 0 auto; /* Centruje obrazek */
     }
-    
+
     #albumImage:hover {
       transform: scale(1.1);
     }
 
+    #nowPlaying {
+      text-align: center;
+      margin-bottom: 10px;
+    }
 
     #trackInfo {
-      margin-left: 20px;
-      text-align: left;
+      text-align: center;
+    }
+
+    #scrobblesInfo {
+      text-align: center;
+      margin-top: 20px;
+    }
+
+    .center-down {
+      text-align: center;
     }
       
     body {
