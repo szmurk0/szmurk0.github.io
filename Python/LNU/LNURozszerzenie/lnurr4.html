@@ -1,0 +1,371 @@
+<html>
+  <head>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+      body {
+          color: black;
+          margin: auto;
+          font-family: 'Source Code Pro', monospace;
+          overflow: auto;
+          background: linear-gradient(315deg, rgba(101,0,94,1) 3%, rgba(60,132,206,1) 38%, rgba(48,238,226,1) 68%, rgba(255,25,25,1) 98%);
+          animation: gradient 15s ease infinite;
+          background-size: 400% 400%;
+          background-attachment: fixed;
+      }
+      @keyframes gradient {
+          0% {
+              background-position: 0% 0%;
+          }
+          50% {
+              background-position: 100% 100%;
+          }
+          100% {
+              background-position: 0% 0%;
+          }
+      }
+      .wave {
+          background: rgb(255 255 255 / 25%);
+          border-radius: 1000% 1000% 0 0;
+          position: fixed;
+          width: 200%;
+          height: 12em;
+          animation: wave 10s -3s linear infinite;
+          transform: translate3d(0, 0, 0);
+          opacity: 0.8;
+          bottom: 0;
+          left: 0;
+          z-index: -1;
+      }
+      .wave:nth-of-type(2) {
+          bottom: -1.25em;
+          animation: wave 18s linear reverse infinite;
+          opacity: 0.8;
+      }
+      .wave:nth-of-type(3) {
+          bottom: -2.5em;
+          animation: wave 20s -1s reverse infinite;
+          opacity: 0.9;
+      }
+      @keyframes wave {
+          2% {
+              transform: translateX(1);
+          }
+          25% {
+              transform: translateX(-25%);
+          }
+          50% {
+              transform: translateX(-50%);
+          }
+          75% {
+              transform: translateX(-25%);
+          }
+          100% {
+              transform: translateX(1);
+          }
+      }
+      /* Lista */
+      ul {
+        list-style: none;
+        text-align: center;
+      }
+      ul li.programming {
+        background-color: #145369;
+        color: #fff;
+      }
+      ul li.hobby {
+        background-color: #e74c3c;
+        color: #fff;
+      }
+      ul li:hover {
+        background-color: #fff;
+        color: #145369;
+        border-color: #145369;
+      }     
+      ul {
+        padding: -32px;
+      }
+      ul li {
+        display: inline-block;
+        margin: 10px;
+        float: center;
+        font-weight: bold;
+        padding: 10px;
+        border: 2px solid #ccc;
+        border-radius: 10px;
+        transition: background-color 0.3s ease;
+      }
+      ul li:hover {
+        background-color: #fff;
+        color: #145369;
+        border-color: #145369;
+      }
+      a:hover {
+        text-decoration: underline;
+      }
+      a {
+        color: black;
+        text-decoration: none;
+      }
+      /* Paragrafy */
+      p {
+        font-size: 1.2em;
+        line-height: 1.5;
+        margin: 20px;
+        text-align: justify;
+      }
+      .center-text {
+          text-align: center;
+          margin: 0 auto;
+      }
+  
+  
+
+    </style>
+    
+  </head>
+  
+  <body>
+    <div>
+     <div class="wave"></div>
+     <div class="wave"></div>
+     <div class="wave"></div>
+    </div>
+    <br><br>
+    <center><h2> Dekoratory i generatory </h2></center>
+    <br>
+    <pre>
+    
+    1. Dekoratory - wstęp
+    def censoring_wrapper(func):
+      # Funkcja do sprawdzania, czy napis zawiera literę 'k'
+      def contains_k(s):
+          return 'k' in s
+  
+      def wrapper(*args, **kwargs):
+          # Przefiltruj argumenty pozycyjne, usuwając te, które zawierają 'k'
+          censored_args = [arg for arg in args if not contains_k(str(arg))]
+  
+          # Przefiltruj argumenty nazwane, usuwając te, których nazwa zawiera 'k'
+          censored_kwargs = {key: value for key, value in kwargs.items() if not contains_k(key)}
+  
+          # Usuń argument 'd', jeśli istnieje
+          if 'd' in censored_kwargs:
+              del censored_kwargs['d']
+  
+          return func(*censored_args, **censored_kwargs)
+  
+      return wrapper
+
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+    2. Składnia dekoratora
+    def power(x, y):
+      result = x ** y
+      print(f"Argumenty: x={x}, y={y}, Wynik: {result}")
+      return result
+
+
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+    3. Dekoratory z argumentami
+    def enforce_types(t1, t2):
+      def decorator(func):
+          def inner(*args, **kwargs):
+              # Sprawdź, czy argumenty są poprawnych typów
+              a1, a2 = args
+              if not isinstance(a1, t1):
+                  raise TypeError(f"Argument {a1} nie jest typu {t1}")
+              if not isinstance(a2, t2):
+                  raise TypeError(f"Argument {a2} nie jest typu {t2}")
+  
+              return func(*args, **kwargs)
+  
+          return inner
+  
+      return decorator
+  
+    @enforce_types(int, int)
+    # /* read-only */
+    def add_ints(x, y):
+        return x + y
+    # /* read-only */
+    
+    
+    
+    @enforce_types(str, str) 
+    # /* read-only */
+    def concat_strings(s1, s2):
+        return s1 + s2
+    # /* read-only */
+
+
+    
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+    4. @lru_cache
+    from secret_base_of_horrible_baddies import get_secret_plan
+    # Słownik do przechowywania wyników memoizacji
+    memo = {}
+    
+    def steal_plans(plan_list):
+        stolen_plans = []
+        for plan_number in plan_list:
+            # Sprawdź, czy wynik jest już w pamięci podręcznej (memoizacja)
+            if plan_number in memo:
+                plan = memo[plan_number]
+            else:
+                plan = get_secret_plan(plan_number)
+                # Zapamiętaj wynik w pamięci podręcznej
+                memo[plan_number] = plan
+    
+            if plan is not None:
+                stolen_plans.append(plan)
+            if len(stolen_plans) >= 20:
+                break
+        return stolen_plans
+
+
+
+    
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+    5. @singledispatch
+    def count_elements(container):
+      if isinstance(container, (list, set, tuple)):
+          return len(container)
+      elif isinstance(container, str):
+          # Podziel napis na słowa (używając spacji jako separatora) i zwróć ilość słów
+          words = container.split()
+          return len(words)
+      elif isinstance(container, dict):
+          # Ilość elementów w słowniku to suma liczby kluczy i liczby wartości
+          return len(container.keys()) + len(container.values())
+      else:
+          # Obsługa innych rodzajów kontenerów lub nieznanych typów
+          raise ValueError("Nieobsługiwany typ kontenera")
+
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+    6. @wraps
+    import functools
+
+    def enforce_types(type1, type2):
+        def decorator(func):
+            @functools.wraps(func)
+            def inner(a1, a2):
+                if isinstance(a1, type1) and isinstance(a2, type2):
+                    return func(a1, a2)
+                else:
+                    raise TypeError(f"Arguments must be of types {type1} and {type2}")
+            
+            return inner
+        
+        return decorator
+    
+    # Udekoruj funkcje add_ints() i concat_strings() za pomocą enforce_types
+    @enforce_types(int, int)
+    # /* read-only */
+    def add_ints(x: int, y: int):
+        """Adds two integers together"""
+        return x + y
+    # /* read-only */
+    
+    
+    @enforce_types(str, str)    
+    # /* read-only */
+    def concat_strings(s1: str, s2: str):
+        """Concatenates two strings together"""
+        return s1 + s2
+    # /* read-only */
+
+    
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+    7. Generatory - wstęp
+    def neighbours():
+      # Lista zawierająca nazwy krajów sąsiadujących z Polską
+      neighbours_list = ['Rosja', 'Litwa', 'Białoruś', 'Ukraina', 'Czechy', 'Słowacja', 'Niemcy']
+  
+      # Iterujemy przez listę i zwracamy nazwy sąsiadujących krajów
+      for country in neighbours_list:
+          yield country
+
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+    8. Dlaczego używać generatorów?
+    def my_range(start, stop=None, step=1):
+      if stop is None:
+          start, stop = 0, start
+  
+      current = start
+      while current < stop:
+          yield current
+          current += step
+
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+    9. Nieskończone generatory
+    import itertools
+    def fibonacci_gen():
+        a, b = 0, 1
+        while True:
+            yield a
+            a, b = b, a + b
+    
+    def nth_fibonacci(n):
+        if n <= 0:
+            raise ValueError("n must be a positive integer")
+        nth_fib = next(itertools.islice(fibonacci_gen(), n, n+1))
+        return nth_fib
+
+          
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+    10. Podgeneratory
+    def join_with(iterators, sep):
+      # Jeśli lista iterators jest pusta, zwracamy pusty iterator
+      if not iterators:
+          return iter([])
+  
+      # Tworzymy generator, który łączy iteratory z separatorem
+      for i, iterator in enumerate(iterators):
+          for item in iterator:
+              yield item
+          if i < len(iterators) - 1:  # Jeśli nie jest to ostatni iterator
+              yield from sep  # Dodajemy elementy z sep
+
+
+
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+    11. Wczesne zakańczanie za pomocą return
+    def short_list(numbers, k):
+      for num in numbers:
+          if num % k == 0:
+              break
+          yield num
+
+ 
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+    12. Wyrażenie generatora
+    def first_powers(k):
+      return (2 ** i for i in range(k))
+    
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+    </pre>
+    <br>
+
+
+  <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+  </body>
+</html>
