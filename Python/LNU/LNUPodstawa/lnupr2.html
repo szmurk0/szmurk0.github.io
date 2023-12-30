@@ -1,0 +1,378 @@
+<html>
+  <head>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+      body {
+          color: black;
+          margin: auto;
+          font-family: 'Source Code Pro', monospace;
+          overflow: auto;
+          background: linear-gradient(315deg, rgba(101,0,94,1) 3%, rgba(60,132,206,1) 38%, rgba(48,238,226,1) 68%, rgba(255,25,25,1) 98%);
+          animation: gradient 15s ease infinite;
+          background-size: 400% 400%;
+          background-attachment: fixed;
+      }
+      @keyframes gradient {
+          0% {
+              background-position: 0% 0%;
+          }
+          50% {
+              background-position: 100% 100%;
+          }
+          100% {
+              background-position: 0% 0%;
+          }
+      }
+      .wave {
+          background: rgb(255 255 255 / 25%);
+          border-radius: 1000% 1000% 0 0;
+          position: fixed;
+          width: 200%;
+          height: 12em;
+          animation: wave 10s -3s linear infinite;
+          transform: translate3d(0, 0, 0);
+          opacity: 0.8;
+          bottom: 0;
+          left: 0;
+          z-index: -1;
+      }
+      .wave:nth-of-type(2) {
+          bottom: -1.25em;
+          animation: wave 18s linear reverse infinite;
+          opacity: 0.8;
+      }
+      .wave:nth-of-type(3) {
+          bottom: -2.5em;
+          animation: wave 20s -1s reverse infinite;
+          opacity: 0.9;
+      }
+      @keyframes wave {
+          2% {
+              transform: translateX(1);
+          }
+          25% {
+              transform: translateX(-25%);
+          }
+          50% {
+              transform: translateX(-50%);
+          }
+          75% {
+              transform: translateX(-25%);
+          }
+          100% {
+              transform: translateX(1);
+          }
+      }
+      /* Lista */
+      ul {
+        list-style: none;
+        text-align: center;
+      }
+      ul li.programming {
+        background-color: #145369;
+        color: #fff;
+      }
+      ul li.hobby {
+        background-color: #e74c3c;
+        color: #fff;
+      }
+      ul li:hover {
+        background-color: #fff;
+        color: #145369;
+        border-color: #145369;
+      }     
+      ul {
+        padding: -32px;
+      }
+      ul li {
+        display: inline-block;
+        margin: 10px;
+        float: center;
+        font-weight: bold;
+        padding: 10px;
+        border: 2px solid #ccc;
+        border-radius: 10px;
+        transition: background-color 0.3s ease;
+      }
+      ul li:hover {
+        background-color: #fff;
+        color: #145369;
+        border-color: #145369;
+      }
+      a:hover {
+        text-decoration: underline;
+      }
+      a {
+        color: black;
+        text-decoration: none;
+      }
+      /* Paragrafy */
+      p {
+        font-size: 1.2em;
+        line-height: 1.5;
+        margin: 20px;
+        text-align: justify;
+      }
+      .center-text {
+          text-align: center;
+          margin: 0 auto;
+      }
+  
+  
+
+    </style>
+    
+  </head>
+  
+  <body>
+    <div>
+     <div class="wave"></div>
+     <div class="wave"></div>
+     <div class="wave"></div>
+    </div>
+    <br><br>
+    <center><h2> Funkcje </h2></center>
+    <br>
+    <pre>
+    1. A teraz coś całkiem innego
+    def display_greetings():
+      print( "Hello!" )
+
+
+    print('And now for something completely different.')
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+    2. Definicja funkcji
+    def display_greetings():
+      print( "Hello!" )
+      print('And now for something completely different.')
+    
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+    3. Wywołanie funkcji
+    def display_greetings():
+      print( "Hello!" )
+      print( "And now for something completely different." )
+      
+    display_greetings()
+    
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+    4. Ćwiczenie - sełf congrats
+    def display_self_congratulations():
+      print( "I am" )
+      print( "really great" )
+      print( "in calling" )
+      print( "functions!" )
+  
+    display_self_congratulations()
+    
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+    5. A teraz coś całkiem innego
+    def great_moment_in_human_history():
+      print("My first function in Python")
+
+    
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+    6. Ćwiczenie - jeszcze jedna funkcja
+    #your second function in Python
+
+    def yet_another_great_moment():
+        print("My second function in Python")
+    
+    yet_another_great_moment()
+    
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+    7. Ćwiczenie - i jeszcze jedna..
+    #your function
+
+    def display():
+        print("Eric Idle")
+    
+    display()
+    
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+    8. Parametry czy para-metry?
+    def display( number ):
+      print( number )
+      
+    display(3.14)
+    
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+    9. Łańcuch jako argument
+    def display( some_text ):
+      print( some_text )
+
+    display("And now for something completely different")
+    
+
+    
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+    10. Więcej parametrów
+    def display_area( x, y ):
+      print( x * y )
+
+    display_area(3, 8)
+    
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+    11. A teraz coś całkiem innego
+    def simple_per(x,y,z):
+      print(x+y+z)
+
+    simple_per(23,9,8)
+    
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+    12. Funkcja zwraca wartość
+    def andNow():
+      return "And now something completely different"
+    
+    print(andNow() )
+
+    
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+    13. Jeszcze raz funkcja zwraca wartość
+    def add(x, y):
+      return x+y
+
+    print( add(2,3) )
+    
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+    14. Ćwiczenei - Ole!
+    def multiply(x, y):
+      iloczyn = x * y
+      return iloczyn
+  
+    print( multiply("Ole!", 10) )
+
+    
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+    15. return kończy funkcje
+    def calc_area(a, b):
+      print("calculating area of a rectangle ...")
+      return a * b
+  
+    area = calc_area(17, 36)
+    print(area)
+
+
+    
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+    16. Zadania z testami
+      def plus_tax(cena_netto):
+      podatek_vat = 0.23  # 23% podatku VAT
+      cena_brutto = cena_netto * (1 + podatek_vat)
+      return cena_brutto
+
+    
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+    17. Ćwiczenie - Celsjusz to Fahrenheit
+    def C_to_F(temperatura_C):
+      temperatura_F = temperatura_C * 9/5 + 32
+      return temperatura_F
+
+    
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+    18. Ćwiczenie - galony na litry
+    def GallonsToLiters(gallons):
+      liters = gallons / 0.26417
+      return liters
+
+    
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+    19. Ćwiczenie - obwód
+    def calcCirc(radius):
+      Pi = 3.1416
+      circumference = 2 * Pi * radius
+      return circumference
+
+    
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+    20. Ćwiczenie - pole
+    def calcArea(radius):
+      Pi = 3.1416
+      area = Pi * radius**2
+      return area
+
+    
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+    21. Korzystanie z funkcji
+    def calcArea(r):
+      return 3.1416 * r**2
+
+    def calcVolume(r, h):
+        base_area = calcArea(r)
+        volume = base_area * h
+        return volume
+
+    
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+    22. Ćwiczenie - czas 1
+    def to_time(sekundy, minuty, godziny):
+      godziny = max(0, min(23, godziny))
+      minuty = max(0, min(59, minuty))
+      sekundy = max(0, min(59, sekundy))
+      godziny_str = str(godziny).zfill(2)
+      minuty_str = str(minuty).zfill(2)
+      sekundy_str = str(sekundy).zfill(2)
+      czas = int(godziny_str + minuty_str + sekundy_str)
+      return czas
+
+    
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+    23. Ćwiczenie - czas 2
+    def to_time(sekundy):
+      sekundy = max(0, min(86000, sekundy))
+      godziny = sekundy // 3600
+      reszta = sekundy % 3600
+      minuty = reszta // 60
+      sekundy = reszta % 60
+      godziny_str = str(godziny).zfill(2)
+      minuty_str = str(minuty).zfill(2)
+      sekundy_str = str(sekundy).zfill(2)
+      czas = int(godziny_str + minuty_str + sekundy_str)
+      return czas
+
+    
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+    24. Ćwiczenie brutto
+    def plus_tax(cena_netto, procent_podatku):
+      cena_brutto = cena_netto * (1 + procent_podatku / 100)
+      return cena_brutto
+
+    
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+    25. QUIZ
+    odpowiedzi niema, bo pytania są generowane automatycznie. Dajcie se polecenia z odpowiedziami w chatgpt/bard.ai i będzie git okok?
+
+      
+    </pre>
+    <br>
+
+
+  <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+  </body>
+</html>
