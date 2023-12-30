@@ -1,0 +1,361 @@
+<html>
+  <head>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+      body {
+          color: black;
+          margin: auto;
+          font-family: 'Source Code Pro', monospace;
+          overflow: auto;
+          background: linear-gradient(315deg, rgba(101,0,94,1) 3%, rgba(60,132,206,1) 38%, rgba(48,238,226,1) 68%, rgba(255,25,25,1) 98%);
+          animation: gradient 15s ease infinite;
+          background-size: 400% 400%;
+          background-attachment: fixed;
+      }
+      @keyframes gradient {
+          0% {
+              background-position: 0% 0%;
+          }
+          50% {
+              background-position: 100% 100%;
+          }
+          100% {
+              background-position: 0% 0%;
+          }
+      }
+      .wave {
+          background: rgb(255 255 255 / 25%);
+          border-radius: 1000% 1000% 0 0;
+          position: fixed;
+          width: 200%;
+          height: 12em;
+          animation: wave 10s -3s linear infinite;
+          transform: translate3d(0, 0, 0);
+          opacity: 0.8;
+          bottom: 0;
+          left: 0;
+          z-index: -1;
+      }
+      .wave:nth-of-type(2) {
+          bottom: -1.25em;
+          animation: wave 18s linear reverse infinite;
+          opacity: 0.8;
+      }
+      .wave:nth-of-type(3) {
+          bottom: -2.5em;
+          animation: wave 20s -1s reverse infinite;
+          opacity: 0.9;
+      }
+      @keyframes wave {
+          2% {
+              transform: translateX(1);
+          }
+          25% {
+              transform: translateX(-25%);
+          }
+          50% {
+              transform: translateX(-50%);
+          }
+          75% {
+              transform: translateX(-25%);
+          }
+          100% {
+              transform: translateX(1);
+          }
+      }
+      /* Lista */
+      ul {
+        list-style: none;
+        text-align: center;
+      }
+      ul li.programming {
+        background-color: #145369;
+        color: #fff;
+      }
+      ul li.hobby {
+        background-color: #e74c3c;
+        color: #fff;
+      }
+      ul li:hover {
+        background-color: #fff;
+        color: #145369;
+        border-color: #145369;
+      }     
+      ul {
+        padding: -32px;
+      }
+      ul li {
+        display: inline-block;
+        margin: 10px;
+        float: center;
+        font-weight: bold;
+        padding: 10px;
+        border: 2px solid #ccc;
+        border-radius: 10px;
+        transition: background-color 0.3s ease;
+      }
+      ul li:hover {
+        background-color: #fff;
+        color: #145369;
+        border-color: #145369;
+      }
+      a:hover {
+        text-decoration: underline;
+      }
+      a {
+        color: black;
+        text-decoration: none;
+      }
+      /* Paragrafy */
+      p {
+        font-size: 1.2em;
+        line-height: 1.5;
+        margin: 20px;
+        text-align: justify;
+      }
+      .center-text {
+          text-align: center;
+          margin: 0 auto;
+      }
+  
+  
+
+    </style>
+    
+  </head>
+  
+  <body>
+    <div>
+     <div class="wave"></div>
+     <div class="wave"></div>
+     <div class="wave"></div>
+    </div>
+    <br><br>
+    <center><h2> Odpakowywanie </h2></center>
+    <br>
+    <pre>
+    
+    1. Wstęp do wstępu
+    def retTuple(x, y):
+      # Użyj przecinka, aby utworzyć jednoelementową krotkę
+      result = x * y,
+      return result
+
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+    2. Wstęp właściwy
+    def sums(numbers):
+      # Inicjalizuj zmienne do przechowywania sum
+      sum_even = 0
+      sum_odd = 0
+      
+      # Iteruj się po liście i sumuj elementy na pozycjach parzystych i nieparzystych
+      for i, num in enumerate(numbers):
+          if i % 2 == 0:
+              sum_even += num
+          else:
+              sum_odd += num
+      
+      # Zwróć wynik w postaci krotki
+      return sum_even, sum_odd
+
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+    3. And now for something completely different
+    monty = ( "completely different.",  "And now for", "something" )
+    # Rozpakowanie krotki i wyświetlenie poprawnego cytatu
+    x, y, z = monty
+    print(y, z, x)
+
+    
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+    4. Symbol zastępczy
+    def second_element(sequence):
+      # Inicjalizuj zmienną do przechowywania drugiego elementu
+      second = None
+      
+      # Iteruj się przez elementy krotki z użyciem enumerate
+      for index, value in enumerate(sequence):
+          # Jeśli jesteśmy na drugim elemencie (indeks 1), przypisz go do zmiennej second
+          if index == 1:
+              second = value
+      
+      # Zwróć drugi element
+      return second
+
+    
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+    5. Ćwiczenie - BMI
+    def bmi(person):
+      # Rozpakowanie danych z listy person
+      name, birthdate, weight_kg, height_cm = person
+      
+      # Przeliczenie wzrostu z cm na m
+      height_m = height_cm / 100
+      
+      # Obliczenie wartości BMI
+      bmi_value = round(weight_kg / (height_m ** 2), 2)
+      
+      return bmi_value
+
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+    6. Zbieranie
+    def cityCountry(data):
+      # Rozpakowanie pierwszych dwóch elementów listy, resztę zbierzmy w jednej zmiennej
+      city, country, *rest = data
+      
+      # Połączenie nazwy miejscowości i kraju oddzielonych przecinkiem i spacją
+      result = city + ', ' + country
+      
+      return result
+
+    
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+    7. Ćwiczenie - przedostatni
+    def before_last(sequence):
+      before_last_element = None
+      last_element = None
+      
+      for item in sequence:
+          before_last_element, last_element = last_element, item
+      
+      return before_last_element
+
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+    8. Ćwiczenie: Rekurencyjna długość listy
+    def length(sequence, licznik=0):
+      if bool(sequence) == True:
+          licznik += 1
+          _, *sequence = sequence
+          return length(sequence, licznik)
+  
+      else:
+          return licznik
+    
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+    9. Funkcja enumerate()
+    def findGreater( oil, value ):
+      odp = []
+      for i, el in enumerate(oil):
+          if el >= value:
+              odp.append(i)
+      
+      return odp
+          
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+    10. Ćwiczenie - uznania
+    def dashFormat(password_1, password_2, letter):
+      # Zmiana litery na małe litery, aby ułatwić porównanie
+      password_1 = [c.lower() for c in password_1]
+      letter = letter.lower()
+  
+      # Przeszukiwanie pierwszego hasła w poszukiwaniu litery
+  
+      for i, c in enumerate(password_1):
+          if c == letter:
+              # Znaleziono literę, uzupełnienie drugiego hasła
+              password_2[i] = letter
+  
+      return password_2
+
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+    11. Ćwiczenie - konwersja na system dziesiętny
+    def valueToDecimal(value, base):
+      decimal_value = 0
+      value = value[::-1]  # Odwróć wartość, aby łatwiej było obliczyć wartość dziesiętną
+      
+      for i, digit in enumerate(value):
+          decimal_value += int(digit) * (base ** i)
+      
+      return decimal_value
+ 
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+    12. Funkcja enumerate() cd.
+    def monthReport(data):
+      result = []  # Inicjalizuj pustą listę na wynik
+      
+      for day_number, (total_tests, positive_tests) in enumerate(data, 1):
+          if positive_tests > 0.5 * total_tests:  # Warunek na więcej niż 50% testów pozytywnych
+              result.append(day_number)
+      
+      return result
+    
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+    13. Funkcja zip()
+    def weightedRating(rating, weight):
+      # Zainicjuj pustą listę wynikową
+      result = []
+      
+      # Iteruj przez odpowiadające sobie elementy rating i weight
+      for r, w in zip(rating, weight):
+          # Oblicz ocenę pomnożoną przez wagę i zaokrąglij do jednego miejsca po przecinku
+          weighted_score = round(r * w, 1)
+          # Dodaj obliczoną wartość do listy wynikowej
+          result.append(weighted_score)
+      
+      return result
+
+
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+    14. Ćwiczenie - słownik niem.-ang.
+    def gerEngDict(ger, eng):
+      # Użyj funkcji zip() do połączenia dwóch list w pary
+      pairs = zip(ger, eng)
+      
+      # Utwórz słownik za pomocą wyrażenia słownikowego
+      dictionary = {ger_word: eng_word for ger_word, eng_word in pairs}
+      
+      return dictionary
+      
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+    15. Ćwiczenie - egzaminy
+    def who_failed(reports, thresholds):
+      # Inicjuj pustą listę na niezdanych uczniów
+      failed_students = []
+      
+      # Iteruj przez listę wyników i progi zdawalności
+      for i in range(len(reports)):
+          # Pobierz imię i wynik ucznia z raportu
+          name, score = reports[i]
+          
+          # Pobierz próg zdawalności dla danego egzaminu
+          threshold = thresholds[i]
+          
+          # Sprawdź, czy wynik jest mniejszy od progu zdawalności
+          if score < threshold:
+              # Jeśli tak, dodaj imię ucznia do listy niezdanych
+              failed_students.append(name)
+      
+      return failed_students
+
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+    </pre>
+    <br>
+
+
+  <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+  </body>
+</html>
