@@ -1,0 +1,545 @@
+<html>
+  <head>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+      body {
+          color: black;
+          margin: auto;
+          font-family: 'Source Code Pro', monospace;
+          overflow: auto;
+          background: linear-gradient(315deg, rgba(101,0,94,1) 3%, rgba(60,132,206,1) 38%, rgba(48,238,226,1) 68%, rgba(255,25,25,1) 98%);
+          animation: gradient 15s ease infinite;
+          background-size: 400% 400%;
+          background-attachment: fixed;
+      }
+      @keyframes gradient {
+          0% {
+              background-position: 0% 0%;
+          }
+          50% {
+              background-position: 100% 100%;
+          }
+          100% {
+              background-position: 0% 0%;
+          }
+      }
+      .wave {
+          background: rgb(255 255 255 / 25%);
+          border-radius: 1000% 1000% 0 0;
+          position: fixed;
+          width: 200%;
+          height: 12em;
+          animation: wave 10s -3s linear infinite;
+          transform: translate3d(0, 0, 0);
+          opacity: 0.8;
+          bottom: 0;
+          left: 0;
+          z-index: -1;
+      }
+      .wave:nth-of-type(2) {
+          bottom: -1.25em;
+          animation: wave 18s linear reverse infinite;
+          opacity: 0.8;
+      }
+      .wave:nth-of-type(3) {
+          bottom: -2.5em;
+          animation: wave 20s -1s reverse infinite;
+          opacity: 0.9;
+      }
+      @keyframes wave {
+          2% {
+              transform: translateX(1);
+          }
+          25% {
+              transform: translateX(-25%);
+          }
+          50% {
+              transform: translateX(-50%);
+          }
+          75% {
+              transform: translateX(-25%);
+          }
+          100% {
+              transform: translateX(1);
+          }
+      }
+      /* Lista */
+      ul {
+        list-style: none;
+        text-align: center;
+      }
+      ul li.programming {
+        background-color: #145369;
+        color: #fff;
+      }
+      ul li.hobby {
+        background-color: #e74c3c;
+        color: #fff;
+      }
+      ul li:hover {
+        background-color: #fff;
+        color: #145369;
+        border-color: #145369;
+      }     
+      ul {
+        padding: -32px;
+      }
+      ul li {
+        display: inline-block;
+        margin: 10px;
+        float: center;
+        font-weight: bold;
+        padding: 10px;
+        border: 2px solid #ccc;
+        border-radius: 10px;
+        transition: background-color 0.3s ease;
+      }
+      ul li:hover {
+        background-color: #fff;
+        color: #145369;
+        border-color: #145369;
+      }
+      a:hover {
+        text-decoration: underline;
+      }
+      a {
+        color: black;
+        text-decoration: none;
+      }
+      /* Paragrafy */
+      p {
+        font-size: 1.2em;
+        line-height: 1.5;
+        margin: 20px;
+        text-align: justify;
+      }
+      .center-text {
+          text-align: center;
+          margin: 0 auto;
+      }
+  
+  
+
+    </style>
+    
+  </head>
+  
+  <body>
+    <div>
+     <div class="wave"></div>
+     <div class="wave"></div>
+     <div class="wave"></div>
+    </div>
+    <br><br>
+    <center><h2> Zaawansowane funkcje funkcji </h2></center>
+    <br>
+    <pre>
+    
+    1. Więcej o funkcji int()
+    def convertList(values, bases):
+      # Użyj listy składanej do wykonania konwersji
+      return [int(str(x), y) for x, y in zip(values, bases)]
+
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+    2. Ćwiczenie - złe wartości
+    def convertList(values, bases):
+      # Inicjuj pustą listę na nieprawidłowe wartości
+      invalid_values = []
+      
+      # Iteruj przez listę wartości i odpowiadające im bazy
+      for value, base in zip(values, bases):
+          try:
+              # Spróbuj dokonać konwersji
+              int(value, base=base)
+          except ValueError:
+              # Jeśli wystąpi błąd ValueError, dodaj wartość do listy nieprawidłowych
+              invalid_values.append(value)
+      
+      return invalid_values
+
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+    3. Argumenty opcjonalne
+    def increment(x, by=None):
+      if by is not None:
+          return x + by
+      else:
+          return x + 1
+
+    
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+    4. Ćwiczenie - cena brutto
+    def grossPrice(net_price, tax_rate=23):
+      # Oblicz cenę brutto na podstawie ceny netto i stawki podatku
+      gross_price = net_price * (1 + tax_rate / 100)
+      
+      # Zaokrąglij cenę brutto do pełnych centów
+      gross_price = round(gross_price, 2)
+      
+      return gross_price
+
+
+    
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+    5. Ćwiczenie - drugie imię
+    def retName(first_name, last_name, middle_name=None):
+      if middle_name:
+          full_name = f'{first_name} {middle_name} {last_name}'
+      else:
+          full_name = f'{first_name} {last_name}'
+      
+      return full_name
+
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+    6. Podawanie nazw argumentów
+    def make_dict(x):
+      # Utwórz słownik z kluczem 'number' i wartością x
+      return {'number': x}
+
+    
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+    7. Ćwiczenie - wolna powierzchnia
+    def cargoSpace(area=240, business=0, premium=0, economy=0):
+      print("Available space:", round(area - business * 2 - premium * 1.6 - economy * 1.2, 2))
+  
+    cargoSpace(premium=12, economy=145)
+
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+    8. Ćwiczenie - ostateczna cena
+    def finalPrice(price, tax=23, discount=0):
+      # Oblicz cenę po uwzględnieniu podatku
+      price_with_tax = price * (1 + tax / 100)
+      
+      # Oblicz cenę po uwzględnieniu rabatu
+      final_price = price_with_tax * (1 - discount / 100)
+      
+      # Zaokrąglij cenę do pełnych centów
+      final_price = round(final_price, 2)
+      
+      return final_price
+
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+    9. Ćwiczenie - ostateczna cena 2
+    def finalPrice(price, /, tax=23, discount=0):
+      final_price = price + (price * (tax / 100))
+      final_price -= (final_price * (discount / 100))
+      return round(final_price, 2)
+
+          
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+    10. Ćwiczenie - ostateczna cena 3
+    def finalPrice(price, *, tax=23, discount=0):
+      final_price = price + (price * (tax / 100))
+      final_price -= (final_price * (discount / 100))
+      return round(final_price, 2)
+
+
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+    11. Ćwiczenie - parseInt
+    import re
+    def parseInt(x, / ,base=10, * ,changeEndianness=False):
+        x = int(str(x), base)
+        
+        if changeEndianness:
+            #converted num TO hex
+            x = hex(x)[2:]
+            if len(x) % 2 == 1:
+                x = '0' + x
+            
+            #swapping    
+            x = re.findall('..', x)
+            x.reverse()
+            x = ''.join(map(str, x))
+            
+            return int(x, 16)
+        return x
+    
+ 
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+    12. Funkcje o dowolnej liczbie argumentów
+    def operation(op, *args):
+      if op == "+":
+          result = sum(args)
+      elif op == "*":
+          result = 1
+          for arg in args:
+              result *= arg
+      else:
+          raise ValueError("Nieobsługiwane działanie: " + op)
+      
+      return result
+    
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+    13. Ćwiczenie - wielkie litery
+    def toUpper(text, *letters):
+      result = text
+      
+      for letter in letters:
+          result = result.replace(letter.lower(), letter.upper())
+      
+      return result
+
+
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+    14. Ćwiczenie - usuń hasła
+    def delKeys(dictionary, *keys_to_delete):
+      result = dictionary.copy()
+      
+      for key in keys_to_delete:
+          if key in result:
+              del result[key]
+      
+      return result
+      
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+    15. Funkcje o dowolnej liczbie nazwanych argumentów
+    def filter_kwargs(modulo, **kwargs):
+      filtered_args = []
+      
+      for key, value in kwargs.items():
+          if isinstance(value, int) and value % modulo == 0:
+              filtered_args.append(key)
+      
+      return filtered_args
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+    16. Ćwiczenie - zaprzęg św. Mikołaja
+    def setHarness(a,**kwargs):
+      b=0
+      c=[]
+      for i in sorted(kwargs,key=lambda x: kwargs[x],reverse=True):
+          if i in ('Dasher', 'Dancer', 'Prancer', 'Vixen', 'Comet', 'Cupid', 'Donner', 'Blitzen','Rudolph'):
+              if b<a:
+                  b+=kwargs[i]
+                  c.append(i)
+      return sorted(c)
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+    17. Odpakowywanie argumentów
+    def convert(number_data):
+      try:
+          # Rozpakowujemy krotkę na składniki
+          number_str, base = number_data
+          
+          # Konwertujemy napis na liczbę w systemie dziesiętnym
+          decimal_value = int(number_str, base)
+          
+          return decimal_value
+      except ValueError:
+          # Jeśli konwersja nie powiedzie się (np. niewłaściwy napis w systemie pozycyjnym), zwracamy None
+          return None
+    
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+    18. Ćwiczenie - jeszcze raz BMI
+    import fitness
+
+    def clientBmi(clientsData, clientId):
+        data=[]
+        if clientId in clientsData:
+            clientInfo = clientsData[clientId]
+            
+            # Rozpakowanie listy klientInfo bez użycia przecinków
+            firstName = clientInfo[0]
+            lastName = clientInfo[1]
+            birthYear = clientInfo[2]
+            gender = clientInfo[3]
+            data.append(clientInfo[4])
+            data.append(clientInfo[5])
+            
+            # Obliczenie BMI za pomocą funkcji z modułu fitness
+            bmi_value = fitness.bmi(*data)
+            
+            # Zaokrąglenie wyniku do dwóch miejsc po przecinku
+            bmi_value = "{:.2f}".format(bmi_value)
+            
+            return float(bmi_value)
+        else:
+            return "Klient o podanym identyfikatorze nie istnieje"
+
+
+    
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+    19. Funkcje pierwszoklasowe
+    def finalPrice(gross_price, correction_function):
+      corrected_price = correction_function(gross_price)
+      adjusted_price = round(corrected_price - 0.01, 2)
+      return adjusted_price
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+    20. Ćwiczenie: kasa fiskalna 2
+    import math
+    from cash1200 import finalPrice
+    
+    def ultimateFinalPrice(price, discount, likedCustomer):
+        # Wybór funkcji zaokrąglającej w zależności od klienta
+        round_function = math.floor if likedCustomer else math.ceil
+        
+        # Obliczenie ceny z wykorzystaniem funkcji finalPrice() i funkcji zaokrąglającej
+        corrected_price = finalPrice(price, round_function)
+        
+        # Obniżka ceny
+        discounted_price = corrected_price - discount
+        
+        # Zaokrąglenie wyniku do pełnych centów
+        rounded_price = round(discounted_price, 2)
+        
+        return rounded_price
+
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+    
+    21. Funkcje pierwszoklasowe - domknięcie
+    def createAdder(x):
+      def add(y):
+          return x + y
+      return add
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+    
+    22. Ulubione zabawki - sorted(key=)
+    def rhymeList(words):
+      # Funkcja, która zamienia słowo na jego odbicie lustrzane (czyta od prawej do lewej)
+      def reverse_word(word):
+          return word[::-1]
+  
+      # Sortowanie słów, biorąc pod uwagę ich odbicia lustrzane
+      sorted_words = sorted(words, key=reverse_word)
+      
+      return sorted_words
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+    
+    23. Ćwiczenie - ceny litu
+    def sortByMax(lists):
+      # Funkcja, która zwraca maksymalną wartość w liście
+      def max_price(week):
+          return max(week)
+      
+      # Sortowanie list wg maksymalnych cen
+      sorted_lists = sorted(lists, key=max_price, reverse=True)
+      
+      return sorted_lists
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+    
+    24. Funkcje lambda
+    def sortedBySecondLetter(strings):
+      # Utworzenie funkcji lambda, która zwraca drugą literę napisu
+      second_letter = lambda s: s[1]
+      
+      # Sortowanie napisów wg drugich liter
+      sorted_strings = sorted(strings, key=second_letter)
+      
+      return sorted_strings
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+    
+    25. Najlepszy Uczeń - max( key= )
+    def bestStudent(studentScores):
+      # Utworzenie funkcji lambda, która zwraca drugi element krotki (czyli wynik ucznia)
+      get_score = lambda x: x[1]
+      
+      # Znalezienie ucznia o najwyższym wyniku
+      best = max(studentScores, key=get_score)
+      
+      return best[0]  # Zwrócenie imienia ucznia
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+    
+    26. map()
+    def toOrdList(text):
+      # Utworzenie zbioru z kodami Unicode poszczególnych znaków z napisu
+      unicode_codes = set(map(ord, text))
+      
+      return unicode_codes
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+    
+    27. map() - więcej argumentów
+    def intPlusFract(list_1, list_2):
+      # Utworzenie funkcji lambda, która łączy część całkowitą z listy 1 i część ułamkową z listy 2
+      combine_and_convert = lambda x, y: float(f"{x}.{y}")
+      
+      # Stworzenie nowej listy za pomocą map
+      result_list = list(map(combine_and_convert, list_1, list_2))
+      
+      return result_list
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+    
+    28. filter()
+    def findPeople(data):
+      # Utworzenie funkcji lambda, która sprawdza, czy słowo jest imieniem
+      is_name = lambda word: word.istitle()
+      
+      # Podzielenie napisu na słowa i filtrowanie imion
+      names = list(filter(is_name, data.split()))
+      
+      return names
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+    
+    29. Ćwiczenie - transakcje w walucie
+    def calcExchangeList(exRates, transactions, currency):
+      # Sprawdzamy, czy waluty currency jest zawarta w słowniku exRates
+      if currency not in exRates:
+          raise ValueError(f"Waluta {currency} nie jest zawarta w słowniku exRates")
+  
+      # Zwracamy listę wartości transakcji, które są wyrażone w walucie currency
+      return list(map(lambda transaction: round(transaction[0] * exRates[currency], 2), filter(lambda transaction: transaction[1] == currency, transactions)))
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+    
+    30. Owijanie
+    realInt = int
+    def int(x):
+        try:
+            return realInt(x)
+        except ValueError:
+            return -1
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+    31. Ćwiczenie: wstrętne k
+    def censor(func, *args, **kwargs):
+      pozycyjne = [i for i in args if "k" not in str(i)]
+      nazwane = dict((x, y) for x, y in [i for i in kwargs.items() if "k" not in str(i)])
+  
+      #print(f"{pozycyjne} \n {nazwane} \n\n")
+      return func(*pozycyjne, **nazwane)
+
+    </pre>
+    <br>
+
+
+  <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+  </body>
+</html>
