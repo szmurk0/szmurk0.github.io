@@ -1,0 +1,250 @@
+<html>
+  <head>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+      body {
+          color: black;
+          margin: auto;
+          font-family: 'Source Code Pro', monospace;
+          overflow: auto;
+          background: linear-gradient(315deg, rgba(101,0,94,1) 3%, rgba(60,132,206,1) 38%, rgba(48,238,226,1) 68%, rgba(255,25,25,1) 98%);
+          animation: gradient 15s ease infinite;
+          background-size: 400% 400%;
+          background-attachment: fixed;
+      }
+      @keyframes gradient {
+          0% {
+              background-position: 0% 0%;
+          }
+          50% {
+              background-position: 100% 100%;
+          }
+          100% {
+              background-position: 0% 0%;
+          }
+      }
+      .wave {
+          background: rgb(255 255 255 / 25%);
+          border-radius: 1000% 1000% 0 0;
+          position: fixed;
+          width: 200%;
+          height: 12em;
+          animation: wave 10s -3s linear infinite;
+          transform: translate3d(0, 0, 0);
+          opacity: 0.8;
+          bottom: 0;
+          left: 0;
+          z-index: -1;
+      }
+      .wave:nth-of-type(2) {
+          bottom: -1.25em;
+          animation: wave 18s linear reverse infinite;
+          opacity: 0.8;
+      }
+      .wave:nth-of-type(3) {
+          bottom: -2.5em;
+          animation: wave 20s -1s reverse infinite;
+          opacity: 0.9;
+      }
+      @keyframes wave {
+          2% {
+              transform: translateX(1);
+          }
+          25% {
+              transform: translateX(-25%);
+          }
+          50% {
+              transform: translateX(-50%);
+          }
+          75% {
+              transform: translateX(-25%);
+          }
+          100% {
+              transform: translateX(1);
+          }
+      }
+      /* Lista */
+      ul {
+        list-style: none;
+        text-align: center;
+      }
+      ul li.programming {
+        background-color: #145369;
+        color: #fff;
+      }
+      ul li.hobby {
+        background-color: #e74c3c;
+        color: #fff;
+      }
+      ul li:hover {
+        background-color: #fff;
+        color: #145369;
+        border-color: #145369;
+      }     
+      ul {
+        padding: -32px;
+      }
+      ul li {
+        display: inline-block;
+        margin: 10px;
+        float: center;
+        font-weight: bold;
+        padding: 10px;
+        border: 2px solid #ccc;
+        border-radius: 10px;
+        transition: background-color 0.3s ease;
+      }
+      ul li:hover {
+        background-color: #fff;
+        color: #145369;
+        border-color: #145369;
+      }
+      a:hover {
+        text-decoration: underline;
+      }
+      a {
+        color: black;
+        text-decoration: none;
+      }
+      /* Paragrafy */
+      p {
+        font-size: 1.2em;
+        line-height: 1.5;
+        margin: 20px;
+        text-align: justify;
+      }
+      .center-text {
+          text-align: center;
+          margin: 0 auto;
+      }
+  
+  
+
+    </style>
+    
+  </head>
+  
+  <body>
+    <div>
+     <div class="wave"></div>
+     <div class="wave"></div>
+     <div class="wave"></div>
+    </div>
+    <br><br>
+    <center><h2> Zmienne i stringi </h2></center>
+    <br>
+    <pre>
+    1. Komentarze
+    # I am gorgeous!
+
+    2. Ćwiczenie - komentarz
+    #umieść swój komentarz w następnej linii
+    #I rock in Python!
+
+    3. Funkcja print()
+    #wyświetl tekst "John Cleese"
+    print("John Cleese")
+
+    4. Ćwiczenie - print()
+    #wyswietl tekst "Monty Python's Flying Circus"
+    print("Monty Python's Flying Circus")
+
+    5. Wyrażenia
+    #wyswietl wartość wyrażenia 1 + 2 + 3
+    print(1+2+3)
+
+    6. Operatory arytmetyczne
+    #wyświetl pole powierzchni prostokąta o wymiarach 17 na 23
+    print(17*23)
+
+    7. Ćwiczenie - bagietki
+    print(2.34 * 14)
+
+    8. Print() - kilka wyrażeń
+    #wyświetl komunikat zgodny z trescią zadania
+    print(f"Koszt jednej parówki to: {4.50 / 6} PLN")
+
+    9. Ćwiczenie - parówki
+    print(f"Każde dziecko otrzyma {133 // 16} parówek")
+
+    10. Ćwiczenie - modulo
+    print(f"Dla nauczyciela zostało {133 % 16} parówek")
+
+    11. Zmienne
+    price = 0.75
+    print(f'Parówka kosztuje: {price} PLN')
+
+    12. Ćwiczenie - uczniowie
+    students = 16
+    print ("Na pikniku było", students, "uczniów")
+
+    13. Metody
+    text = "ave caesar!"
+    
+    14. lower()
+    text = "MORITURI TE SALUTANT"
+    print(text.lower() )
+
+    15. capitalize()
+    quote = "two things are infinite: the universe and human stupidity; and I'm not sure about the universe."
+    print(quote.capitalize() )
+
+    16. title()
+    some_title = "monty python's flying circus"
+    print(some_title.title() )
+    
+    17. replace()
+    some_text = "Mmmmm, xxx, yummy xxx, I love xxx!"
+    result_text = some_text.replace("xxx", "sausages")
+    print(result_text)
+
+    18. swapcase()
+    quote = "The hardest thing in the world to understand is the Income Tax."
+    print(quote.swapcase() )
+    
+    19. strip()
+    quote = "     just a flesh wound.\n"
+    print(quote.strip() )
+    
+    20. Konkatenacja
+    text1 = "monty"
+    text2 = "python"
+    print(text1 + text2)
+
+    21. Ćwiczenie - imię i nazwisko
+    first_name = "clint"
+    last_name = "eastwood"
+    result = first_name.capitalize() + ", " + last_name.capitalize()
+    print(result)
+
+    22. Mnożenie stringów
+    text1 = "Ole! "
+    print(text1 * 10)
+    
+    23. Parametr sep
+    nr1 = 123
+    nr2 = 456
+    nr3 = 789
+    print(nr1, nr2, nr3, sep=".")
+
+    24. Parametr end
+    print("Black",end=" * ")
+    print("Knight")
+    
+    25. Combo
+    actor1 = "clint eastwood"
+    actor2 = "bee vang"
+    actor3 = "scott eastwood"
+    print("Gran Torino cast: ", end="")
+    print(actor1.title(),actor2.title(),actor3.title(), sep=", ", end=".")
+
+      
+    </pre>
+    <br>
+
+
+  <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+  </body>
+</html>
