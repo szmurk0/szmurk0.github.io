@@ -1,0 +1,449 @@
+<html>
+  <head>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+      body {
+          color: black;
+          margin: auto;
+          font-family: 'Source Code Pro', monospace;
+          overflow: auto;
+          background: linear-gradient(315deg, rgba(101,0,94,1) 3%, rgba(60,132,206,1) 38%, rgba(48,238,226,1) 68%, rgba(255,25,25,1) 98%);
+          animation: gradient 15s ease infinite;
+          background-size: 400% 400%;
+          background-attachment: fixed;
+      }
+      @keyframes gradient {
+          0% {
+              background-position: 0% 0%;
+          }
+          50% {
+              background-position: 100% 100%;
+          }
+          100% {
+              background-position: 0% 0%;
+          }
+      }
+      .wave {
+          background: rgb(255 255 255 / 25%);
+          border-radius: 1000% 1000% 0 0;
+          position: fixed;
+          width: 200%;
+          height: 12em;
+          animation: wave 10s -3s linear infinite;
+          transform: translate3d(0, 0, 0);
+          opacity: 0.8;
+          bottom: 0;
+          left: 0;
+          z-index: -1;
+      }
+      .wave:nth-of-type(2) {
+          bottom: -1.25em;
+          animation: wave 18s linear reverse infinite;
+          opacity: 0.8;
+      }
+      .wave:nth-of-type(3) {
+          bottom: -2.5em;
+          animation: wave 20s -1s reverse infinite;
+          opacity: 0.9;
+      }
+      @keyframes wave {
+          2% {
+              transform: translateX(1);
+          }
+          25% {
+              transform: translateX(-25%);
+          }
+          50% {
+              transform: translateX(-50%);
+          }
+          75% {
+              transform: translateX(-25%);
+          }
+          100% {
+              transform: translateX(1);
+          }
+      }
+      /* Lista */
+      ul {
+        list-style: none;
+        text-align: center;
+      }
+      ul li.programming {
+        background-color: #145369;
+        color: #fff;
+      }
+      ul li.hobby {
+        background-color: #e74c3c;
+        color: #fff;
+      }
+      ul li:hover {
+        background-color: #fff;
+        color: #145369;
+        border-color: #145369;
+      }     
+      ul {
+        padding: -32px;
+      }
+      ul li {
+        display: inline-block;
+        margin: 10px;
+        float: center;
+        font-weight: bold;
+        padding: 10px;
+        border: 2px solid #ccc;
+        border-radius: 10px;
+        transition: background-color 0.3s ease;
+      }
+      ul li:hover {
+        background-color: #fff;
+        color: #145369;
+        border-color: #145369;
+      }
+      a:hover {
+        text-decoration: underline;
+      }
+      a {
+        color: black;
+        text-decoration: none;
+      }
+      /* Paragrafy */
+      p {
+        font-size: 1.2em;
+        line-height: 1.5;
+        margin: 20px;
+        text-align: justify;
+      }
+      .center-text {
+          text-align: center;
+          margin: 0 auto;
+      }
+  
+  
+
+    </style>
+    
+  </head>
+  
+  <body>
+    <div>
+     <div class="wave"></div>
+     <div class="wave"></div>
+     <div class="wave"></div>
+    </div>
+    <br><br>
+    <center><h2> Sekwencje cz. 2 </h2></center>
+    <br>
+    <pre>
+    1. Metoda isalpha()
+    def formatFirstName(name):
+      if name.isalpha():
+          return name.capitalize()
+      else:
+          return ""
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+    2. Metoda isnumeric()
+    def formatHeight(feet, inches):
+      if feet.isnumeric() and ((len(feet) > 1 and feet[0] != '0') or len(feet) == 1) and inches.isnumeric() and ((len(inches) > 1 and inches[0] != '0') or len(inches) == 1) and 0 <= int(inches) <= 12:
+          return feet + " ft " + inches
+      else:
+          return 0
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+    3. Metoda isalnum()
+    def clearText(s):
+      cleaned_text = ""
+      for char in s:
+          if char.isalnum():
+              cleaned_text += char
+      return cleaned_text
+    
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+    4. Moduły
+    import math
+    import balloons
+    
+    def calcVolume():
+        total_volume = 0
+        num_balloons = balloons.balloonsNumber()
+        
+        for x in range(num_balloons):
+            volume = 4/3 * math.pi * (balloons.getRadius(x) ** 3) / 1000
+            total_volume += volume
+        
+        return total_volume
+    
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+    5. Ćwiczenie: czas
+    import time
+    def displayTime():
+        current_time = time.ctime()
+        components = current_time.split()
+        day_of_week = components[0].upper()
+        time_of_day = components[3]
+        
+        return f"{time_of_day} {day_of_week}"
+
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+    6. Krotki
+    def findLongest(x):
+      longest = ""
+      for string in x:
+          if len(string) > len(longest):
+              longest = string
+      return len(longest)
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+    7. Ćwiczenie: najdłuższy string
+    def findLongest(x):
+      longest = ""
+      for string in x:
+          if len(string) > len(longest):
+              longest = string
+
+      return longest
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+    8. Konkatenacja sekwencji
+    def testA(t1, t2):
+      count_a_t1 = t1.count("a")
+      count_a_t2 = t2.count("a")
+      if count_a_t1 > count_a_t2 or (count_a_t1 == count_a_t2 and t1 < t2):
+          result = t1 + t2
+      else:
+          result = t2 + t1
+      
+      return result
+    
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+    9. Ćwiczenie: chińskie dni
+    def chineseWeekDays(chineseDays, day):
+      days_mapping = {
+          "monday": 0,
+          "tuesday": 1,
+          "wednesday": 2,
+          "thursday": 3,
+          "friday": 4,
+          "saturday": 5,
+          "sunday": 6
+      }
+      
+      if day.lower() in days_mapping:
+          index = days_mapping[day.lower()]
+
+          return chineseDays[index]
+      else:
+          return "Niepoprawna nazwa dnia"
+          
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+    10. Ćwiczenie: ustaw zawór
+    import math
+
+    def calcAV(r):
+        circle_area = math.pi * r**2
+        sphere_volume = (4/3) * math.pi * r**3
+
+        return (circle_area, sphere_volume)
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+    11. Listy
+    def results(x):
+      if len(x) >= 3:
+          x[2] += 273.15
+      return x
+ 
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+    12. Funkcja sorted()
+    def goldenRaspberry(x):
+      sorted_names = sorted(x)
+
+      return sorted_names
+    
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+    13. Metoda sort()
+    def getHighest(x):
+      sorted_list = sorted(x, reverse=True)
+      return sorted_list[:3]
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+    14. Ćwiczenie: najwyższe i najniższe
+    def highLow(t1, t2):
+      combined_temperatures = t1 + t2
+      sorted_temperatures = sorted(combined_temperatures, reverse=True)
+      highest_lowest_temperatures = sorted_temperatures[:3] + sorted_temperatures[-3:]
+      return sorted(highest_lowest_temperatures, reverse=True)
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+    15. Metoda append()
+    def selectEven(t1, t2):
+      result = t1.copy()
+      for num in t2:
+          if num % 2 == 0:
+              result.append(num)
+      return result
+      
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+    16. Funkcje max() i min()
+    def concHighest(t1, t2, t3):
+      highest_t1 = max(t1)
+      highest_t2 = max(t2)
+      highest_t3 = max(t3)
+      result = [highest_t1, highest_t2, highest_t3]
+      
+      return result
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+    17. Funkcja sum()
+    def getBalance(t1, t2, t3):
+      balance1 = sum(t1)
+      balance2 = sum(t2)
+      balance3 = sum(t3)
+      return [balance1, balance2, balance3]
+    
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+    18. Metoda insert()
+    def temperature(x):
+      celsius_temp = x[0]
+      fahrenheit_temp = celsius_temp * 9/5 + 32
+      kelvin_temp = x[1]
+      result = [celsius_temp, fahrenheit_temp, kelvin_temp]
+      
+      return result
+    
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+    19. Ćwiczenie: skoki do wody
+    def sumUp(args):
+      result = []
+      num_ratings = 5
+  
+      for i in range(0, len(args), num_ratings):
+          ratings = args[i:i + num_ratings]
+          
+          total = sum(ratings) - min(ratings) - max(ratings)
+  
+          result.extend(ratings)
+          result.append(total)
+  
+      return result
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+    20. Funkcja del()
+    def optimize(operations, toRemove):
+      toRemove.sort(reverse=True)
+      
+      for idx in toRemove:
+          if 0 <= idx < len(operations):
+              operations.pop(idx)
+      
+      return operations
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+    21. Metoda remove()
+    def delNumber(t1, t2):
+      result = [num for num in t1 if num != t2]
+      return result
+      
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+    22. Funkcja list()
+    def clearUnderscore(s):
+      result = [char for char in s if char != '_']
+      return result
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+    23. Kopiowanie listy
+    def convert(x):
+        result = x + [0 if score < 0 else 10 if score > 10 else score for score in x]
+        return result
+        
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+    24. Metoda reverse()
+    def isPalindrom(x):
+      x = [char for char in x if char != ' ']
+      return x == x[::-1]
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+    25. Wycinanie ze skokiem
+    def hourDataO3(data, hour):
+      return [data[i] for i in range(hour, len(data), 24)]
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+    26. Ćwiczenie: ananimy
+    def hasNotAnanym(words):
+      result = []
+      
+      def areAnanagrams(word1, word2):
+          return sorted(word1) != sorted(word2)
+      
+      for i, word1 in enumerate(words):
+          isNotAnanym = True
+          for j, word2 in enumerate(words):
+              if i != j and not areAnanagrams(word1, word2):
+                  isNotAnanym = False
+                  break
+          if isNotAnanym:
+              result.append(word1)
+      
+      return result
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+    27. Sekwencje zagnieżdżone
+    def sumUp(data, nr):
+      total_energy = 0  # Inicjalizujemy sumę energii na 0
+    
+      for entry in data:
+          car_number, energy_used = entry
+    
+          if car_number == nr:
+              total_energy += energy_used
+    
+      return total_energy
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+    28. Ćwiczenie: maksymalna temperatura
+    def maxTemp(weekly_temperatures):
+      max_temperature = float('-inf')
+  
+      for daily_temperatures in weekly_temperatures:
+          for temperature in daily_temperatures:
+              if temperature > max_temperature:
+                  max_temperature = temperature
+  
+      return max_temperature
+      
+    </pre>
+    <br>
+
+
+  <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+  </body>
+</html>
