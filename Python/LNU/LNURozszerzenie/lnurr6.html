@@ -1,0 +1,335 @@
+<html>
+  <head>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+      body {
+          color: black;
+          margin: auto;
+          font-family: 'Source Code Pro', monospace;
+          overflow: auto;
+          background: linear-gradient(315deg, rgba(101,0,94,1) 3%, rgba(60,132,206,1) 38%, rgba(48,238,226,1) 68%, rgba(255,25,25,1) 98%);
+          animation: gradient 15s ease infinite;
+          background-size: 400% 400%;
+          background-attachment: fixed;
+      }
+      @keyframes gradient {
+          0% {
+              background-position: 0% 0%;
+          }
+          50% {
+              background-position: 100% 100%;
+          }
+          100% {
+              background-position: 0% 0%;
+          }
+      }
+      .wave {
+          background: rgb(255 255 255 / 25%);
+          border-radius: 1000% 1000% 0 0;
+          position: fixed;
+          width: 200%;
+          height: 12em;
+          animation: wave 10s -3s linear infinite;
+          transform: translate3d(0, 0, 0);
+          opacity: 0.8;
+          bottom: 0;
+          left: 0;
+          z-index: -1;
+      }
+      .wave:nth-of-type(2) {
+          bottom: -1.25em;
+          animation: wave 18s linear reverse infinite;
+          opacity: 0.8;
+      }
+      .wave:nth-of-type(3) {
+          bottom: -2.5em;
+          animation: wave 20s -1s reverse infinite;
+          opacity: 0.9;
+      }
+      @keyframes wave {
+          2% {
+              transform: translateX(1);
+          }
+          25% {
+              transform: translateX(-25%);
+          }
+          50% {
+              transform: translateX(-50%);
+          }
+          75% {
+              transform: translateX(-25%);
+          }
+          100% {
+              transform: translateX(1);
+          }
+      }
+      /* Lista */
+      ul {
+        list-style: none;
+        text-align: center;
+      }
+      ul li.programming {
+        background-color: #145369;
+        color: #fff;
+      }
+      ul li.hobby {
+        background-color: #e74c3c;
+        color: #fff;
+      }
+      ul li:hover {
+        background-color: #fff;
+        color: #145369;
+        border-color: #145369;
+      }     
+      ul {
+        padding: -32px;
+      }
+      ul li {
+        display: inline-block;
+        margin: 10px;
+        float: center;
+        font-weight: bold;
+        padding: 10px;
+        border: 2px solid #ccc;
+        border-radius: 10px;
+        transition: background-color 0.3s ease;
+      }
+      ul li:hover {
+        background-color: #fff;
+        color: #145369;
+        border-color: #145369;
+      }
+      a:hover {
+        text-decoration: underline;
+      }
+      a {
+        color: black;
+        text-decoration: none;
+      }
+      /* Paragrafy */
+      p {
+        font-size: 1.2em;
+        line-height: 1.5;
+        margin: 20px;
+        text-align: justify;
+      }
+      .center-text {
+          text-align: center;
+          margin: 0 auto;
+      }
+  
+  
+
+    </style>
+    
+  </head>
+  
+  <body>
+    <div>
+     <div class="wave"></div>
+     <div class="wave"></div>
+     <div class="wave"></div>
+    </div>
+    <br><br>
+    <center><h2> Zaawansowane napisy </h2></center>
+    <br>
+    <pre>
+    {% raw %}
+    
+    1. f-napisy
+    def generate_report(points, threshold):
+      if points >= threshold:
+          return f"You passed the exam with {points} points."
+      else:
+          return f"You failed the exam with {points} points."
+
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+    2. Ćwiczenie: True i False
+    def check_if_true(x, y):
+      result = x > y  # Oblicz wartość wyrażenia x > y
+      message = f"The value of the expression x > y is {result}"
+      print(message)
+
+
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+    3. f-napisy: wyrażenia samodokumentujące
+    def document(x, y, z):
+      return f"{x=}\n{y=}\n{z=}"
+
+    
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+    4. Sekwencja ucieczki dla {}
+    def dictstring(name, age):
+      user_info = f"{{'name': '{name}', 'age': {age}}}"
+      return user_info
+
+
+    
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+    5. Mini-język formatowania: wybór reprezentacji
+    def stringify(obj, human_readable=False):
+      if human_readable:
+          result = f"Result: {obj}"
+      else:
+          result = f"Result: {obj!r}"
+      
+      return result
+
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+    6. Mini-język formatowania: wyrównywanie, cz. 1: szerokość
+    def pretty_print(report):
+      max_name_width = max(len(name) for name in report.keys())
+      
+      for name, score in report.items():
+          print(f"{name:<{max_name_width}} {score}")
+
+    
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+    7. Wyrównywanie cz. 2: kierunek
+    def rgb_dec_code_disp(colors):
+      for color_info in colors:
+          color_name, r, g, b = color_info
+          print(f"{color_name:<10}|{r:>5}|{g:>5}|{b:>5}")
+
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+    8. Ćwiczenie: Imiona
+    def disp_names(names):
+      names_sorted = sorted(names, key=len)
+      max_width = len(names_sorted[-1])
+      for name1, name2 in zip(names_sorted, reversed(names_sorted)):
+          print(f"{name1:^{max_width}}|{name2:^{max_width}}")
+
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+    9. Wyrównywanie cz. 3: wypełnienie
+    def table_of_contents(chapters):
+      for i, page in enumerate(chapters, start=1):
+          chapter_line = f"{i:.<5}{page:.>10}"
+          print(chapter_line)
+
+          
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+    10. Wyrównywanie cz. 4: typy numeryczne
+    def pretty_print(indexes):
+      for i in indexes:
+          print(f"{i:010}")
+
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+    11. Ćwiczenie: odchylenie
+    def deviation( readings ):
+      avg=sum(readings)/len(readings)
+      for i in readings:
+          print(f"{i-avg:o=25}")
+
+ 
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+    12. Mini-język formatowania: liczby
+    def print_report(previous, current):
+      if current > previous:
+          growth_percent = ((current - previous) / previous) * 100
+          print(f"Growth by {growth_percent:.2f}%.")
+      elif current < previous:
+          loss_percent = ((previous - current) / previous) * 100
+          print(f"Loss of {loss_percent:.2f}%.")
+      else:
+          print("No change in revenue.")
+    
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+    13. Ćwiczenie: Wykres słupkowy
+    def plot(data):
+      for period, profit in data:
+          bar = '#' * profit
+          print(f"{bar}{profit}, {period}")
+
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+    14. Ćwiczenie: Zamiana RGB na Hex
+    def rgb_to_hex(colors):
+      for color in colors:
+          r, g, b = color
+          print(f"{r:02X}{g:02X}{b:02X}")
+      
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+    15. Formatowanie dat
+    def printDate(year, month, day):
+      formatted_date = f"Date: {year:04d}-{month:02d}-{day:02d}"
+      print(formatted_date)
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+    16. Podsumowanie kolejności określeń formatu
+    def pretty_print(x):
+      formatted_x = f"{x:+.4e}"
+      print(formatted_x)
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+    17. Ćwiczenie: Centrowanie liczb
+    def pretty_print(x):
+      print(f"{x:-^20.5}")
+    
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+    18. Ćwiczenie: Znaki w jednej kolumnie
+    def pretty_print(numbers):
+      for number in numbers:
+          sign = "+" if number >= 0 else "-"
+          number_str = "{:>{width}}".format(abs(number), width=9)
+          print(f"{sign}{number_str}")
+
+
+    
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+    19. Metoda str.format()
+    def print_rows(numbers):
+      for i in range(0, len(numbers), 2):
+          # Formatuj liczby jako procenty z dokładnością do 3 miejsc po przecinku
+          formatted_number1 = '{:.3f}%'.format(numbers[i] * 100)
+          formatted_number2 = '{:.3f}%'.format(numbers[i + 1] * 100)
+          # Wypisz dwie sformatowane liczby w jednej linii
+          print('{:<10}{}'.format(formatted_number1, formatted_number2))
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+    20. Ćwiczenie: Metoda str.format()
+    def fill_in_data(data):
+      # Formatuj dane zamówienia i zwróć wypełniony formularz
+      formatted_data = "Nr. Zamówienia: {}\nNr. Klienta: {}\nImię: {}\nNazwisko: {}".format(
+          data['order_id'], data['client_id'], data['name'], data['family_name']
+      )
+      return formatted_data
+
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+    {% endraw %}
+    </pre>
+    <br>
+
+
+  <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+  </body>
+</html>
