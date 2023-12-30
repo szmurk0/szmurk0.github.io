@@ -1,0 +1,480 @@
+ <html>
+  <head>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+      body {
+          color: black;
+          margin: auto;
+          font-family: 'Source Code Pro', monospace;
+          overflow: auto;
+          background: linear-gradient(315deg, rgba(101,0,94,1) 3%, rgba(60,132,206,1) 38%, rgba(48,238,226,1) 68%, rgba(255,25,25,1) 98%);
+          animation: gradient 15s ease infinite;
+          background-size: 400% 400%;
+          background-attachment: fixed;
+      }
+      @keyframes gradient {
+          0% {
+              background-position: 0% 0%;
+          }
+          50% {
+              background-position: 100% 100%;
+          }
+          100% {
+              background-position: 0% 0%;
+          }
+      }
+      .wave {
+          background: rgb(255 255 255 / 25%);
+          border-radius: 1000% 1000% 0 0;
+          position: fixed;
+          width: 200%;
+          height: 12em;
+          animation: wave 10s -3s linear infinite;
+          transform: translate3d(0, 0, 0);
+          opacity: 0.8;
+          bottom: 0;
+          left: 0;
+          z-index: -1;
+      }
+      .wave:nth-of-type(2) {
+          bottom: -1.25em;
+          animation: wave 18s linear reverse infinite;
+          opacity: 0.8;
+      }
+      .wave:nth-of-type(3) {
+          bottom: -2.5em;
+          animation: wave 20s -1s reverse infinite;
+          opacity: 0.9;
+      }
+      @keyframes wave {
+          2% {
+              transform: translateX(1);
+          }
+          25% {
+              transform: translateX(-25%);
+          }
+          50% {
+              transform: translateX(-50%);
+          }
+          75% {
+              transform: translateX(-25%);
+          }
+          100% {
+              transform: translateX(1);
+          }
+      }
+      /* Lista */
+      ul {
+        list-style: none;
+        text-align: center;
+      }
+      ul li.programming {
+        background-color: #145369;
+        color: #fff;
+      }
+      ul li.hobby {
+        background-color: #e74c3c;
+        color: #fff;
+      }
+      ul li:hover {
+        background-color: #fff;
+        color: #145369;
+        border-color: #145369;
+      }     
+      ul {
+        padding: -32px;
+      }
+      ul li {
+        display: inline-block;
+        margin: 10px;
+        float: center;
+        font-weight: bold;
+        padding: 10px;
+        border: 2px solid #ccc;
+        border-radius: 10px;
+        transition: background-color 0.3s ease;
+      }
+      ul li:hover {
+        background-color: #fff;
+        color: #145369;
+        border-color: #145369;
+      }
+      a:hover {
+        text-decoration: underline;
+      }
+      a {
+        color: black;
+        text-decoration: none;
+      }
+      /* Paragrafy */
+      p {
+        font-size: 1.2em;
+        line-height: 1.5;
+        margin: 20px;
+        text-align: justify;
+      }
+      .center-text {
+          text-align: center;
+          margin: 0 auto;
+      }
+  
+  
+
+    </style>
+    
+  </head>
+  
+  <body>
+    <div>
+     <div class="wave"></div>
+     <div class="wave"></div>
+     <div class="wave"></div>
+    </div>
+    <br><br>
+    <center><h2> if i while </h2></center>
+    <br>
+    <pre>
+    1. Praca z plikami tekstowymi
+    file = open('data.txt', 'r')
+    file_contents = file.read()
+    print(file_contents)
+    file.close()
+
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+    2. Metoda read() plus bajty
+    def getData(x):
+      file = open('data.txt', 'r')
+      v = file.read(x)
+      file.close()
+      return v
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+    3. Metoda readline()
+    def getData(x):
+      file = open('data.txt', 'r')
+      for y in range(x):
+          v = file.readline()
+      file.close()
+      return v
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+    4. Metoda readlines()
+    def getData(fileName):
+      file = open(fileName, 'r')
+      result = ''
+      for line in file:
+          if line.strip():
+              result += line[0]
+      file.close()
+      return result
+    
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+    5. Iterowanie po wierszach
+    def avgAge():
+      file = open('data.txt', 'r')
+      total_age = 0
+      count = 0
+      for line in file:
+          age_str, _ = line.strip().split(' ', 1)
+          age = int(age_str)
+          total_age += age
+          count += 1
+      file.close()
+      if count == 0:
+          return 0.0
+      return total_age / count
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+    6. Ćwiczenie: znajdź osobę
+    def findData(x):
+      file = open('data.txt', 'r')
+      for line in file:
+          parts = line.strip().split(' ', 1)
+          pesel = parts[0]
+          name = parts[1]
+          if pesel == str(x):
+              file.close()
+              return name
+      file.close()
+    
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+    7. Zapis do pliku: write()
+    def is_prime(n):
+      if n <= 1:
+          return False
+      elif n <= 3:
+          return True
+      elif n % 2 == 0 or n % 3 == 0:
+          return False
+      i = 5
+      while i * i <= n:
+          if n % i == 0 or n % (i + 2) == 0:
+              return False
+          i += 6
+      return True
+  
+    file = open('prime_numbers.txt', 'w')
+    for num in range(1, 51):
+        if is_prime(num):
+            file.write(str(num) + '\n')
+    
+    file.close()
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+    8. Metoda writelines()
+    def generateBilling(call_data):
+      file = open('billing.txt', 'w')
+      for call in call_data:
+          phone_number, call_datetime, call_duration = call
+          file.write(f"{phone_number}, {call_datetime}, {call_duration}\n")
+      file.close()
+    
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+    9. Ćwiczenie: dane kobiet
+    def modify():
+      try:
+          file = open('women.txt', 'r')
+          lines = file.readlines()
+          
+          file = open('women.txt', 'w')
+          
+          for line in lines:
+              pesel, first_name, last_name = line.split(' ', 2)
+              if int(pesel[-2]) % 2 == 0:
+                  file.write(f"{pesel} {first_name} {last_name}")
+      finally:
+          file.close()
+          
+    modify()
+          
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+    10. Dopisywanie danych do pliku
+    def addData(data):
+      try:
+          file = open('data.txt', 'a')
+          line = f"{data['PESEL']} {data['firstName']} {data['familyName']}\n"
+          file.write(line)
+      finally:
+          file.close()
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+    11. Tryby odczytu/zapisu
+    def format():
+      f = open("data.txt", "r+")
+      lines = f.readlines()
+      lines.reverse()
+      for line in lines:
+          f.write(line)
+      f.close()
+  
+    format()
+ 
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+    12. Ćwiczenie: pierwiastki
+    import math
+    
+    def format():
+        plik = open("preData.txt", "r+")
+        plik2 = open("data.txt", "w+")
+        tab = []
+        licznik = 0
+        for i in plik:
+            tab.append(i)
+    
+        for i in tab:
+            tab[licznik] = tab[licznik][0:2]
+            licznik += 1
+    
+        for i in tab:
+            plik2.write(i + ' ' + str(math.sqrt(int(i))) + '\n')
+    
+        plik.close()
+        plik2.close()
+    
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+    13. Metoda seek()
+    def replaceSign(position, new_char):
+      f = open("data.txt", "r+")
+      f.seek(position - 1)
+      f.write(new_char)
+      f.close()
+      
+    replaceSign(3, "#")
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+    14. Ćwiczenie: podmień znaki
+    def replaceSign(x, y):
+      f = open("data.txt", "r+")
+      content = f.read()
+      modified_content = content.replace(x, y)
+      f.seek(0)
+      f.write(modified_content)
+      f.truncate()
+      f.close()
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+    15. Ćwiczenie: Twoje dane
+    def sumUp():
+      f = open("data.txt", "r")
+      total = 0
+      for line in f:
+          number = float(line.strip())
+          total += number
+
+      f.close()
+      return total
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+    16. Ćwiczenie: Obsługa wyjątków: try ... except
+    def outgoings(x):
+      total_outgoings = 0
+      for operation in x:
+          try:
+              amount = float(operation)
+              if amount < 0:
+                  total_outgoings += amount
+          except (ValueError, TypeError):
+              pass
+      return total_outgoings
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+    17. Ćwiczenie: iloraz
+    def divide(x, y):
+      try:
+          return x / y
+      except ZeroDivisionError:
+          return 'Wrong values'
+      except TypeError:
+          return 'Wrong values'
+    
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+    18. Typy wyjątków
+    def getData(content, pos, key):
+      try:
+          container = content[pos]
+          if key in container:
+              return container[key]
+          else:
+              return "key not found"
+      except IndexError:
+          return "container not found"
+    
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+    19. Ćwiczenie: detektor cząstek
+    def avgParticles(file):
+      try:
+          with open(file, 'r') as f:
+              lines = f.readlines()
+              particle_count = 0
+              time_units = 0
+  
+              for line in lines:
+                  try:
+                      particle_count += int(line.strip())
+                      time_units += 1
+                  except ValueError:
+                      return "wrong data"
+  
+              if time_units == 0:
+                  return 0.0
+              else:
+                  return particle_count / time_units
+  
+      except FileNotFoundError:
+          return "file not found"
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+    20. else i finally
+    def addData(x):
+      p = open( "data.txt", "a+" )
+      try:
+          p.write( x )
+      except:
+          p.close()
+          return "Type error"
+      p.close()
+      return "Done"
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+    21. Ćwiczenie: ASCII message
+    def convertData(file):
+      try:
+          czytaj = open(file, "r")
+      except IOError:
+          return 1
+      pisz = open("message.txt", "w")
+      
+      length = 0
+      for line in czytaj:
+          length += 1
+      
+      czytaj.seek(0)
+      l = 0
+      
+      for line in czytaj:
+          l += 1
+          line = line.split()
+          for data in line:
+              try:
+                  data = int(data)
+              except ValueError:
+                  return 2
+  
+              if data < 0 or data > 127:
+                  return 3
+  
+              pisz.write(chr(data))
+          if l < length:
+              pisz.write("\n")
+      return 0
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+    22. Wywołanie wyjątków: raise
+    def KazadDum(BalrogComing):
+      if BalrogComing:
+          raise SyntaxError("You shall not pass!")
+      else:
+          return "Wait"
+          
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+    23. Wywołanie wyjątków: assert
+    def KazadDum(BalrogComing):
+      assert not BalrogComing, "You shall not pass!"
+      return "Wait"
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+    24. QUIZ
+    skopiuj wszystko i wklej w chatgpt/bard.ai i będzie git, okok?
+    </pre>
+    <br>
+
+
+  <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+  </body>
+</html>
