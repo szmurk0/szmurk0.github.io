@@ -1,0 +1,399 @@
+<html>
+  <head>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+      body {
+          color: black;
+          margin: auto;
+          font-family: 'Source Code Pro', monospace;
+          overflow: auto;
+          background: linear-gradient(315deg, rgba(101,0,94,1) 3%, rgba(60,132,206,1) 38%, rgba(48,238,226,1) 68%, rgba(255,25,25,1) 98%);
+          animation: gradient 15s ease infinite;
+          background-size: 400% 400%;
+          background-attachment: fixed;
+      }
+      @keyframes gradient {
+          0% {
+              background-position: 0% 0%;
+          }
+          50% {
+              background-position: 100% 100%;
+          }
+          100% {
+              background-position: 0% 0%;
+          }
+      }
+      .wave {
+          background: rgb(255 255 255 / 25%);
+          border-radius: 1000% 1000% 0 0;
+          position: fixed;
+          width: 200%;
+          height: 12em;
+          animation: wave 10s -3s linear infinite;
+          transform: translate3d(0, 0, 0);
+          opacity: 0.8;
+          bottom: 0;
+          left: 0;
+          z-index: -1;
+      }
+      .wave:nth-of-type(2) {
+          bottom: -1.25em;
+          animation: wave 18s linear reverse infinite;
+          opacity: 0.8;
+      }
+      .wave:nth-of-type(3) {
+          bottom: -2.5em;
+          animation: wave 20s -1s reverse infinite;
+          opacity: 0.9;
+      }
+      @keyframes wave {
+          2% {
+              transform: translateX(1);
+          }
+          25% {
+              transform: translateX(-25%);
+          }
+          50% {
+              transform: translateX(-50%);
+          }
+          75% {
+              transform: translateX(-25%);
+          }
+          100% {
+              transform: translateX(1);
+          }
+      }
+      /* Lista */
+      ul {
+        list-style: none;
+        text-align: center;
+      }
+      ul li.programming {
+        background-color: #145369;
+        color: #fff;
+      }
+      ul li.hobby {
+        background-color: #e74c3c;
+        color: #fff;
+      }
+      ul li:hover {
+        background-color: #fff;
+        color: #145369;
+        border-color: #145369;
+      }     
+      ul {
+        padding: -32px;
+      }
+      ul li {
+        display: inline-block;
+        margin: 10px;
+        float: center;
+        font-weight: bold;
+        padding: 10px;
+        border: 2px solid #ccc;
+        border-radius: 10px;
+        transition: background-color 0.3s ease;
+      }
+      ul li:hover {
+        background-color: #fff;
+        color: #145369;
+        border-color: #145369;
+      }
+      a:hover {
+        text-decoration: underline;
+      }
+      a {
+        color: black;
+        text-decoration: none;
+      }
+      /* Paragrafy */
+      p {
+        font-size: 1.2em;
+        line-height: 1.5;
+        margin: 20px;
+        text-align: justify;
+      }
+      .center-text {
+          text-align: center;
+          margin: 0 auto;
+      }
+  
+  
+
+    </style>
+    
+  </head>
+  
+  <body>
+    <div>
+     <div class="wave"></div>
+     <div class="wave"></div>
+     <div class="wave"></div>
+    </div>
+    <br><br>
+    <center><h2> if i while </h2></center>
+    <br>
+    <pre>
+    1. Operatory porównania
+    print( 5 == 3 )
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+    2. Wartości logiczne
+    print(2 ** 2 != 2 * 2)
+    print(5 ** 2 != 2 ** 5)
+    print("A"=="a")
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+    3. Operatory logiczne
+    print(2>3 or 10>5)
+    print(2/3>1 or 2//3==0)
+    print( 1==12**0 and str(1) == "1")
+    
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+    4. Instrukcja if
+    def setSign(x):
+      if x < 0:
+          value = -1
+      else:
+          value = 1
+      
+      return value
+    
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+    5. Zakres
+    def isWeekend(x):
+      if x in (5, 6, 7):
+          value = "Weekend!!!"
+      else:
+          value = "Bleeee!!!"
+      
+      return value
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+    6. Klauzula else
+    def whoWins(coyote, roadrunner):
+      if coyote > roadrunner:
+          winner = "Coyote"
+      else:
+          winner = "Roadrunner"
+      
+      return winner
+    
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+    7. Klauzula elif
+    def constValue(constName):
+      if constName == "Pi":
+          value = 3.14159
+      elif constName == "e":
+          value = 2.71828
+      elif constName == "gamma":
+          value = 0.57721
+      elif constName == "phi":
+          value = 1.61803
+      else:
+          value = None
+      
+      return value
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+    8. Ćwiczenie: dni tygodnia
+    def dayOfWeek(x):
+      if x == 1:
+          return "Monday"
+      elif x == 2:
+          return "Tuesday"
+      elif x == 3:
+          return "Wednesday"
+      elif x == 4:
+          return "Thursday"
+      elif x == 5:
+          return "Friday"
+      elif x == 6:
+          return "Saturday"
+      elif x == 7:
+          return "Sunday"
+      else:
+          return "wrong value"
+    
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+    9. Ćwiczenie: czy parzysta
+    def isEven(number):
+      if number % 2 == 0:
+          return True
+      else:
+          return False
+          
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+    10. Ćwiczenie: ustaw zawór
+    def setValve(x):
+      if x <= 100:
+          return 0
+      elif 100 < x <= 200:
+          return 1
+      elif 200 < x <= 400:
+          return 2
+      elif 400 < x <= 600:
+          return 3
+      elif 600 < x <= 800:
+          return 4
+      else:
+          return 5
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+    11. Oczyszczacz powietrza
+    def setPower(pm25, pm10):
+      if pm25 > 120 or pm10 > 200:
+          return 5
+      elif pm25 >= 85 or pm10 >= 141:
+          return 4
+      elif pm25 >= 61 or pm10 >= 101:
+          return 3
+      elif pm25 >= 37 or pm10 >= 61:
+          return 2
+      elif pm25 >= 13 or pm10 >= 21:
+          return 1
+      else:
+          return 0
+  
+  
+      if 0 <= pm10 <= 20:
+          index_pm10 = 0
+      elif 21 <= pm10 <= 60:
+          index_pm10 = 1
+      elif 61 <= pm10 <= 100:
+          index_pm10 = 2
+      elif 101 <= pm10 <= 140:
+          index_pm10 = 3
+      elif 141 <= pm10 <= 200:
+          index_pm10 = 4
+      else:
+          index_pm10 = 5
+          
+      power_level = min(index_pm25, index_pm10)
+      return power_level
+ 
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+    12. Ćwiczenie: instalacja alarmowa
+    def setAlarm(godzina, dzien_tygodnia):
+      if (dzien_tygodnia >= 1 and dzien_tygodnia <= 4 and godzina >= 6 and godzina < 22) or \
+         (dzien_tygodnia == 5 and godzina >= 6 and godzina < 18) or \
+         (dzien_tygodnia == 6 and godzina >= 6 and godzina < 14):
+          return False
+      else:
+          return True
+    
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+    13. Ćwiczenie: trójkąty
+    def checkTriangle(pręt1, pręt2, pręt3):
+      if pręt1 + pręt2 > pręt3 and pręt1 + pręt3 > pręt2 and pręt2 + pręt3 > pręt1:
+          return True
+      else:
+          return False
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+    14. Pętla while
+    def printer_ctrl():
+      while pc_leftover() > 5:
+          pc_cut()
+          pc_position()
+          pc_print()
+      pc_pause()
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+    15. Ćwiczenie: Hail to the president!
+    def play_anthem():
+      note = get_note()
+      while note != 0:
+          play(note)
+          note = get_note()
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+    16. Ćwiczenie: kompresor
+    def compressor(set_pressure):
+      while get_pressure() < set_pressure:
+          pump()
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+    17. Ćwiczenie: maszyna tenisowa
+    def shooting():
+      while isBall():
+          shoot()
+    
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+    18. Ćwiczenie: korytarz
+    def route():
+      x=front()
+      while x>0:
+          if left()>5000 and right()>5000 and front()>5000:
+              return
+          move()
+          x=front()
+          if x==0:
+              if left()<=right() and right()>0:
+                  turnR()
+              elif left()>0:
+                  turnL()
+              x=front()
+    
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+    19. Skrócone operatory
+    i = 0
+    while i < 10:
+        i += 1
+        print(i)
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+    20. Ćwiczenie - pole
+    def maxPeriod(debt, equity):
+      annual_interest_rate = 0.035
+      years = 0
+  
+      while debt < equity:
+          debt *= (1 + annual_interest_rate)
+          years += 1
+  
+      return years
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+    21. Korzystanie z funkcji
+    def prize(day, month):
+      days_in_month = [0, 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]
+      leap_year = False
+      total_prize = 0
+      current_day = day
+  
+      while current_day <= days_in_month[month]:
+          total_prize += current_day
+          current_day += 1
+  
+      return total_prize
+
+    </pre>
+    <br>
+
+
+  <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+  </body>
+</html>
