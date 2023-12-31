@@ -126,18 +126,22 @@
       }
 
       .center-text {
-          text-align: center;
-          margin: 0 auto;
+         text-align: center;
+         margin: 0 auto;
       }
 
       .center-container {
-          display: flex;
-          flex-direction: column;
-          align-items: center;
-          justify-content: center;
-          height: 100vh; /* 100% wysokości ekranu */
-        }
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+      }
         
-        .center-down {
-          margin-top: 20px; /* Dodatkowy odstęp między sekcjami */
-        }
+      .center-down {
+        margin-top: 20px; /* Dodatkowy odstęp między sekcjami */
+      }
+
+      #trackInfo {
+        text-align: center;
+      }
