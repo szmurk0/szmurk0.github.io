@@ -1,0 +1,7 @@
+Teoria z lekcji: Hello World w TypeScript
+    Instalacja: 
+      npm init -y -> package.json
+      npm install typescript -> package-lock.json / katalog "node.modules"
+      npx tsc -init -> tsconfig.json
+      npx tsc nazwaprogramu.ts -> zmiana na nazwaprogramu.js
+      node nazwaprogramu.js -> odpalenie programu w terminalu
