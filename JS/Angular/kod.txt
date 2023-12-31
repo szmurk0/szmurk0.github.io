@@ -1,0 +1,6 @@
+  Instalacja Node.JS:
+    ze strony: https://nodejs.org/en
+  
+  komenda na npm w konsoli: 
+    npm install -g @angular/cli
+    ng new nazwa_projektu
