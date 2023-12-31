@@ -129,19 +129,3 @@
          text-align: center;
          margin: 0 auto;
       }
-
-      .center-container {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        height: 100vh;
-      }
-        
-      .center-down {
-        margin-top: 20px; /* Dodatkowy odstęp między sekcjami */
-      }
-
-      #trackInfo {
-        text-align: center;
-      }
