@@ -1,0 +1,31 @@
+P1. Czym jest Node.js?
+	 Node.js jest środowiskiem uruchomieniowe JS, które pozwala wykonywać kod JS poza przeglądarką.
+   
+   Node.js to program, którego głównym celem jest obsługa JS na różnych ...
+   
+JS:
+  - Przeglądarka
+  - Środowisko uruchomieniowe dla JS
+
+P2. Kluczowe cechy Node.js
+  - Asynchorniczne działanie; Node.js jest zdolny do obsługi dużej liczby jednoczesnych połączeń i żądań bez zatrzymywania przetwarzania innych operacji.
+  - Node.js pozwala na tworzenie skalowalnych i wydajnych aplikacji sieciowych przy użyciu języka JS.
+
+P3. Składniki Node.js
+	- V8 JS Engine -> Silnik JS o nazwie V8,
+  - Libuv -> Biblioteka do obsługi asynchronicznych operacji I/O wejścia/wyjścia,
+  - CommonJS Modules -> Sytem importowania i eksportowania modułów w JS,
+  - Pakiet npm (Node Package Manager) -> Narzędzia do zarządzania pakietami JS,
+  - API Node.js -> API do obsługi różnych zadań,
+  - REPL -> Interaktywna konsola,
+  - Event Loop -> Pętla zdarzeń obsługująca operacje I/O wejścia/wyjścia.
+
+
+P4. Zastosowanie Node.js
+	- Tworzenie serwerów API (REST APi) - taki server umożliwia innym aplikacjom korzystanie z jego zasobów, funkcji lub usług poprzez wywoływanie odpowiedniach żądań.
+
+	- Tworzenie stron typu SPA - Node.js jest back-endem dla frameworków Angular czy React (na stronach SPA interakcja odbywa się na jednej stronie internetowej, bez konieczności ładowania nowych stron lub ich przeładowywania)
+
+	- Wszędzie tam, gdzie model oparty jest na zdarzeniach i tych zdarzeń jest bardzo wiele. Poza projektami obciążająceymi procesor lub kartę graficzną (aplikacje wymagające złożone obliczenia)
+
+P5. NPM (Node Package Manager) - Jest to narzędzie do zarządzania pakietami w środowisku Node.js - zwykle instalowany razem z Node.js (jest dostępny jako polecenie w wierszu poleceń)
