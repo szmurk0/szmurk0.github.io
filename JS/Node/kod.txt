@@ -1,0 +1,162 @@
+ - - - - - - - - - - Przypisywanie Danych do Zmiennych - - - - - - - - - 
+        
+        const name = "Kamil";
+        const surname = "Amrah";
+        
+        - - - - - - - - - - - - - - Wyświetlanie Danych - - - - - - - - - - - - 
+        
+        console.log(' '); //Wyświetla dane
+        
+        console.log(name,surname); //Sposób 1
+        
+        console.log("Imię: "+name); //Sposób 2
+        console.log("Nazwisko: "+surname); 
+        
+        console.log('${name} ${surname}'); //Sposób 3
+        
+        - - - - - - - - - - - - - - Wyświetlanie Inicjałów - - - - - - - - - - - - 
+        
+        console.log('${name[0]} ${surname[0]}')
+        
+        - - - - - - - - - - - - - - Losowanie Dowolnej Liczby - - - - - - - - - - - - 
+        
+        let b = Math.floor((Math.random()) * 10);
+        console.log("Wylosowana liczba całkowita to: "+b);
+        
+        - - - - - - - - - - - - - - Losowanie Liczby z Zakresu- - - - - - - - - - - - 
+        
+        console.log("-- Losowanie liczby od 1 do 49 --");
+        let c = Math.floor((Math.random() * 50) + 1);
+        console.log("(1)Wylosowana liczba z przedziału(1 - 49) to: " + c);
+        console.log(' ');
+        
+        let min = 1;
+        let max = 50;
+        let los = " ";
+        let d = Math.floor(Math.floor() * (max - min) + min);
+        console.log("(2)Wylosowana liczba z przedziału (1 - 49) to: " + d)
+        
+        console.log("-- Losowanie 6 liczb od 1 do 100 i wyświetlenie ich w poziomie --");
+        let min1 = 1;
+        let max1 = 100;
+        let los1 = " ";
+        let e = Math.floor(Math.floor() * (max1 - min1) + min1);
+        const arr = [];
+        
+        for(i = 0; i<6; i++){
+        	let e = Math.floor(Math.random() * (max1 - min1) + min1);
+          los1 = los1 + e+" ";
+        }
+        
+        console.log("(3)Wylosowana liczba z przedziału (1 - 100) to: " + los1)
+    
+    
+    
+    
+    
+    
+    
+    
+        Kartkówka:
+    
+        Zadanie 1 / Wypisz wszystkie typy proste w js
+        string
+        number
+        boolean
+        undefined
+        null
+        symbol
+        BigInt
+        
+        
+        Zadanie 2 / Wypisz typy złożone występujące w javascript
+        tablica (array)
+        funkcja (function)
+        objekt (object)
+        
+        
+        Zadanie 3 / Korzystając z poniższego algorytmu, napisz program, który dokonuje podziału liczby na cyfry.
+        
+        dopóki liczba > 0 wykonuj
+        	wypisz liczba mod 10
+        	liczba = liczba div 10
+        
+        kod:
+        
+        let liczba = 12345;
+        
+        console.log("Cyfry liczby:");
+        while (liczba > 0) {
+            let cyfra = liczba % 10;
+            console.log(cyfra);
+            liczba = Math.floor(liczba / 10);
+        }
+        
+        
+        
+        Zadanie 4 / Kierując się poniższymi wskazówkami, utwórz aplikację obliczającą masę ciała BMI w node.
+        Wzór na BMI, gdzie masa ciała jest podana w kilogramach (kg), a wysokość ciała w metrach (m).
+        
+        BMI = masa/wys.ciała^2
+        
+        wygłodzenie: < 16 BMI
+        wychudzenieL 16,0 - 16,99 BMI
+        niedowaga: 17,0 - 18,49 BMI
+        pożądana masa ciała: 18,5 - 24.99 BMI
+        nadwaga: 25,0 - 29,99 BMI
+        otyłość 1 stopnia: 30,0 - 34,99 BMI
+        otyłość 2 stopnia: 35,0 - 39,99 BMI
+        otyłość 3 stopnia: >= 40,
+        
+        
+        kod:
+        
+        let masa = 65;
+        let wysokosc = 1.82;
+        
+        let BMI = masa / wysokosc**2;
+        
+        console.log(BMI);
+        
+        if (BMI < 16){
+            console.log("Masz wygłodzenie")
+            console.log("ryzyko chorób: minimalne, ale zwiększony poziom wystąpienia innych problemów zdrowotnych")
+        } else if (BMI < 16.99){
+            console.log("Masz wychudzenie")
+            console.log("ryzyko chorób: minimalne, ale zwiększony poziom wystąpienia innych problemów zdrowotnych")
+        } else if (BMI < 18.49){
+            console.log("Masz niedowagę")
+            console.log("ryzyko chorób: minimalne, ale zwiększony poziom wystąpienia innych problemów zdrowotnych")
+        } else if (BMI < 24.99){
+            console.log("Masz pożądaną wagę")
+            console.log("ryzyko chorób: minimalne")
+        } else if (BMI < 29.99){
+            console.log("Masz nadwagę")
+            console.log("ryzyko chorób: średnie")
+        } else if (BMI < 34.99){
+            console.log("Masz otyłość 1 stopnia")
+            console.log("ryzyko chorób: wysokie")
+        } else if (BMI < 39.99){
+            console.log("Masz otyłość 2 stopnia")
+            console.log("ryzyko chorób: bardzo wysokie")
+        } else if (BMI < 40){
+            console.log("Masz otyłość 3 stopnia")
+            console.log("ryzyko chorób: ekstremalny poziom ryzyka")
+        }
+        
+        
+        Zadanie 5 / Napisz program, który sprawdza warunek budowy trójkąta.
+        a<b+c
+        b<a+c
+        c<a+b
+        W każdym trójkącie długość boku jest mniejsza od sum długości dwóch pozostałych boków
+        
+        const a = 3;
+        const b = 4;
+        const c = 5;
+        
+        if (a + b > c && b + c > a && c + a > b) {
+            console.log('Podane boki mogą zbudować trójkąt.');
+        } else {
+            console.log('Podane boki nie mogą zbudować trójkąta.');
+        }
