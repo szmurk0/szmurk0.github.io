@@ -1,0 +1,544 @@
+{% raw %}
+        
+          
+          Temat: Projektowanie obiektowe
+          Obiekty języka JavaScript:
+          - String - łańcuch
+          	var nazwa=tekst
+          - Array - przechowują wiele danych tego samego typu
+          	var nazwa=new Array()
+          - Date
+          - Math
+           
+          Metody Stringa:
+          - substring(x, y) / substr(x, y) - zwraca podzbiór z łańcucha, w którym argument “x” określa początek podzbioru, a argument “y” jego koniec
+          - toUpperCase() - zamienia wszystkie litery na wielkie litery
+          - toLowerCase() - zamienia wszystkie litery na małe litery
+          - charAt() - zwraca pierwszy znak w łańcucha
+          
+          
+          Składnia deklarowania zmiennych:
+          var nazwa = wartość
+          
+          Rodzaje tablic: jednowymiarowe, wielowymiarowe
+          -	tablice indeksowane - odwołanie do elementu tablicy poprzez indeks
+          -	tablice asocjacyjne -  odwołanie do elementu tablicy poprzez klucz
+          
+          Deklarowanie tablicy
+          
+                var uczen=[];
+                      uczen[0]=['Jan', 'Kowalski', '15'];
+                      uczen[1]=['Adam', 'Nowak', '16'];
+          
+          
+          Metody Array:
+          	- join() - dzięki join można połączyć elementy tablicy w jeden ciąg znaków. W miejscu argumentu można podać co ma rozdzielać elementy (bazowo przecinek)
+          - reverse() - pozwala odwrócić kolejność elementów w tablicy
+          - sort() - sortowanie elementów w tablicy w sposób leksykograficzny
+          
+          	join()
+                      var tabela=['Kacper', 'Galoch'];
+                      document.write(tabela.join(" ") + "<br><br>");
+          
+          reverse()
+                      document.write(uczen.join(" ") + "<br>");
+                      uczen.reverse();
+                      document.write(uczen.join(" ") + "<br><br>");
+          
+          	new Date()
+                      var data=new Date();
+                      document.write(data);
+          
+          Metody Date:
+          -	toString() - zwraca datę,czas oraz informacje o strefie czasowej po angielsku
+          -	toLocaleString() - zwraca datę i czas dla bieżących ustawień regionalnych
+          -	toUTCString() - zwraca datę, czas oraz informacje o strefie czasowej dla formatu UTC
+          -	toGMTString() - działa jak funkcja toUTCString()
+          -	toDateString() - zwraca tylko datę w języku angielskim
+          -	toLocaleDateString() - zwraca tylko datę dla bieżących ustawień regionalnych
+          -	toTimeString() - zwraca tylko czas w języku angielskim
+          -	toLocaleString() - zwraca tylko czas dla bieżących ustawień reginalnych
+                      var data=new Date();
+                      document.write(data+"<br>");
+                      var data1=data.toString();
+                      document.write(data1+"<br>");
+                      var data2=data.toLocaleString();
+                      document.write(data2+"<br>");
+                      var data3=data.toUTCString();
+                      document.write(data3+"<br>");
+                      var data4=data.toGMTString();
+                      document.write(data4+"<br>");
+                      var data5=data.toDateString();
+                      document.write(data5+"<br>");
+                      var data6=data.toLocaleDateString();
+                      document.write(data6+"<br>");
+                      var data7=data.toTimeString();
+                      document.write(data7+"<br>");
+                      var data8=data.toLocaleTimeString();
+                      document.write(data8+"<br>");
+          
+          
+          
+          
+          
+          
+          Temat: Obiekty DOM
+          
+          1.	DOM - sposób reprezentacji złożonych dokumentów w postaci modelu obiektowego.
+          2.	Hierarchia DOM - opisuje ona hierarchię obiektów na stronie  oraz udostępnia metody i właściwości, które umożliwiają manipulowanie tymi obiektami.
+           
+          (hierarchia DOM)
+          
+          3.	Obiekty przeglądarki:
+          a.	window
+          b.	navigator
+          c.	document
+          d.	history
+          e.	location
+          
+          
+          
+          
+          
+          
+          Kod: 
+          <!DOCTYPE html>
+          <html>
+          <head>
+              <title>Jaka przeglądarka</title>
+          </head>
+          <body>
+          
+          <script>
+              var licz = 0;
+              var Id = window.setInterval(
+                  function() {
+                      alert("działa");
+                      licz++;
+          
+                      if (licz >= 5) {
+                          window.clearInterval(Id);
+                      }
+          
+                  }, 3000);
+          </script>
+          
+          </body>
+          </html>
+          
+          
+          Obiekt Window -> znajduje się na szczycie hierarchii obiektów i reprezentuje okno przeglądarki. Jest też obiektem domyślnym, tzn. do jego metod i właściwości można się odwoływać bezpośrednio, z pominięciem jego nazwy.
+          window.innerHeight -> wysokość strony
+          window.innerWidth -> szerokość strony
+          window.setTimeout -> włącza się raz po określonym czasie
+          window.setInterval -> włącza się w nieskończoność co określony czas
+          window.clearInterval -> kończy setInterval
+          window.open -> otwarcie okna
+          close() -> zamknięcie okna
+          
+          
+          Obiekt Document -> służy do reprezentacji wczytanego do przeglądarki dokumentu HTML oraz zawiera szereg właściwości i metod pozwalających na jego modyfikację.
+          	document.URL -> zwraca adres URL strony
+          	document.title -> zwraca tytuł strony
+          	document.lastModified -> zwraca datę ostatniej modyfikacji
+          	document.bgColor -> określa kolor tła dokumentu
+          	document.fgColor -> określa kolor pierwszego planu
+          	document.linkColor -> określa kolor łącza w dokumencie
+          	document.alinkColor -> określa kolor łącza
+          	document.vlink -> określa kolor łącza atrybutu vlink
+          
+          Obiekt History -> przechowuje historię odwiedzin stron dokonanych przez użytkownika podczas danej sesji przeglądarki.
+          	history.go() -> otwiera określony adres URL z listy historii,
+          	history.back() -> otwiera poprzedni adres URL z listy historii,
+          	history.forward() -> otwiera następny adres URL z listy historii,
+          	history.length() -> zawiera informacje o dlugości listy historii.
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          Obiekt Location -> zawiera informacje dotyczące adresu URL aktualnie załadowanego dokumentu oraz metody pozwalające na manipulację tym adresem.
+          	location.href
+          location.protocol
+          location.
+          location.
+          location.
+          location.
+          location.
+          
+          	
+          
+          Obiekt Nawigator -> W ustawieniach w  wersji przeglądarki
+          navigator.appname -> Rodzaj przeglądarki
+          navigator.language -> Język przeglądarki
+          navigator.platform ->  Nazwa platformy
+          
+          
+          
+          
+          Ćwiczenie: navigator
+          
+          
+          <!DOCTYPE html>
+          <html>
+          <head>
+              <title>Jaka przeglądarka</title>
+          </head>
+          <body>
+          
+          <script>
+          
+              document.write("Masz przeglądarkę: ");
+              document.write(navigator.appName + "<br>");
+              document.write("Język przeglądarki: ");
+              document.write(navigator.language + "<br>");
+              document.write("Platform: ");
+              document.write(navigator.platform);
+          
+          </script>
+          
+          </body>
+          </html>
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          Ćwiczenie: document
+          
+          <!DOCTYPE html>
+          <html>
+          <head>
+              <title>Jaka przeglądarka</title>
+          </head>
+          <body>
+          
+          <script>
+              function zmien_tekst(){
+                  document.getElementById('blok').innerHTML = "Jesień mimozami się zaczyna";
+              }
+          </script>
+          
+          <p>
+              Pory roku: <b id="blok">lato, lato, lato czeka...</b>
+          
+          </p>
+          
+          <input type="button" onclick="zmien_tekst()" value="Zmień Tekst"/>
+          
+          </body>
+          </html>
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          Ćwiczenie: Wyświetl bierzący czas / 81
+          
+          
+          <!DOCTYPE html>
+          <html>
+          <head>
+              <title>Jaka przeglądarka</title>
+          </head>
+          <body>
+          
+          <div id="zegar"></div>
+          
+          <script>
+              var timerID = null;
+              var timerRunning = false;
+          
+              function stopclock() {
+                  if (timerRunning) {
+                      clearTimeout(timerID);
+                  }
+                  timerRunning = false;
+              }
+          
+              function startclock() {
+                  stopclock();
+                  showtime();
+              }
+          
+              function showtime() {
+                  var data_n = new Date();
+                  var godz = data_n.getHours();
+                  var min = data_n.getMinutes();
+                  var sek = data_n.getSeconds();
+                  var czas = "" + godz;
+                  czas += ((min < 10) ? ":0" : ":") + min;
+                  czas += ((sek < 10) ? ":0" : ":") + sek;
+          
+                  document.getElementById('zegar').innerHTML = czas;
+                  timerID = setTimeout(showtime, 1000);
+                  timerRunning = true;
+              }
+          
+              startclock();
+          </script>
+          
+          </body>
+          </html>
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          Ćwiczenie 3.4
+          Zmodyfikuj kod pokazany w przykładzie 3.79 w ten sposób, aby kolejne kliknięcia przycisku „Zmień Tekst” powodowały wyświetlanie następnych tekstów, a na przykład „Hu, hu, ha, nasza zima zła” i „Wiosna, wiosna wonna i radosna”. Po wyświetleniu podanych tekstów powinien nastąpić powrót do wyświetlenia tekstu pierwszego.
+          
+          
+          <!DOCTYPE html>
+          <html>
+          <head>
+              <title>Jaka przeglądarka</title>
+          </head>
+          <body>
+          
+          <script>
+              var teksty = [
+                  "Jesień mimozami się zaczyna",
+                  "Hu, hu, ha, nasza zima zła",
+                  "Wiosna, wiosna wonna i radosna"
+              ];
+          
+              var aktualnyIndeks = 0;
+          
+              function zmien_tekst() {
+                  var blok = document.getElementById('blok');
+                  blok.innerHTML = teksty[aktualnyIndeks];
+                  aktualnyIndeks = (aktualnyIndeks + 1) % teksty.length;
+              }
+          </script>
+          
+          <p>
+              Pory roku: <b id="blok">lato, lato, lato czeka...</b>
+          </p>
+          
+          <input type="button" onclick="zmien_tekst()" value="Zmień Tekst"/>
+          
+          </body>
+          </html>
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          Ćwiczenie 3.5
+          Wykorzystując język HTML, arkusze CSS oraz skrytpy z poprzednich przykładów, utwórz kod, który na stronie internetowej wyświetli bierzący czas w postaci zegara cyfrowego.
+          
+          
+          <!DOCTYPE html>
+          <html>
+          <head>
+              <title>Zegar cyfrowy</title>
+              <style>
+                  #zegar {
+                      font-size: 24px;
+                      font-weight: bold;
+                      text-align: center;
+                      margin-top: 50px;
+                  }
+              </style>
+          </head>
+          <body>
+          
+          <div id="zegar"></div>
+          
+          <script>
+              var timerID = null;
+              var timerRunning = false;
+          
+              function stopclock() {
+                  if (timerRunning) {
+                      clearTimeout(timerID);
+                  }
+                  timerRunning = false;
+              }
+          
+              function startclock() {
+                  stopclock();
+                  showtime();
+              }
+          
+              function showtime() {
+                  var data_n = new Date();
+                  var godz = data_n.getHours();
+                  var min = data_n.getMinutes();
+                  var sek = data_n.getSeconds();
+                  var czas = "" + godz;
+                  czas += ((min < 10) ? ":0" : ":") + min;
+                  czas += ((sek < 10) ? ":0" : ":") + sek;
+          
+                  document.getElementById('zegar').innerHTML = czas;
+                  timerID = setTimeout(showtime, 1000);
+                  timerRunning = true;
+              }
+          
+              startclock();
+          </script>
+          
+          </body>
+          </html>
+          
+          
+          
+          
+          
+          
+          
+          Zadanie 3.6
+          Utwórz i dodaj do dokumentu HTML skrypt, który wyświetli datę ostatniej modyfikacji tego dokumentu.
+          
+          
+          <!DOCTYPE html>
+          <html>
+          <head>
+              <title>Data ostatniej modyfikacji</title>
+          </head>
+          <body>
+          
+          <p>Data ostatniej modyfikacji dokumentu: <span id="data-modyfikacji"></span></p>
+          
+          <script>
+              var dataModyfikacji = document.lastModified;
+              var spanElement = document.getElementById('data-modyfikacji');
+              spanElement.textContent = dataModyfikacji;
+          </script>
+          
+          </body>
+          </html>
+          
+          
+          
+          Temat: Formularze - Zatwierdzanie
+          
+          
+          Zadanie / Zatwierdzanie danych z formularza:
+          
+          <html>
+            <head>
+              
+            </head>
+            
+            <body>
+              
+              <form id="in_form" onsubmit="return wzorzec();">
+                  <label for="imie">Imię i nazwisko:</label>
+                  <input type="text" id="imie" name="imie" required>
+              
+                  <label for="nr_telef">Numer telefonu:</label>
+                  <input type="text" id="nr_telef" name="nr_telef" required>
+              
+                  <label for="e-mail">E-mail:</label>
+                  <input type="email" id="e-mail" name="e-mail" required>
+              
+                  <label for="kod_poczt">Kod pocztowy:</label>
+                  <input type="text" id="kod_poczt" name="kod_poczt" required>
+              
+                  <input type="submit" value="Wyślij">
+                </form>
+          
+            </body>
+          
+            <script>
+              function wzorzec() {
+                var formularz = document.getElemenTById('in_form');
+          
+                wzory = {
+                  'imie' : /^[a-zA-Z]{2,}\s+[a-zA-Z]{2,}$/i,
+                  'nr_telef' : /^\+\d{2,3} \d{3} \d{3} \d{3}$/,
+                  'e-mail' : /^[0-9a-zA-Z_.-]+@[0-9a-zA-Z.-]+\.[a-zA-Z]{2,3}$/i,
+                  'kod_poczt' : /^\d{2}-\d{3}$/
+                };
+          
+                for (var pole in wzory){
+                  if(formularz[pole]){
+                    if(!wzory[pole].test(formularz[pole].value)){
+                      alert('Pole ' + pole + ' ma nieprawidłową wartość');
+                      formularz[pole].style.background = 'yellow';
+                      return false;
+                    }
+                    else{
+                      formularz[pole].style.background('');
+                    }
+                  }
+                }
+                alert('Wszystkie pola wypełniono poprawnie!');
+                return true;
+              }
+            </script>
+          
+            </html>
+  
+  
+  
+  <!-- ewreczycka@zs4.tychy.edu.pl 
+  w temacie klasa, nazwisko, temat-->
+
+{% endraw %}
