@@ -1,0 +1,930 @@
+tutaj będzie c++ itp od gicika
+
+
+#include <iostream>
+
+using namespace std;
+// Definicja typu wyliczeniowego
+enum ocena {
+    cel = 6,
+    bdb = 5,
+    db = 4,
+    dst = 3,
+    dop = 2,
+    ndst = 1
+};
+
+int main() {
+    ocena k;
+
+    int i = ocena::dop;
+
+    switch (i) {
+    case 6:
+        cout << "Ocena celująca";
+
+    case 5:
+        cout << "Ocena bardzo dobra";
+
+    case 4:
+        cout << "Ocena dobra";
+
+    case 3:
+        cout << "Ocena dostateczna";
+
+    case 2:
+        cout << "Ocena dopuszczająca";
+
+    case 1:
+        cout << "Ocena niedostateczna";
+
+    }
+
+    return 0;
+}
+
+
+___________________________________________________________________________________________
+
+
+
+#include <iostream>
+
+using namespace std;
+
+int main()
+    {
+     struct User {
+         string name;
+         string surname;
+         int age;
+     };
+
+
+     User u;
+     u.name = "Jan";
+     u.surname = "Kowalski";
+     u.age = 17;
+
+     cout << u.name << " " << u.surname;
+     
+     system("pause");
+     return 0;
+}
+
+
+___________________________________________________________________________________________
+
+
+#include <iostream>
+
+using namespace std;
+
+int main()
+    {
+     struct odc {
+         float x;
+
+         float y;
+
+     };
+
+
+     odc a,b;
+
+     a.x = 1;
+     a.y = 1;
+
+     b.x = 10;
+     b.y = 12;
+
+     float arr[5] = { 1.1, 3.5, 4.2, 7.3, 2.9 };
+
+     for (int i = 0; i < 5; i++) {
+         cout << arr[i] << " " << endl;
+     }
+     
+     system("pause");
+     return 0;
+}
+
+
+___________________________________________________________________________________________
+
+
+
+#include <iostream>
+
+using namespace std;
+
+struct odc {
+    float x;
+    float y;
+};
+
+int main() {
+    odc a, b;
+
+    a.x = 1;
+    a.y = 1;
+
+    b.x = 10;
+    b.y = 12;
+
+    float arr[5] = { 1.1, 3.5, 4.2, 7.3, 2.9 };
+    int i = 0;
+    float suma = 0.0;
+
+    while (i < 5) {
+        suma += arr[i];
+        i++;
+    }
+
+    a.x = suma;
+
+    cout << "Suma wartosci w tablicy: " << suma << endl;
+
+    system("pause");
+    return 0;
+}
+
+
+
+___________________________________________________________________________________________
+
+
+
+#include <iostream>
+#include <vector>
+
+using namespace std;
+
+int main() {
+
+    char sign = 't';
+    int value = 0;
+
+    while (sign == 't') {
+        cout << "Podaj liczbe calkowita : ";
+        cin >> value;
+
+        rating.push_back(value);
+
+        cout << "Czy chcesz dodac kolejna liczbe t/n : ";
+        cin >> sign;
+    
+    }
+
+    system("pause");
+    return 0;
+}
+
+
+
+___________________________________________________________________________________________
+
+
+
+#include <iostream>
+
+using namespace std;
+
+struct dane {
+    int a_1;
+    int a_2;
+    int b_1;
+    int b_2;
+};
+
+int main()
+
+{
+    dane punkty;
+
+    punkty.a_1 = 2;
+    punkty.a_2 = 3;
+    punkty.b_1 = 7;
+    punkty.b_2 = 10;
+
+    
+    cout << "Punkt A1: " << punkty.a_1 << endl;
+    cout << "Punkt A2: " << punkty.a_2 << endl;
+    cout << "Punkt B1: " << punkty.b_1 << endl;
+    cout << "Punkt B2: " << punkty.b_2 << endl;
+
+    return 0;
+}
+
+
+
+___________________________________________________________________________________________
+
+                            
+
+#include <iostream>
+
+using namespace std;
+
+
+
+int main()
+
+{
+    int oceny[] = { 1,2,3,4,5,6 };
+
+    for (int i = 0; i < 6; i++) {
+        cout << oceny[i] << " " << endl;
+    }
+
+    return 0;
+}
+
+
+___________________________________________________________________________________________
+
+
+
+WEKTORY:
+#include <iostream>
+#include <vector>
+
+using namespace std;
+
+void viewArr(vector<int> myVector) {
+    for (int i = 0; i < myVector.size(); ++i) {
+        cout << myVector[i] << " ";
+    }
+}
+
+
+
+
+
+
+int main()
+{
+    vector<int> myVector = { 1,2,3 };
+
+    myVector.push_back(23);
+    viewArr(myVector);
+
+    cout << endl; 
+    cout << endl;
+
+    myVector.insert(myVector.begin(), 30);
+    viewArr(myVector);
+
+    cout << endl;
+    cout << endl;
+
+    myVector.insert(myVector.begin()+3, 35);
+    viewArr(myVector);
+
+    cout << endl;
+
+    return 0;
+}
+
+
+___________________________________________________________________________________________
+
+            
+            
+#include <iostream> // Biblioteka wejścia/wyjścia
+#include <vector> // Biblioteka do Wektorów
+#include <locale.h> // Biblioteka do Polskich znaków
+
+using namespace std;
+
+void viewArr(vector<int> myVector) { // Powstanie voida viewArr z argumentem funkcji myVector
+    for (int i = 0; i < myVector.size(); i++) { // Przeiterowanie wektora
+        cout << myVector[i] << " "; // Wyświetlenie danych z wektora
+    }
+    cout << endl; // Nowa linijka
+}
+
+void lParzyste(vector<int> myVector) { // Powstanie voida lParzyste z argumentem funkcji myVector
+    for (int i = 0; i < myVector.size(); i++) { // Przeiterowanie wektora
+        if (myVector[i] % 2 != 0) { // Jeśli wektor jest nieparzysty: 
+            myVector.erase(myVector.begin() + i); // Usuń element
+            i--; // Zdekrementuj
+        }
+    }
+}
+
+___________________________________________________________________________________________
+
+
+int main() {
+    setlocale(LC_CTYPE, "Polish"); // Polskie znaki
+    //
+    vector<int> myVector = { 1, 2, 3, 4, 5, 6, 7, 8 }; // Wektor z danymi jemu przypisanymi
+    //
+    cout << "Wektor przed modyfikacjami: "; // Wyświetlenie Wektora przed modyfikacjami
+    viewArr(myVector); // Wywołanie funkcji myVector
+    //
+    lParzyste(myVector); // wywołanie funkcji void z obliczeniami do usuwania liczb nieparzystych.
+    //
+    cout << "Wektor po usunięciu liczb nieparzystych: "; // Wyświetlenie Wektora po modyfikacjach
+    viewArr(myVector); // Wywołanie funkcji myVector
+
+
+    return 0; // Zwrócenie 0, czyli poprawnego działania programu.
+}
+
+
+
+
+
+___________________________________________________________________________________________
+___________________________________________________________________________________________
+
+1/
+      
+#include <iostream>
+#include <vector>
+
+using namespace std;
+
+int main() {
+    vector<int> wektor = { 6, 5, 2 };
+
+    cout << "Wartości z wektora: ";
+    for (int i = 0; i < wektor.size(); ++i) {
+        cout << wektor[i] << " ";
+    }
+
+    cout << endl;
+
+    return 0;
+}
+
+___________________________________________________________________________________________
+___________________________________________________________________________________________
+
+            
+2/
+
+#include <iostream>
+#include <vector>
+#include <string>
+
+using namespace std;
+
+int main() {
+    vector<string> imiona = { "Bartek", "Adam", "Anna" };
+
+    cout << "Pierwszy element: " << imiona.front() << endl;
+
+    cout << "Ostatni element: " << imiona.back() << endl;
+
+    return 0;
+}
+
+
+___________________________________________________________________________________________
+___________________________________________________________________________________________
+
+                                   
+3/
+
+#include <iostream>
+#include <vector>
+
+using namespace std;
+
+int main() {
+    vector<float> liczby;
+
+    liczby.push_back(6.23);
+    liczby.push_back(7.54);
+    liczby.push_back(23.99);
+
+    cout << "Wartosci w wektorze:" << endl;
+    for (float liczba : liczby) {
+        cout << liczba << endl;
+    }
+
+    return 0; 
+}
+
+
+___________________________________________________________________________________________
+___________________________________________________________________________________________     
+
+4/
+
+#include <iostream>
+#include <vector>
+
+using namespace std;
+
+int main() {
+    vector<double> wartosci = { 6.45, 7.45, 8.34 };
+
+    cout << "Liczba elementow w wektorze: " << wartosci.size() << endl;
+
+    return 0;
+}
+
+___________________________________________________________________________________________
+___________________________________________________________________________________________     
+
+5/
+                                               
+#include <iostream>
+#include <vector>
+#include <string>
+
+using namespace std;
+
+int main() {
+    vector<string> asortyment_rowerowy = { "bidon", "opona", "hamulce" };
+
+    cout << "Ostatni element wektora: " << asortyment_rowerowy.back() << endl;
+
+    asortyment_rowerowy.pop_back();
+
+    asortyment_rowerowy.push_back("klocki hamulcowe");
+
+    cout << "Ostatni element po modyfikacji: " << asortyment_rowerowy.back() << endl;
+
+    return 0;
+}
+
+___________________________________________________________________________________________
+___________________________________________________________________________________________     
+
+6/
+
+#include <iostream>
+#include <vector>
+#include <string>
+
+using namespace std;
+
+int main() {
+    vector<string> produkty = { "Pomidor", "Ogorek", "Marchewka" };
+
+    cout << "Wartosc elementu o indeksie 1 przed operacja: " << produkty[1] << endl;
+
+    produkty.insert(produkty.begin() + 1, "Ananas");
+
+    cout << "Wartosc elementu o indeksie 1 po operacji: " << produkty[1] << endl;
+
+    return 0;
+}
+
+___________________________________________________________________________________________
+___________________________________________________________________________________________     
+
+7/
+
+#include <iostream>
+#include <vector>
+#include <string>
+
+using namespace std;
+
+int main() {
+    vector<string> produkty = { "Pomidor", "Ogorek", "Marchewka" };
+
+    cout << "Wartosc elementu o indeksie 1 przed operacja: " << produkty[1] << endl;
+
+    produkty.erase(produkty.begin() + 1);
+
+    cout << "Wartosc elementu o indeksie 1 po operacji: " << produkty[1] << endl;
+
+    return 0;
+}
+
+
+___________________________________________________________________________________________
+___________________________________________________________________________________________  
+___________________________________________________________________________________________  
+___________________________________________________________________________________________
+                                                             
+
+Kontynuacja z Kartkówki:
+
+#include <iostream>
+
+using namespace std;
+
+enum Dni {
+    PONIEDZIALEK,  
+    WTOREK,         
+    SRODA,          
+    CZWARTEK,       
+    PIATEK, 
+    SOBOTA,
+    NIEDZIELA       
+};
+
+int main() {
+    Dni dzien = WTOREK;
+
+    switch (dzien) {
+    case PONIEDZIALEK:
+        cout << "Poniedziałek";
+        break;
+    case WTOREK:
+        cout << "Wtorek";
+        break;
+    case SRODA:
+        cout << "Środa";
+        break;
+    case CZWARTEK:
+        cout << "Czwartek";
+        break;
+    case PIATEK:
+        cout << "Piątek";
+        break;
+    case SOBOTA:
+        cout << "Sobota";
+        break;
+    case NIEDZIELA:
+        cout << "Niedziela";
+        break;
+    }
+}
+                                                             
+
+2 zadanie z kartkówki:
+
+          #include <iostream>
+#include <string>
+
+using namespace std;
+
+struct User {
+    string pesel;
+    string imie;
+    string nazwisko;
+    string nr_telefonu;
+};
+
+int main() {
+    User uzytkownik;
+    uzytkownik.pesel = "12345678901";
+    uzytkownik.imie = "Jan";
+    uzytkownik.nazwisko = "Kowalski";
+    uzytkownik.nr_telefonu = "123456789";
+
+    cout << "PESEL: " << uzytkownik.pesel << endl;
+    cout << "Imie: " << uzytkownik.imie << endl;
+    cout << "Nazwisko: " << uzytkownik.nazwisko << endl;
+    cout << "Numer telefonu: " << uzytkownik.nr_telefonu << endl;
+
+    return 0;
+}
+
+
+3/
+
+#include <iostream>
+#include <string>
+
+using namespace std;
+
+int main() {
+    float arr[10];
+
+    for (int i = 0; i < 10; i++) {
+        cout << arr[i] << "\n";
+    }
+
+    return 0;
+}
+
+___________________________________________________________________________________________
+___________________________________________________________________________________________  
+___________________________________________________________________________________________  
+___________________________________________________________________________________________
+          
+// Napisz funkcję, która przyjmuje tablicę liczb całkowitych i jej rozmiar jako argumenty, a następnie oblicza i zwraca średnią arytmetyczną tych liczb.                                   
+
+#include <iostream>
+#include <locale.h>
+
+using namespace std;
+
+double obliczSrednia(int tablica[], int rozmiar);
+
+int main()
+{
+    int tablica[] = { 1, 2, 3, 4, 5 };
+    int rozmiar = sizeof(tablica) / sizeof(tablica[0]);
+
+    double srednia = obliczSrednia(tablica, rozmiar);
+
+    cout << "Średnia arytmetyczna liczb w tablicy wynosi: " << srednia << endl;
+
+    return 0;
+}
+
+double obliczSrednia(int tablica[], int rozmiar) {
+    int suma = 0;
+    for (int i = 0; i < rozmiar; i++) {
+        suma += tablica[i];
+    }
+
+    return static_cast<double>(suma) / rozmiar;
+    
+}
+
+___________________________________________________________________________________________
+
+#include <iostream>
+#include <locale.h>
+
+using namespace std;
+//Napisz funkcję, która przyjmuje dwie zmienne i zamienia ich wartości.
+void zamienWartosci(int& a, int& b) {
+    int temp = a;
+    a = b;
+    b = temp;
+}
+
+int main() {
+    setlocale(LC_CTYPE, "Polish");
+    int pierwsza = 5;
+    int druga = 10;
+
+    cout << "Przed zamianą: pierwsza = " << pierwsza << ", druga = " << druga << endl;
+
+    zamienWartosci(pierwsza, druga);
+
+    cout << "Po zamianie: pierwsza = " << pierwsza << ", druga = " << druga << endl;
+
+    return 0;
+}
+
+___________________________________________________________________________________________
+                                                                      
+#include <iostream>
+#include <locale.h>
+
+using namespace std;
+
+// Napisz funkcję, która na podstawie podanej cyfry (liczba naturalna większa od 0)wypisuje cyfry. Nie można dokonywać konwersji na typ string.
+
+void wypiszCyfry(int liczba) {
+    if (liczba > 0) {
+        wypiszCyfry(liczba / 10);
+        cout << liczba % 10 << " ";
+    }
+}
+
+int main() {
+    int cyfra;
+    cout << "Podaj cyfre: ";
+    cin >> cyfra;
+
+    if (cyfra <= 0) {
+        cout << "Podana liczba nie jest cyfra większą od 0." << endl;
+    }
+    else {
+        cout << "Cyfry podanej liczby: ";
+        wypiszCyfry(cyfra);
+        cout << endl;
+    }
+
+    return 0;
+}
+
+___________________________________________________________________________________________
+                                                                      
+#include <iostream>
+#include <string>
+
+using namespace std;
+
+/*Każda z 11 cyfr w numerze PESEL ma swoje znaczenie.Można je podzielić następująco : RRMMDDPPPPK.Napisz funkcję dla urodzonych w latach 1900 - 1999, która na podstawie numeru PESEL zwróci : dzien.miesc.rok urodzenia np. 11.02.1970.Przykładowe numery pesel :
+
+69011052332
+94020268834
+57031795953
+96072685511
+60060929268
+76061733377
+90111383484
+54120886196
+63061781486*/
+
+
+string peselnaur(const string& pesel) {
+    // stoi -> konwersja znaków na int
+    int rok = stoi(pesel.substr(0, 2));
+    int miesiac = stoi(pesel.substr(2, 2));
+    int dzien = stoi(pesel.substr(4, 2));
+
+    if (miesiac > 80 && miesiac < 93) {
+        rok += 1800;
+        miesiac -= 80;
+    }
+    else if (miesiac > 0 && miesiac < 13) {
+        rok += 1900;
+    }
+    else if (miesiac > 20 && miesiac < 33) {
+        rok += 2000;
+        miesiac -= 20;
+    }
+    else if (miesiac > 40 && miesiac < 53) {
+        rok += 2100;
+        miesiac -= 40;
+    }
+    else if (miesiac > 60 && miesiac < 73) {
+        rok += 2200;
+        miesiac -= 60;
+    }
+
+    return to_string(dzien) + "." + to_string(miesiac) + "." + to_string(rok);
+}
+
+int main() {
+    string pesel1 = "69011052332";
+    string pesel2 = "94020268834";
+    string pesel3 = "57031795953";
+
+    cout << peselnaur(pesel1) << endl;
+    cout << peselnaur(pesel2) << endl;
+    cout << peselnaur(pesel3) << endl;
+
+    return 0;
+}
+
+___________________________________________________________________________________________
+___________________________________________________________________________________________   
+Temat: Liczby losowe
+
+Wyświetl 6 liczb losowych od 1 do 49:
+
+#include <iostream>
+#include <locale.h>
+#include <ctime>
+#include <cstdlib>
+using namespace std;
+
+int main()
+{
+    setlocale(LC_CTYPE, "Polish");
+
+    unsigned int czas = time(0);
+    srand(czas);
+
+    const int MAX = 49;
+    const int MIN = 1;
+
+
+    for (int i = 0; i < 6; i++)
+    {
+        int y = (rand() % (MAX - MIN + 1)) + MIN;
+        cout << y << endl;
+    }
+}
+
+___________________________________________________________________________________________
+___________________________________________________________________________________________   
+                
+Temat: Rzutowanie i konwersja typów w C++
+
+Zmienianie typu z int na float;
+                
+int main()
+{
+    int x = 3;
+    int y = 4;
+
+    cout << "Podaj a: ";
+    cin >> x;
+    cout << "Podaj b: ";
+    cin >> y;
+    float z = static_cast<float>(x);
+    float r = static_cast<float>(y);
+
+    cout << z/r << endl;
+
+    return 0;
+}
+
+___________________________________________________________________________________________
+___________________________________________________________________________________________   
+                
+Temat: Rzutowanie i konwersja typów w C++ / Kontynuacja
+
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+    int x = 7;
+    int y = 4;
+    
+    float a = static_cast<float>(x);
+    float b = static_cast<float>(y);
+    
+    cout << a/b;
+}
+
+___________________________________________________________________________________________
+
+
+#include <iostream>
+
+using namespace std;
+
+const int N = 10;
+
+void pokazTablice(int tablica[], int rozmiar) {
+    for (int i = 0; i < rozmiar; i++) {
+        cout << tablica[i] << " ";
+    }
+    cout << endl;
+}
+
+float sredniaTablicy(int tablica[], int rozmiar) {
+    float suma = 0;
+
+    for (int i = 0; i < rozmiar; i++) {
+        suma += tablica[i];
+    }
+
+    return suma / rozmiar;
+}
+
+int main() {
+    int tablica[] = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
+
+    pokazTablice(tablica, N);
+    float srednia = sredniaTablicy(tablica, N);
+    cout << "Srednia tablicy wynosi: " << srednia << endl;
+
+    return 0;
+}
+
+___________________________________________________________________________________________
+
+
+#include <iostream>
+#include <cstdlib>
+#include <ctime>
+
+using namespace std;
+
+// Stałe definiujące rozmiar tablicy oraz zakres losowanych liczb
+const int rozmiar = 10;
+const int minimalna = 20;
+const int maksymalna = 80;
+
+// Funkcja wypełniająca tablicę losowymi liczbami z podanego zakresu
+void wypelnijTablice(int tablica[], int rozmiar) {
+    for (int i = 0; i < rozmiar; i++) {
+        // Losowanie liczby z zakresu i przypisanie jej do tablicy
+        tablica[i] = rand() % (maksymalna - minimalna + 1) + minimalna;
+    }
+}
+
+// Funkcja wyświetlająca zawartość tablicy
+void wyswietlTablice(const int tablica[], int rozmiar) {
+    cout << "Tablica: ";
+    for (int i = 0; i < rozmiar; i++) {
+        // Wyświetlenie kolejnych elementów tablicy
+        cout << tablica[i] << " ";
+    }
+    cout << endl;
+}
+
+// Funkcja obliczająca średnią wartość elementów w tablicy
+double obliczSrednia(const int tablica[], int rozmiar) {
+    double suma = 0;
+    for (int i = 0; i < rozmiar; i++) {
+        // Sumowanie elementów tablicy
+        suma += tablica[i];
+    }
+    // Obliczenie średniej wartości
+    return suma / rozmiar;
+}
+
+int main() {
+    setlocale(LC_CTYPE, "Polish");
+    srand(time(0));
+
+    // Inicjalizacja tablicy o zdefiniowanym rozmiarze
+    int mojaTablica[rozmiar];
+
+    // Wywołanie funkcji wypełniającej tablicę losowymi liczbami
+    wypelnijTablice(mojaTablica, rozmiar);
+
+    // Wywołanie funkcji wyświetlającej zawartość tablicy
+    wyswietlTablice(mojaTablica, rozmiar);
+
+    // Wywołanie funkcji obliczającej średnią wartość i wyświetlenie wyniku
+    double srednia = obliczSrednia(mojaTablica, rozmiar);
+    cout << "Średnia: " << srednia << endl;
+
+    return 0;
+}
+
+___________________________________________________________________________________________
