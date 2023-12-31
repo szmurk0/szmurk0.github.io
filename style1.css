@@ -124,7 +124,20 @@
         margin: 20px;
         text-align: justify;
       }
+
       .center-text {
           text-align: center;
           margin: 0 auto;
       }
+
+      .center-container {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+          height: 100vh; /* 100% wysokości ekranu */
+        }
+        
+        .center-down {
+          margin-top: 20px; /* Dodatkowy odstęp między sekcjami */
+        }
