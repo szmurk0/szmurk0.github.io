@@ -1,0 +1,4 @@
+Pierwszy program w TypeScript:
+  Hello World:
+	let komunikat:string = "Hello World";
+	console.log(komunikat);
