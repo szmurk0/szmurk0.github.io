@@ -1,0 +1,461 @@
+Tu będą odpowiedzi i pytania na Kartkówkę z C++ z dnia: 17.11.2023
+
+
+1. Napisz program, w którym będzie wypełniał 10 elementową tablicę liczbami całkowitymi z 
+zakresu 1-50. Dodatkowo utwórz metodę o nazwie showArr, która wyświetla zawartość tablicy
+
+#include <iostream>
+#include <cstdlib>
+#include <ctime>
+
+const int arraySize = 10;
+
+void fillArray(int arr[], int size) {
+    srand(static_cast<unsigned int>(time(0)));
+    for (int i = 0; i < size; ++i) {
+        arr[i] = rand() % 50 + 1;
+    }
+}
+
+void showArray(int arr[], int size) {
+    std::cout << "Zawartość tablicy:\n";
+    for (int i = 0; i < size; ++i) {
+        std::cout << arr[i] << " ";
+    }
+    std::cout << std::endl;
+}
+
+int main() {
+    int myArray[arraySize];
+
+    fillArray(myArray, arraySize);
+    showArray(myArray, arraySize);
+
+    return 0;
+}
+
+
+
+
+2. Napisz program, w którym będzie wypełniał 10 elementową tablicę liczbami całkowity parzystymi z zakresu 1-100. Dodatkowo utwórz funkcję o nazwie sumArr, która będzie sumowa
+wszystkie elementy tablicy. W konsoli przedstaw:
+- zawartość tablicy
+- sumę liczb zawartych w tablicy
+
+
+#include <iostream>
+#include <cstdlib>
+#include <ctime>
+
+const int arraySize = 10;
+
+void fillArray(int arr[], int size) {
+    srand(static_cast<unsigned int>(time(0)));
+    for (int i = 0; i < size; ++i) {
+        // Generowanie losowej liczby parzystej z zakresu 1-100
+        arr[i] = rand() % 50 * 2 + 2;
+    }
+}
+
+int sumArray(int arr[], int size) {
+    int sum = 0;
+    for (int i = 0; i < size; ++i) {
+        sum += arr[i];
+    }
+    return sum;
+}
+
+void showArray(int arr[], int size) {
+    std::cout << "Zawartość tablicy:\n";
+    for (int i = 0; i < size; ++i) {
+        std::cout << arr[i] << " ";
+    }
+    std::cout << std::endl;
+}
+
+int main() {
+    int myArray[arraySize];
+
+    fillArray(myArray, arraySize);
+    showArray(myArray, arraySize);
+
+    int arraySum = sumArray(myArray, arraySize);
+    std::cout << "Suma liczb w tablicy: " << arraySum << std::endl;
+
+    return 0;
+}
+
+
+
+
+
+
+3. Napisz program, w którym będzie wypełniał 10 elementową tablicę liczbami rzeczywistymi z 
+zakresu od 10.00 do 90.00. W konsoli przedstaw:
+- zawartość tablicy
+- średnią wartość tablicy
+- wartość najwyższą z tablicy
+- wartość najniższą z tablicy
+Dla każdego działania utwórz odpowiednią funkcję
+
+
+#include <iostream>
+#include <cstdlib>
+#include <ctime>
+
+const int arraySize = 10;
+
+void fillArray(float arr[], int size) {
+    srand(static_cast<unsigned int>(time(0)));
+    for (int i = 0; i < size; ++i) {
+        // Generowanie losowej liczby rzeczywistej z zakresu 10.00-90.00
+        arr[i] = (rand() % 8100) / 100.0 + 10.0;
+    }
+}
+
+float calculateAverage(float arr[], int size) {
+    float sum = 0.0;
+    for (int i = 0; i < size; ++i) {
+        sum += arr[i];
+    }
+    return sum / size;
+}
+
+float findMaxValue(float arr[], int size) {
+    float max = arr[0];
+    for (int i = 1; i < size; ++i) {
+        if (arr[i] > max) {
+            max = arr[i];
+        }
+    }
+    return max;
+}
+
+float findMinValue(float arr[], int size) {
+    float min = arr[0];
+    for (int i = 1; i < size; ++i) {
+        if (arr[i] < min) {
+            min = arr[i];
+        }
+    }
+    return min;
+}
+
+void showArray(float arr[], int size) {
+    std::cout << "Zawartość tablicy:\n";
+    for (int i = 0; i < size; ++i) {
+        std::cout << arr[i] << " ";
+    }
+    std::cout << std::endl;
+}
+
+int main() {
+    float myArray[arraySize];
+
+    fillArray(myArray, arraySize);
+    showArray(myArray, arraySize);
+
+    float average = calculateAverage(myArray, arraySize);
+    std::cout << "Średnia wartość tablicy: " << average << std::endl;
+
+    float maxValue = findMaxValue(myArray, arraySize);
+    std::cout << "Wartość najwyższa z tablicy: " << maxValue << std::endl;
+
+    float minValue = findMinValue(myArray, arraySize);
+    std::cout << "Wartość najniższa z tablicy: " << minValue << std::endl;
+
+    return 0;
+}
+
+
+
+4. Napisz program, który będzie symulatorem rzutu kostką sześcienną (losowanie liczb z zakresu 
+od 1 do 6). Stwórz odpowiedni interfejs dla użytkownika w konsoli, np.
+Czy chcesz rzucić kostką (t/n)? t
+Wynik rzutu kostką: 5
+Czy chcesz rzucić kostką (t/n)? n
+Symulator zakończył działanie
+
+
+#include <iostream>
+#include <cstdlib>
+#include <ctime>
+
+int rollDice() {
+    return rand() % 6 + 1;
+}
+
+int main() {
+    // Inicjalizacja generatora liczb losowych ziarnem czasu
+    srand(static_cast<unsigned int>(time(0)));
+
+    char choice;
+
+    do {
+        std::cout << "Czy chcesz rzucić kostką (t/n)? ";
+        std::cin >> choice;
+
+        if (choice == 't' || choice == 'T') {
+            int result = rollDice();
+            std::cout << "Wynik rzutu kostką: " << result << std::endl;
+        } else if (choice != 'n' && choice != 'N') {
+            std::cout << "Niepoprawny wybór. Spróbuj ponownie." << std::endl;
+        }
+
+    } while (choice != 'n' && choice != 'N');
+
+    std::cout << "Symulator zakończył działanie" << std::endl;
+
+    return 0;
+}
+
+
+
+
+5. Napisz generator losowego hasła składającego się z liter i cyfr. Użytkownik podaje długość 
+hasła (minimum 5 znaków). Posłuż się np. stringiem, tablicą lub wektorem
+
+
+#include <iostream>
+#include <cstdlib>
+#include <ctime>
+#include <vector>
+
+std::string generateRandomPassword(int length) {
+    const std::string characters = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+    const int charactersCount = characters.length();
+
+    std::string password;
+    password.reserve(length);
+
+    for (int i = 0; i < length; ++i) {
+        int randomIndex = rand() % charactersCount;
+        password.push_back(characters[randomIndex]);
+    }
+
+    return password;
+}
+
+int main() {
+    srand(static_cast<unsigned int>(time(0)));
+
+    int passwordLength;
+
+    do {
+        std::cout << "Podaj długość hasła (minimum 5 znaków): ";
+        std::cin >> passwordLength;
+
+        if (passwordLength < 5) {
+            std::cout << "Hasło musi mieć co najmniej 5 znaków. Spróbuj ponownie." << std::endl;
+        }
+
+    } while (passwordLength < 5);
+
+    std::string password = generateRandomPassword(passwordLength);
+
+    std::cout << "Wygenerowane hasło: " << password << std::endl;
+
+    return 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+Tu będą odpowiedzi i pytania na Kartkówkę z C++ z dnia: 03.11.2023
+
+
+1 Zadanie : Napisz program, który będzie wczytywał do tablicy przy wykorzystaniu pętli DO WHILE 10
+liczb naturalnych (wartości, które podaje użytkownik są kontrolowane przed zapisaniem do
+tablicy). Na końcu program wyświetla zawartość tablicy.
+
+#include <iostream>
+#include <locale.h>
+
+using namespace std;
+
+  int main() {
+      const int rozmiar = 10;
+      int tablica[rozmiar];
+      int liczba, indeks = 0;
+  
+      cout << "Podaj 10 liczb naturalnych:\n";
+  
+      do {
+          cout << "Podaj liczbe: ";
+          cin >> liczba;
+  
+          if (liczba > 0) {
+              tablica[indeks] = liczba;
+              indeks++;
+          } else {
+              cout << "Podano niepoprawna liczbe. Wprowadz liczbe naturalna.\n";
+          }
+  
+      } while (indeks < rozmiar);
+  
+      cout << "Zawartosc tablicy:\n";
+      for (int i = 0; i < rozmiar; ++i) {
+          cout << tablica[i] << " ";
+      }
+  
+      return 0;
+  }
+
+
+
+
+
+2 Zadanie: Napisz program, który zapisze do tablicy 100 liczb losowych z zakresu 1-100. Na końcu
+program wyświetli zawartość tablicy.
+
+
+#include <iostream>
+#include <cstdlib>
+#include <ctime>
+
+using namespace std;
+
+int main() {
+    const int rozmiar = 100;
+    int tablica[rozmiar];
+
+    srand(time(0));
+
+    
+    for (int i = 0; i < rozmiar; ++i) {
+        tablica[i] = rand() % 100 + 1;
+    }
+
+    cout << "To jest cała tablica:\n";
+    for (int i = 0; i < rozmiar; ++i) {
+        cout << tablica[i] << " ";
+        if ((i + 1) % 10 == 0) {
+            cout << endl;
+        }
+    }
+
+    return 0;
+}
+
+
+
+
+
+3 Zadanie : Napisz program wczytujący do tablicy przez użytkownika 10 kobiecych imion (program
+weryfikuje imię żeńskie na podstawie ostatniej litery imienia). Na końcu program wypisuje
+imiona w odwrotnej kolejności.
+
+!!!!!!!!! Zmieńcie Kod!!!!!!!!
+
+#include <iostream>
+#include <string>
+#include <locale.h>
+
+using namespace std;
+
+int main() {
+    setlocale(LC_CTYPE, "Polish");
+
+    const int rozmiar = 10;
+    string imiona[rozmiar];
+
+    cout << "Podaj 10 kobiecych imion:\n";
+
+    for (int i = 0; i < rozmiar; ++i) {
+        cout << "Imie " << i + 1 << ": ";
+        cin >> imiona[i];
+
+        if (imiona[i].back() != 'a') {
+            cout << "Podane imie nie jest kobiece (nie konczy sie na 'a'). Podaj inne imie.\n";
+            --i;
+        }
+    }
+
+    cout << "Imiona w odwrotnej kolejnosci:\n";
+    for (int i = rozmiar - 1; i >= 0; --i) {
+        cout << imiona[i] << endl;
+    }
+
+    return 0;
+}
+
+
+
+
+
+
+Zadanie 4 : Napisz program, który dla zadeklarowanej 10-elementowej tablicy liczb całkowitych wypisze
+sumę liczb parzystych i sumę liczb nieparzystych z tej tablicy.
+
+#include <iostream>
+#include <locale.h>
+
+using namespace std;
+
+int main() {
+    setlocale(LC_CTYPE, "Polish"); 
+
+    const int rozmiar = 10;
+    int tablica[rozmiar] = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
+
+    int sumaParzystych = 0;
+    int sumaNieparzystych = 0;
+
+    for (int i = 0; i < rozmiar; ++i) {
+        if (tablica[i] % 2 == 0) {
+            sumaParzystych += tablica[i];
+        }
+        else {
+            sumaNieparzystych += tablica[i];
+        }
+    }
+
+    cout << "Suma liczb parzystych: " << sumaParzystych << endl;
+    cout << "Suma liczb nieparzystych: " << sumaNieparzystych << endl;
+
+    return 0;
