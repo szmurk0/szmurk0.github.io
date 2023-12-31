@@ -125,6 +125,14 @@
         text-align: justify;
       }
 
+      pre {
+        display: flex;
+        font-size: 1.2em;
+        text-align: center;
+        align-items: center;
+        justify-content: center;
+      }
+
       .center-text {
          text-align: center;
          margin: 0 auto;
