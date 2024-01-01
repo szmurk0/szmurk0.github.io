@@ -11,3 +11,4 @@
 
 ## Wersja strony:
 Wersja: 1.0.1 (wersja stabilna)
+Link: https://szmurk0.github.io
