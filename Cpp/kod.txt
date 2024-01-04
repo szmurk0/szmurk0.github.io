@@ -1,3 +1,233 @@
+Tu będą odpowiedzi i pytania na Kartkówkę z C++ z dnia: 04.01.2024
+
+
+1 Zadanie / 
+#include <iostream>
+
+using namespace std;
+
+int main() {
+    /*
+    Zadanie 1:
+
+    Pobierz z klawiatury trzy nieujemne liczby całkowite, sprawdź, czy są nieujemne. 
+    Znajdź największą z nich. Wyświetl sumę pozostałych liczb tyle razy, ile wynosi wartość największej liczby.
+    */
+
+    int liczba1, liczba2, liczba3;
+
+    cout << "Podaj trzy nieujemne liczby calkowite: ";
+    cin >> liczba1 >> liczba2 >> liczba3;
+
+    if (liczba1 < 0 || liczba2 < 0 || liczba3 < 0) {
+        cout << "Jedna z podanych liczb jest ujemna.";
+        return 0;
+    }
+
+    int najwieksza = liczba1;
+    if (liczba2 > najwieksza) {
+        najwieksza = liczba2;
+    }
+    if (liczba3 > najwieksza) {
+        najwieksza = liczba3;
+    }
+
+    int suma = liczba1 + liczba2 + liczba3 - najwieksza;
+    for (int i = 0; i < najwieksza; i++) {
+        cout << "Suma pozostalych liczb: " << suma << endl;
+    }
+
+    return 0;
+}
+
+
+
+2 Zadanie / 
+
+#include <iostream>
+using namespace std;
+
+int main() {
+    /*
+    Zadanie 2:
+
+    Pobraną z klawiatury liczbę całkowitą zweryfikuj pod kątem parzystości. 
+    Wyświetl tak lub nie, gdy jest lub nie jest parzysta.
+    */
+
+    int liczba;
+    cout << "Podaj liczbe: ";
+    cin >> liczba;
+
+    if (liczba % 2 == 0) {
+        cout << "Liczba jest parzysta" << endl;
+    }
+    else {
+        cout << "Liczba nie jest parzysta" << endl;
+    }
+
+    return 0;
+}
+
+
+
+
+
+
+
+3 Zadanie / 
+
+#include <iostream>
+#include <locale>
+
+using namespace std;
+
+int main() {
+    /*
+    Zadanie 3:
+    
+    Pobierz liczbę całkowitą z klawiatury i sprawdź, czy jest podzielna: 
+
+    przez 3 i przez 5; 
+    przez 3, ale nie przez 5; 
+    przez 5, ale nie przez 3; 
+    ani przez 3, ani przez 5. 
+
+    Właściwą odpowiedź wyświetlna ekranie
+    */
+
+
+    setlocale(LC_CTYPE, "Polish");
+
+    int n;
+    cout << "Podaj liczbę całkowitą: ";
+    cin >> n;
+
+    if (n % 3 == 0 && n % 5 == 0) {
+        cout << "Liczba jest podzielna przez 3 i przez 5." << endl;
+    }
+    else if (n % 3 == 0) {
+        cout << "Liczba jest podzielna przez 3, ale nie przez 5." << endl;
+    }
+    else if (n % 5 == 0) {
+        cout << "Liczba jest podzielna przez 5, ale nie przez 3." << endl;
+    }
+    else {
+        cout << "Liczba nie jest podzielna przez 3 ani przez 5." << endl;
+    }
+
+    return 0;
+}
+
+
+
+
+
+Zadanie 4 / 
+
+
+#include <iostream>
+#include <locale.h>
+
+using namespace std;
+
+int main() {
+    /*
+    Zadanie 4:
+
+    Pobierz znak (char) z klawiatury. 
+    Sprawdź, czy to samogłoska, spółgłoska, czy cyfra. 
+    Poinformuj o tym, jaki to znak. 
+    Uwzględnij tylko małe litery alfabetu angielskiego i cyfry
+    */
+
+
+
+    setlocale(LC_CTYPE, "Polish");
+    
+    char c;
+    cout << "Podaj znak: ";
+    cin >> c;
+
+    if (c >= 'a' && c <= 'z') {
+        if (c == 'a' || c == 'e' || c == 'i' || c == 'o' || c == 'u') {
+            cout << "To jest samogłoska." << endl;
+        } else {
+            cout << "To jest spółgłoska." << endl;
+        }
+    }
+    else if (c >= '0' && c <= '9') {
+        cout << "To jest cyfra." << endl;
+    } else {
+        cout << "To nie jest ani samogłoska, ani spółgłoska, ani cyfra." << endl;
+    }
+
+    return 0;
+}
+
+
+
+Zadanie 5 / 
+
+
+#include <iostream>
+#include <locale.h>
+
+using namespace std;
+
+int main() {
+
+    /*
+    Zadanie 5: 
+
+    Masz takie wyrażenie: (((a1+a2)*a3)-a4)/a5 (elementy od a1 do a5 są typu float). 
+    Pobierz z klawiatury każdą ze zmiennych a1 do a5, oblicz wartość wyrażenia i wyświetl wynik. 
+    Zaprojektuj program tak, aby w przypadku dzielenia przez zero informował o tym i nie wykonywał działania.
+    */
+
+
+    setlocale(LC_CTYPE, "Polish");
+
+    float a1, a2, a3, a4, a5;
+
+    cout << "Podaj a1: ";
+    cin >> a1;
+    cout << "Podaj a2: ";
+    cin >> a2;
+    cout << "Podaj a3: ";
+    cin >> a3;
+    cout << "Podaj a4: ";
+    cin >> a4;
+    cout << "Podaj a5: ";
+    cin >> a5;
+
+    float wynik = (((a1 + a2) * a3) - a4) / a5;
+
+    if (a5 == 0) {
+       cout << "Nie można dzielić przez zero." << endl;
+    } else {
+       cout << "Wynik: " << wynik << endl;
+    }
+
+    return 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 Tu będą odpowiedzi i pytania na Kartkówkę z C++ z dnia: 17.11.2023
 
 
