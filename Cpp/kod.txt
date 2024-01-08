@@ -1,3 +1,198 @@
+Tu będą odpowiedzi i pytania na Kartkówkę z C++ z dnia: 08.01.2024
+
+1/ 
+#include <iostream>
+#include <locale.h>
+using namespace std;
+
+int main() {
+    setlocale(LC_CTYPE, "Polish");
+    int liczba;
+    int parzyste = 0;
+    int nieparzyste = 0;
+
+    cout << "Podaj pięć liczb: " << endl;
+
+    for (int i = 0; i < 5; i++) {
+        cin >> liczba;
+
+        if (liczba % 2 == 0) {
+            parzyste++;
+        }
+        else {
+            nieparzyste++;
+        }
+    }
+
+    cout << "Liczba parzystych liczb: " << parzyste << endl;
+    cout << "Liczba nieparzystych liczb: " << nieparzyste << endl;
+
+    return 0;
+}
+
+
+
+2/
+#include <iostream>
+#include <locale.h>
+using namespace std;
+
+int main() {
+    setlocale(LC_CTYPE, "Polish");
+    char znak;
+    int licznik = 0;
+
+    do {
+        cout << "Wprowadź znak: ";
+        cin >> znak;
+        licznik++;
+    } while (znak != 'x');
+
+    cout << "Pobrano " << licznik << " znaków." << endl;
+
+    return 0;
+}
+
+
+
+
+3/
+#include <iostream>
+#include <locale.h>
+
+using namespace std;
+
+int main() {
+    setlocale(LC_CTYPE, "Polish");
+    float liczba1, liczba2;
+    char znak;
+
+    cout << "Podaj pierwszą liczbę: ";
+    cin >> liczba1;
+
+    cout << "Podaj drugą liczbę: ";
+    cin >> liczba2;
+
+    cout << "Podaj znak działania (+, -, *, /): ";
+    cin >> znak;
+
+    float wynik;
+
+    switch (znak) {
+    case '+':
+        wynik = liczba1 + liczba2;
+        cout << "Wynik dodawania: " << wynik << endl;
+        break;
+    case '-':
+        wynik = liczba1 - liczba2;
+        std::cout << "Wynik odejmowania: " << wynik << endl;
+        break;
+    case '*':
+        wynik = liczba1 * liczba2;
+        cout << "Wynik mnożenia: " << wynik << endl;
+        break;
+    case '/':
+        if (liczba2 != 0) {
+            wynik = liczba1 / liczba2;
+            cout << "Wynik dzielenia: " << wynik << endl;
+        }
+        else {
+            cout << "Nie można dzielić przez zero!" << endl;
+        }
+        break;
+    default:
+        cout << "Niepoprawny znak działania!" << endl;
+        break;
+    }
+
+    return 0;
+}
+
+
+
+
+4/
+#include <iostream>
+#include <locale.h>
+
+using namespace std;
+
+int main() {
+    setlocale(LC_CTYPE, "Polish");
+    int liczba;
+
+    cout << "Wprowadź liczbę całkowitą: ";
+    cin >> liczba;
+
+    if (liczba < 0) {
+        liczba--;
+    }
+    else if (liczba > 0) {
+        liczba++;
+    }
+
+    cout << "Liczba po zmianach: " << liczba << endl;
+
+    if (liczba % 2 == 0) {
+        cout << "Liczba jest parzysta." << endl;
+    }
+    else {
+        cout << "Liczba jest nieparzysta." << endl;
+    }
+
+    return 0;
+}
+
+
+
+
+5/ 
+#include <iostream>
+#include <locale.h>
+#include <string>
+
+
+using namespace std;
+
+int main() {
+    setlocale(LC_CTYPE, "Polish");
+    string imie;
+    cout << "Podaj imie: ";
+    cin >> imie;
+
+    int iloscSamoglosek = 0;
+    for (char litera : imie) {
+        switch (tolower(litera)) {
+        case 'a':
+        case 'e':
+        case 'i':
+        case 'o':
+        case 'u':
+        case 'y':
+            iloscSamoglosek++;
+            break;
+        default:
+            break;
+        }
+    }
+
+    cout << "Imie zawiera " << iloscSamoglosek << " samoglosek." << endl;
+
+    for (int i = 0; i < iloscSamoglosek; i++) {
+        cout << imie << endl;
+    }
+
+    return 0;
+}
+
+
+
+
+
+
+
+
+
 Tu będą odpowiedzi i pytania na Kartkówkę z C++ z dnia: 04.01.2024
 
 
