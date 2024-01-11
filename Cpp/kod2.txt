@@ -629,5 +629,15 @@ Temat: Rekurencja C++
 
 	W algorytmie i programowaniu rekurencja występuje, gdy procedura lub funkcja wywołuje samą siebie, aż do momentu napotkania tzw. przypadku podstawowego, dla którego może wyznaczyć wynik.
 
-2. 
+2. Zastosowanie Rekurencji
+	- Dziel i Zwyciężaj: Dzielą problem na mniejsze podproblemy, aby rozwiązać problem (np. sortowanie QuickSort i MergeSort)
 
+	- Algorytmy grafowe - Przeszukiwanie grafów
+	
+	- Struktury jak drzewa binarne
+
+	- Obliczanie silnii naturalnej: 5! = 5*4*3*2*1;
+
+	- Ciąg Fibonacciego
+
+	- Rozwiązanie zagadki wież Hanoi
