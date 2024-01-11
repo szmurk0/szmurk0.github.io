@@ -614,3 +614,20 @@ Dokumentacja:
 
 Refaktoryzacja kodu:
 	Usuwanie niepotrzebnych zmiennych
+
+
+
+___________________________________________________________________________________________
+___________________________________________________________________________________________   
+
+
+
+				Lekcja
+Temat: Rekurencja C++
+
+1. Rekurencja w Algorytmice
+
+	W algorytmie i programowaniu rekurencja występuje, gdy procedura lub funkcja wywołuje samą siebie, aż do momentu napotkania tzw. przypadku podstawowego, dla którego może wyznaczyć wynik.
+
+
+
