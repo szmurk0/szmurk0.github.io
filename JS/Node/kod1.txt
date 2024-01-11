@@ -29,3 +29,9 @@ P4. Zastosowanie Node.js
 	- Wszędzie tam, gdzie model oparty jest na zdarzeniach i tych zdarzeń jest bardzo wiele. Poza projektami obciążająceymi procesor lub kartę graficzną (aplikacje wymagające złożone obliczenia)
 
 P5. NPM (Node Package Manager) - Jest to narzędzie do zarządzania pakietami w środowisku Node.js - zwykle instalowany razem z Node.js (jest dostępny jako polecenie w wierszu poleceń)
+
+
+
+Temat: Typowanie w JavaScript
+
+
