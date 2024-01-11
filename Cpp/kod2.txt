@@ -629,5 +629,5 @@ Temat: Rekurencja C++
 
 	W algorytmie i programowaniu rekurencja występuje, gdy procedura lub funkcja wywołuje samą siebie, aż do momentu napotkania tzw. przypadku podstawowego, dla którego może wyznaczyć wynik.
 
-
+2. 
 
