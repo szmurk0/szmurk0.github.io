@@ -191,4 +191,25 @@ Temat: Typowanie w JavaScript
 
 
 
+<script>
+        var losowaLiczba = Math.floor(Math.random() * 100) + 1;
+
+        var zgadywanaInput = document.getElementById("zgadywana");
+        var sprawdzButton = document.getElementById("sprawdzButton");
+
+        sprawdzButton.addEventListener("click", function () {
+            var zgadywana = parseInt(zgadywanaInput.value);
+
+            if (zgadywana === losowaLiczba) {
+                alert("Zgadłeś liczbę!");
+            } else if(zgadywana < losowaLiczba) {
+                alert("Liczba szukana jest większa, niż ta wpisana");
+            } else if(zgadywana < losowaLiczba) {
+                alert("Liczba szukana jest mniejsza, niż ta wpisana");
+            } else {
+                alert("Próbuj dalej!");
+            }
+        });
+    </script>
+
 
