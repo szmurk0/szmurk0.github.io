@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zamówienie HotDoga</title>
+    <style>
+        /* Dodaj odpowiednie style CSS według potrzeb */
+    </style>
+</head>
+<body>
+
+    <form id="orderForm">
+        <label for="orderId">ID Zamówienia:</label>
+        <input type="text" id="orderId" name="orderId" required><br>
+
+        <label for="hotdogType">Typ HotDoga:</label>
+        <select id="hotdogType" name="hotdogType" required>
+            <option value="HotDog">HotDog</option>
+            <option value="DoubleDog">DoubleDog</option>
+            <option value="ZegDog">ZegDog</option>
+        </select><br>
+
+        <label for="sauces">Sos 1:</label>
+        <select id="sauces" name="sauces" multiple required>
+            <option value="Ketchup">Ketchup</option>
+            <option value="Musztarda">Musztarda</option>
+            <option value="1000 wysp">1000 Wysp</option>
+            <option value="Cebulowy">Sos Cebulowy</option>
+            <option value="Remoulada">Sos Remoulada</option>
+            <!-- Dodaj więcej opcji sosów, jeśli potrzebujesz -->
+        </select><br>
+
+
+        <label for="secondSauce">Sos 2:</label>
+        <select id="secondSauce" name="secondSauce" required>
+            <option value="Brak">Brak</option>
+            <option value="Ketchup">Ketchup</option>
+            <option value="Musztarda">Musztarda</option>
+            <option value="Cebulowy">Sos Cebulowy</option>
+            <!-- Dodaj więcej opcji sosów, jeśli potrzebujesz -->
+        </select><br>
+
+
+        <label for="comments">Uwagi:</label>
+        <textarea id="comments" name="comments"></textarea><br>
+
+        <button type="button" onclick="submitOrder()">Wyślij Zamówienie</button>
+
+        <button type="button"><a href="orders.html">Pokaż Zamówienia</a></button>
+    </form>
+
+    <div id="ordersContainer">
+        <!-- Tutaj będą wyświetlane zamówienia -->
+    </div>
+
+    <script>
+        function submitOrder() {
+            // Pobierz dane z formularza
+            const orderId = document.getElementById('orderId').value;
+            const hotdogType = document.getElementById('hotdogType').value;
+            const sauces = Array.from(document.getElementById('sauces').selectedOptions).map(option => option.value);
+            const secondSauce = document.getElementById('secondSauce').value;
+            const comments = document.getElementById('comments').value;
+
+            // Utwórz obiekt zawierający dane zamówienia
+            const orderData = {
+                orderId: orderId,
+                hotdogType: hotdogType,
+                sauces: sauces,
+                secondSauce: secondSauce,
+                comments: comments,
+                status: 'w przygotowaniu'
+            };
+
+            // Pobierz zamówienia z localStorage
+            let orders = JSON.parse(localStorage.getItem('orders')) || [];
+
+            // Dodaj nowe zamówienie do listy
+            orders.push(orderData);
+
+            // Zapisz zamówienia w localStorage
+            localStorage.setItem('orders', JSON.stringify(orders));
+
+            // Aktualizuj wyświetlane zamówienia
+            fetchOrders();
+        }
+
+
+        function fetchOrders() {
+            // Pobierz zamówienia z localStorage
+            const orders = JSON.parse(localStorage.getItem('orders')) || [];
+
+            // Wyświetl zamówienia na stronie
+            displayOrders(orders);
+        }
+
+        function displayOrders(orders) {
+            // Wyświetl zamówienia na stronie (możesz dostosować sposób wyświetlania)
+            const ordersContainer = document.getElementById('ordersContainer');
+            ordersContainer.innerHTML = '';
+
+            orders.forEach(order => {
+                const orderElement = document.createElement('div');
+                orderElement.innerHTML = `<p>ID Zamówienia: ${order.orderId}</p>
+                                          <p>Typ HotDoga: ${order.hotdogType}</p>
+                                          <p>Sosy: ${order.sauces.join(', ')}</p>
+                                          <p>Uwagi: ${order.comments}</p>`;
+                
+                // Dodaj przycisk do usuwania zamówienia
+                orderElement.innerHTML += `<button onclick="deleteOrder('${order.orderId}')">Usuń zamówienie</button>`;
+
+                ordersContainer.appendChild(orderElement);
+            });
+        }
+
+        function deleteOrder(orderId) {
+            // Pobierz zamówienia z localStorage
+            let orders = JSON.parse(localStorage.getItem('orders')) || [];
+
+            // Usuń zamówienie o danym ID
+            orders = orders.filter(order => order.orderId !== orderId);
+
+            // Zapisz aktualizowaną listę zamówień w localStorage
+            localStorage.setItem('orders', JSON.stringify(orders));
+
+            // Aktualizuj wyświetlane zamówienia
+            fetchOrders();
+        }
+
+        // Początkowe pobranie zamówień po załadowaniu strony
+        fetchOrders();
+    </script>
+
+</body>
+
+
+
+
+<style>
+    body {
+        font-family: 'Arial', sans-serif;
+        background-color: #f4f4f4;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+        margin: auto;
+        font-family: 'Source Code Pro', monospace;
+        overflow: auto;
+        background: linear-gradient(315deg, rgb(235, 232, 232) 3%, rgba(80, 80, 80, 1) 38%, rgba(60, 60, 60, 1) 68%, rgba(30, 30, 30, 1) 98%);
+        animation: gradient 15s ease infinite;
+        background-size: 400% 400%;
+        background-attachment: fixed;
+    }
+
+    @keyframes gradient {
+        0% {
+            background-position: 0% 0%;
+        }
+        50% {
+            background-position: 100% 100%;
+        }
+        100% {
+            background-position: 0% 0%;
+        }
+    }
+
+    .wave {
+        background: rgb(0 0 0 / 25%);
+        border-radius: 1000% 1000% 0 0;
+        position: fixed;
+        width: 200%;
+        height: 12em;
+        animation: wave 10s -3s linear infinite;
+        transform: translate3d(0, 0, 0);
+        opacity: 0.8;
+        bottom: 0;
+        left: 0;
+        z-index: -1;
+    }
+
+    .wave:nth-of-type(2) {
+        bottom: -1.25em;
+        animation: wave 18s linear reverse infinite;
+        opacity: 0.8;
+    }
+
+    .wave:nth-of-type(3) {
+        bottom: -2.5em;
+        animation: wave 20s -1s reverse infinite;
+        opacity: 0.9;
+    }
+
+    @keyframes wave {
+        2% {
+            transform: translateX(1);
+        }
+        25% {
+            transform: translateX(-25%);
+        }
+        50% {
+            transform: translateX(-50%);
+        }
+        75% {
+            transform: translateX(-25%);
+        }
+        100% {
+            transform: translateX(1);
+        }
+    }
+
+
+    form {
+        background-color: #fff;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        padding: 20px;
+        width: 300px;
+        text-align: center;
+    }
+
+    label {
+        display: block;
+        margin: 10px 0;
+    }
+
+    input, select, textarea {
+        width: 100%;
+        padding: 8px;
+        margin: 8px 0;
+        box-sizing: border-box;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+    }
+
+    select[multiple] {
+        height: auto;
+    }
+
+    button {
+        background-color: #4caf50;
+        color: white;
+        padding: 10px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+    }
+
+    button:hover {
+        background-color: #45a049;
+    }
+
+    #ordersContainer {
+        margin-top: 20px;
+    }
+
+    #ordersContainer div {
+        background-color: #fff;
+        border-radius: 8px;
+        box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+        padding: 10px;
+        margin-top: 10px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    #ordersContainer button {
+        background-color: #e74c3c;
+        color: white;
+        margin-left: 10px;
+        padding: 5px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+    }
+
+    #ordersContainer button:hover {
+        background-color: #c0392b;
+    }
+</style>
+
+
+
+</html>
