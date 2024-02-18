@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Talky</title>
+  <link rel="stylesheet" href="talky.css">
+</head>
+<body>
+  <div class="wave"></div>
+  <div class="wave"></div>
+  <div class="wave"></div>
+
+  <div id="container">
+    <center><h1>Talky</h1></center>
+
+    <div id="usernameForm">
+      <label for="username">Podaj swoją nazwę użytkownika:</label>
+      <input type="text" id="username" />
+      <button onclick="joinChat()">Dołącz do rozmowy</button>
+    </div>
+
+    <div id="volumeInfo">Głośność: </div>
+  </div>
+
+  <script src="https://cdn.socket.io/4.1.2/socket.io.min.js"></script>
+  <script>
+    let username;
+    const socket = io();
+
+    function joinChat() {
+      username = document.getElementById('username').value;
+      if (username.trim() !== '') {
+        document.getElementById('usernameForm').style.display = 'none';
+        initializeAudio();
+      } else {
+        alert('Proszę podać nazwę użytkownika przed dołączeniem do rozmowy.');
+      }
+    }
+
+    function initializeAudio() {
+      // Inicjalizacja mikrofonu i transmisji audio
+      navigator.mediaDevices.getUserMedia({ audio: true })
+        .then((stream) => {
+          const mediaRecorder = new MediaRecorder(stream);
+
+          mediaRecorder.ondataavailable = (event) => {
+            if (event.data.size > 0) {
+              socket.emit('voice', { username, data: event.data });
+            }
+          };
+
+          mediaRecorder.start();
+
+          // Wykrywanie głośności dźwięku
+          const audioContext = new (window.AudioContext || window.webkitAudioContext)();
+          const analyser = audioContext.createAnalyser();
+          const microphone = audioContext.createMediaStreamSource(stream);
+          microphone.connect(analyser);
+          analyser.connect(audioContext.destination);
+
+          analyser.fftSize = 256;
+          const bufferLength = analyser.frequencyBinCount;
+          const dataArray = new Uint8Array(bufferLength);
+
+          function updateVolume() {
+            analyser.getByteFrequencyData(dataArray);
+            const average = dataArray.reduce((sum, value) => sum + value, 0) / bufferLength;
+            const volumeInfo = document.getElementById('volumeInfo');
+            volumeInfo.textContent = `Głośność: ${average.toFixed(2)}`;
+          }
+
+          setInterval(updateVolume, 100); // Aktualizacja co 100 ms
+
+          // Obsługa odtwarzania audio
+          socket.on('voice', (data) => {
+            const audioBlob = new Blob([data.data], { type: 'audio/wav' });
+            const audioUrl = URL.createObjectURL(audioBlob);
+            const audio = new Audio(audioUrl);
+            audio.play();
+          });
+
+          // Obsługa aktualizacji listy użytkowników
+          socket.on('userList', (users) => {
+            updateUsersList(users);
+          });
+
+          // Informowanie serwera o dołączeniu nowego użytkownika
+          socket.emit('join', { username });
+        })
+        .catch((error) => {
+          console.error('Error accessing microphone:', error);
+        });
+    }
+
+    function updateUsersList(users) {
+      console.clear(); // Wyczyść konsolę przed aktualizacją listy użytkowników
+      console.log('Lista użytkowników:');
+      console.table(users);
+    }
+  </script>
+</body>
+</html>
