@@ -176,6 +176,8 @@ const songs = [
             { time: 250, line: "Vorwärts, Männer, leistet Widerstand" },
             { time: 255, line: "Menschenmassen aus der Nebelwand" },
             { time: 260, line: "Der Sturmtrupp mit dem Spaten in der Hand" },
+
+            { time: 265, line: "♪♪♪" },
         ]
     },
     {
