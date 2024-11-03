@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Strona Muzyczna</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <div class="album-cover">
+            <img id="cover-image" src="cover.png" alt="Album Cover">
+        </div>
+        <div id="song-title" class="song-title">Tytuł utworu</div> <!-- Dodany element -->
+        <audio id="audio" src="urkatastrophe/fusilier.mp3"></audio>
+    
+        <div class="control-bar">
+            <span id="elapsed-time">0:00</span>
+            <input type="range" id="progress-bar" min="0" max="100" value="0">
+            <span id="total-time">0:00</span>
+        </div>
+    
+        <div class="navigation">
+            <button id="prev-btn">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                    <path d="M15.88,16.29L10.59,12l5.29-4.29L14.46,6l-7.59,6l7.59,6L15.88,16.29z" fill="white"/>
+                </svg>
+            </button>
+            <button id="play-pause-btn">
+                <svg id="play-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                    <polygon points="5,3 19,12 5,21 5,3" fill="white"/>
+                </svg>
+                <svg id="pause-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" style="display:none;">
+                    <rect x="6" y="4" width="4" height="16" fill="white"/>
+                    <rect x="14" y="4" width="4" height="16" fill="white"/>
+                </svg>
+            </button>
+            <button id="next-btn">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                    <path d="M8.12,16.29L13.41,12l-5.29-4.29L9.54,6l7.59,6l-7.59,6L8.12,16.29z" fill="white"/>
+                </svg>
+            </button>
+        </div>
+
+        <div class="lyrics">
+            <p id="lyric-line"></p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
