@@ -1,0 +1,162 @@
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #121212;
+    color: #ffffff;
+}
+
+.container {
+    text-align: center;
+    width: 100%;
+    max-width: 600px;
+    display: flex; /* Użyj flexbox */
+    flex-direction: column; /* Ustaw kierunek kolumnowy */
+    align-items: center; /* Wyrównaj do środka */
+}
+
+.album-cover img {
+    width: 350px; /* Powiększenie szerokości obrazka */
+    height: 350px; /* Powiększenie wysokości obrazka */
+    margin-bottom: 20px;
+    border-radius: 15px; /* Zaokrąglone brzegi */
+}
+
+.song-title {
+    font-size: 1.5em; /* Rozmiar czcionki */
+    color: #ffffff; /* Kolor tekstu */
+    margin: 10px 0; /* Odstęp górny i dolny */
+}
+
+
+.control-bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    margin: 20px 0; /* Użyj góry i dołu, usuń automatyczne */
+}
+
+#progress-bar {
+    -webkit-appearance: none; /* Wyłącza domyślne style w WebKit (Safari, Chrome) */
+    width: 80%;
+    margin: 0 10px; /* Zmień marginesy */
+    height: 8px; /* Wysokość paska */
+    border-radius: 5px; /* Zaokrąglone brzegi */
+    background: rgba(255, 255, 255, 0.3); /* Tło paska */
+    cursor: pointer; /* Zmiana kursora na wskaźnik */
+}
+
+/* Styl dla uchwytu paska */
+#progress-bar::-webkit-slider-thumb {
+    -webkit-appearance: none; /* Wyłącza domyślne style dla uchwytu w WebKit */
+    width: 16px; /* Szerokość uchwytu */
+    height: 16px; /* Wysokość uchwytu */
+    border-radius: 50%; /* Okrągły uchwyt */
+    background: #1DB954; /* Kolor uchwytu */
+    cursor: pointer; /* Zmiana kursora na wskaźnik */
+    box-shadow: 0 0 2px rgba(0, 0, 0, 0.5); /* Cień dla uchwytu */
+}
+
+/* Styl dla uchwytu paska w Firefox */
+#progress-bar::-moz-range-thumb {
+    width: 16px; /* Szerokość uchwytu */
+    height: 16px; /* Wysokość uchwytu */
+    border-radius: 50%; /* Okrągły uchwyt */
+    background: #1DB954; /* Kolor uchwytu */
+    cursor: pointer; /* Zmiana kursora na wskaźnik */
+    box-shadow: 0 0 2px rgba(0, 0, 0, 0.5); /* Cień dla uchwytu */
+}
+
+/* Styl dla tła w Firefox */
+#progress-bar::-moz-range-track {
+    background: rgba(255, 255, 255, 0.3); /* Tło paska */
+    border-radius: 5px; /* Zaokrąglone brzegi */
+}
+
+/* Styl dla tła paska w Safari i Chrome */
+#progress-bar::-webkit-slider-runnable-track {
+    background: rgba(255, 255, 255, 0.3); /* Tło paska */
+    border-radius: 5px; /* Zaokrąglone brzegi */
+}
+
+.navigation {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px 0;
+}
+
+button {
+    background-color: rgba(0, 0, 0, 0.3); /* Kolor tła przycisku */
+    color: #fff; /* Kolor tekstu */
+    border: none; /* Bez ramki */
+    padding: 10px; /* Wewnętrzny odstęp */
+    font-size: 1.5em; /* Rozmiar czcionki */
+    cursor: pointer; /* Zmiana kursora na wskaźnik */
+    margin: 0 10px; /* Odstęp między przyciskami */
+    border-radius: 10%; /* Okrągły kształt */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3); /* Cień przycisku */
+    height: 40px;
+    width: 70px;
+    display: flex; /* Dodaj flexbox do przycisku */
+    justify-content: center; /* Wyrównaj do środka w poziomie */
+    align-items: center; /* Wyrównaj do środka w pionie */
+    transition: background-color 0.3s ease, transform 0.2s ease;
+
+}
+
+button svg {
+    width: 24px; /* Szerokość ikony */
+    height: 24px; /* Wysokość ikony */
+}
+
+/* Dostosowanie do ikony i czasu */
+#elapsed-time, #total-time {
+    color: white;
+    font-size: 1em;
+    margin: 0 10px;
+}
+
+
+/* Styl po najechaniu kursorem */
+button:hover {
+    background-color: #d68e28; /* Jaśniejszy zielony po najechaniu */
+}
+
+.lyrics {
+    font-size: 1.3em;
+    margin-top: 20px;
+    padding: 10px;
+    background-color: rgba(255, 255, 255, 0.5);
+    color: #000;
+    border-radius: 8px;
+    width: 100%;
+    max-width: 500px;
+    height: 150px;
+    overflow: hidden; /* Możesz również użyć 'auto' */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    line-height: 1; /* Zmniejszenie odstępu między liniami */
+}
+.lyric-line {
+    opacity: 0.5; /* Past lyrics */
+    margin: 0; /* Usuń marginesy dla linii tekstu */
+}
+
+.lyric-line.active {
+    color: #ffffff; /* Current lyric */
+    font-weight: bold;
+    opacity: 1;
+}
+
+.lyric-line.future {
+    color: #000000; /* Future lyrics */
+    opacity: 0.7;
+}
