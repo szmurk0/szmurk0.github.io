@@ -124,7 +124,7 @@ button svg {
 
 /* Styl po najechaniu kursorem */
 button:hover {
-    background-color: #d68e28; /* Jaśniejszy zielony po najechaniu */
+    background-color: rgba(219, 94, 34); /* Kolor uchwytu */
 }
 
 .lyrics {
