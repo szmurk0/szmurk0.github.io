@@ -184,9 +184,77 @@ const songs = [
         title: "Der Maulwurf", // Dodany tytuł dla drugiego utworu
         src: "Der Maulwurf.mp3",
         lyrics: [
-            { time: 0, line: "First line of the second song" },
-            { time: 4, line: "Second line of the second song" },
-            // Add more lines for the second song
+            { time: 20, line: "♪♪♪" },
+
+            { time: 38, line: "Zum Einsatz als Mineur unter Tage geschickt" },
+            { time: 42, line: "Ich dacht mir, da ist man vor Granaten geschützt" },
+            { time: 46, line: "Die dreihunderteinundzwanzigste Mineur-Kompanie" },
+            { time: 50, line: "Fünfzig Meter über uns herrscht an der Front Manie" },
+            { time: 54, line: "Wir graben zwölf Stunden, zwölf Stunden zum Ruh'n" },
+            { time: 58, line: "Doch ich kann beim Gewummer kein Auge zu tun" },
+            { time: 62, line: "Ich wart' nur, bis der Stollen die Granate erhellt" },
+            { time: 66, line: "Und wenn's nicht der Feind schafft, dann mach' ich es selbst" },
+
+            { time: 71, line: "Graben" },
+            { time: 73, line: "Und weiter graben" },
+            { time: 77, line: "Mit meinem Spaten" },
+            { time: 81, line: "Der Maulwurf sieht kein Licht" },
+            { time: 86, line: "Graben" },
+            { time: 89, line: "Und weiter graben" },
+            { time: 93, line: "Stets unter Tage" },
+            { time: 97, line: "Bis der Stollen endlich einbricht" },
+
+            { time: 103, line: "♪♪♪" },
+
+            { time: 133, line: "Vier Männer im Schleppschacht bilden eine Schicht" },
+            { time: 138, line: "Einer, der den Ton mit dem Spaten absticht" },
+            { time: 142, line: "Einer hält ihm den Sandsack auf" },
+            { time: 146, line: "Die anderen zwei bringen den Dreck hinauf" },
+            { time: 150, line: "Eine Karbidlampe spendet uns Licht" },
+            { time: 154, line: "Obendrein schwarzen Qualm, der in der Brust sticht" },
+            { time: 159, line: "Im Sauerstoffmangel invalide geplagt" },
+            { time: 162, line: "Ich schwör's, nicht mehr lang und ich schieße mich ab" },
+
+            { time: 167, line: "Graben" },
+            { time: 169, line: "Und weiter graben" },
+            { time: 173, line: "Mit meinem Spaten" },
+            { time: 177, line: "Der Maulwurf sieht kein Licht" },
+            { time: 182, line: "Graben" },
+            { time: 185, line: "Und weiter graben" },
+            { time: 189, line: "Stets unter Tage" },
+            { time: 193, line: "Bis der Stollen endlich einbricht" },
+
+            { time: 198, line: "Spatenstich an Spatenstich" },
+            { time: 202, line: "Nur Wasser und Erde, für uns gibt's kein Tageslicht" },
+            { time: 207, line: "Spatenstich an Spatenstich" },
+            { time: 210, line: "Offene Hände und Knie, sie plagen mich" },
+            { time: 215, line: "Spatenstich an Spatenstich" },
+            { time: 218, line: "Seit zwei Jahren jeden Tag zwölf Stunden Arbeitsschicht" },
+            { time: 222, line: "Spatenstich an Spatenstich" },
+            { time: 226, line: "Nur ein weiterer Tag und ich werde wahnsinnig" },
+
+            { time: 231, line: "Ich atme den Ruß ein und spuck' morgens schwarz" },
+            { time: 234, line: "Als ob ich im Krieg nicht genug Sorgen hab'" },
+            { time: 238, line: "Die stete Luftknappheit bringt Krankheit im Geist" },
+            { time: 242, line: "Da passiert's, dass im Dunkeln manch Gedanke entgleist" },
+            { time: 246, line: "Es wummst und es wackelt, ein Minenaufschlag" },
+            { time: 251, line: "Nur Sekunden später gibt die Grabenwand nach" },
+            { time: 254, line: "Unterbreche fürs Letzte den grabenden Trott" },
+            { time: 259, line: "Und press' mir apathisch die 08 an den Kopf!!!" },
+
+            { time: 262, line: "[Kopf.. kopf...]" },
+
+
+            { time: 265, line: "Graben!!!" },
+            { time: 267, line: "Und weiter graben!!!" },
+            { time: 271, line: "Mit meinem Spaten!!!" },
+            { time: 275, line: "Der Maulwurf sieht kein Licht..." },
+            { time: 280, line: "Graben!!!" },
+            { time: 283, line: "Und weiter graben!!!" },
+            { time: 287, line: "Stets unter Tage!!!" },
+            { time: 292, line: "Bis der Stollen endlich einbricht" },
+
+            { time: 297, line: "♪♪♪" },
         ]
     },
     {
