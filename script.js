@@ -306,9 +306,21 @@ const songs = [
         title: "Verdun", // Dodany tytuł dla drugiego utworu
         src: "Verdun.mp3",
         lyrics: [
-            { time: 0, line: "First line of the second song" },
-            { time: 4, line: "Second line of the second song" },
-            // Add more lines for the second song
+            { time: 0, line: "♪♪♪" },
+            { time: 13, line: "Verdun..." },
+
+            { time: 18, line: "Wie Marionetten, die sich gen Tod hieven" },
+            { time: 21, line: "Mit Schlamm und mit Eisen zum Westen hinfließen" },
+            { time: 25, line: "Granaten für Zukunft, sie regnen herab" },
+            { time: 29, line: "Der Graben die Zuflucht, doch im Graben steckt Grab" },
+            { time: 34, line: "Unser Leben als Blutzoll, Verdun uns zum Lohn" },
+            { time: 38, line: "Doch nichts ist noch übrig, wofür Sterben sich lohnt" },
+            { time: 41, line: "Die Väter und Söhne, die kläglich beweint" },
+            { time: 45, line: "In der Hitze verwesend, wenn die Sonnе uns scheint" },
+            { time: 48, line: "Oh Kaiser, mein Kaisеr, willst du kurzerhand" },
+            { time: 52, line: "Uns zur Schlachtbank hinführen für zerriebenes Land?" },
+            { time: 56, line: "Schlamm unser Wein, Blei unser Brot" },
+            { time: 60, line: "Auf Verduns Feldern gedeiht nichts außer dem Tod" },
         ]
     },
     {
